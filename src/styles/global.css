@@ -30,7 +30,7 @@ h1,h2,h3{line-height:1.35;color:var(--gray-900)}
 .brand-copy strong{font-size:1.08rem;letter-spacing:-.025em;white-space:nowrap}
 .brand-copy small{font-size:.67rem;font-weight:400;color:#667085}
 .flag-mark{width:2.65rem;height:2.65rem;display:block;position:relative;border:2px solid #fff;border-radius:50%;overflow:hidden;flex:none;background:#fff;box-shadow:0 0 0 1px #d8dee8,0 4px 10px rgba(15,23,42,.13)}
-.flag-mark img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:0}
+.flag-mark img{display:block;width:100%;height:100%;object-fit:contain;border-radius:0}
 .nav-shell{display:flex;align-items:center;justify-content:flex-end;gap:1.25rem;flex:1}
 .main-nav{display:flex;align-items:center;gap:.18rem}
 .nav-link{display:flex;align-items:center;gap:.52rem;color:#26364d;font-weight:500;padding:.52rem .72rem;border-radius:.5rem;font-size:.88rem;white-space:nowrap;line-height:1.55}

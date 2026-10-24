@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <clipPath id="round"><circle cx="64" cy="64" r="59"/></clipPath>
+  </defs>
+  <circle cx="64" cy="64" r="61.5" fill="#fff" stroke="#d8dee8" stroke-width="3"/>
+  <g clip-path="url(#round)">
+    <path fill="#ff9933" d="M5 5h118v39.333H5z"/>
+    <path fill="#fff" d="M5 44.333h118v39.334H5z"/>
+    <path fill="#138808" d="M5 83.667h118V123H5z"/>
+  </g>
+  <g fill="none" stroke="#000080" stroke-linecap="round">
+    <circle cx="64" cy="64" r="17.5" stroke-width="3"/>
+    <g stroke-width="1.65">
+      <path d="M64 47v34"/>
+      <path d="M64 47v34" transform="rotate(15 64 64)"/>
+      <path d="M64 47v34" transform="rotate(30 64 64)"/>
+      <path d="M64 47v34" transform="rotate(45 64 64)"/>
+      <path d="M64 47v34" transform="rotate(60 64 64)"/>
+      <path d="M64 47v34" transform="rotate(75 64 64)"/>
+      <path d="M64 47v34" transform="rotate(90 64 64)"/>
+      <path d="M64 47v34" transform="rotate(105 64 64)"/>
+      <path d="M64 47v34" transform="rotate(120 64 64)"/>
+      <path d="M64 47v34" transform="rotate(135 64 64)"/>
+      <path d="M64 47v34" transform="rotate(150 64 64)"/>
+      <path d="M64 47v34" transform="rotate(165 64 64)"/>
+    </g>
+  </g>
+  <circle cx="64" cy="64" r="2.5" fill="#000080"/>
+</svg>
