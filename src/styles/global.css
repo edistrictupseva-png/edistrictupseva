@@ -153,8 +153,7 @@ figure.shot figcaption{font-size:.85rem;color:var(--gray-500);margin-top:.35rem;
 .toc ol{margin:.3rem 0;padding-left:1.3rem}
 .toc li{margin:.25rem 0}
 /* footer */
-.disclaimer-strip{background:var(--blue-50);border-top:1px solid var(--blue-200);color:var(--gray-600);font-size:.9rem;padding:1rem 0;margin-top:2rem}
-.site-footer{background:#fff;border-top:1px solid var(--gray-200);padding:2rem 0 1.4rem;margin-top:0;color:var(--gray-600);font-size:.94rem}
+.site-footer{background:#fff;border-top:1px solid var(--gray-200);padding:2rem 0 1.4rem;margin-top:2rem;color:var(--gray-600);font-size:.94rem}
 .footer-grid{display:grid;gap:1.4rem}
 @media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1fr}}
 .action-grid{display:grid;gap:.75rem;margin:1rem 0}

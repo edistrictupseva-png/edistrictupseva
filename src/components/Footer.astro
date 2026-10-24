@@ -12,13 +12,6 @@ const help = lang === 'hi'
   ? [['लॉगिन और रजिस्ट्रेशन', 'login-registration'], ['स्टेटस और सत्यापन', 'status-verification'], ['CSC / जन सेवा केंद्र', 'csc-guide'], ['स्व-घोषणा पत्र', 'self-declaration-form']]
   : [['Login & Registration', 'login-registration'], ['Status & Verification', 'status-verification'], ['CSC / Jan Seva Kendra', 'csc-guide'], ['Self-Declaration', 'self-declaration-form']];
 ---
-<div class="disclaimer-strip">
-  <div class="wrap">
-    {lang === 'hi'
-      ? 'अस्वीकरण: eDistrict UP Seva एक स्वतंत्र जानकारी गाइड है — यह उत्तर प्रदेश सरकार की आधिकारिक वेबसाइट नहीं है। आधिकारिक पोर्टल edistrict.up.gov.in है और सिटीज़न लॉगिन esathi.up.gov.in पर होता है। आवेदन हमेशा आधिकारिक पोर्टल से ही करें।'
-      : 'Disclaimer: eDistrict UP Seva is an independent information guide — it is not an official website of the Government of Uttar Pradesh. The official portal is edistrict.up.gov.in and the citizen login is at esathi.up.gov.in. Always apply only through the official portal.'}
-  </div>
-</div>
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
@@ -38,6 +31,6 @@ const help = lang === 'hi'
         <ul>{legal.map(([label, slug]) => <li><a href={p(slug)}>{label}</a></li>)}</ul>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 eDistrict UP Seva (edistrictupseva.com) — {lang === 'hi' ? 'सर्वाधिकार सुरक्षित। यह साइट किसी सरकारी संस्था से संबद्ध नहीं है।' : 'All rights reserved. This site is not affiliated with any government body.'}</div>
+    <div class="footer-bottom">© 2026 eDistrict UP Seva (edistrictupseva.com) — {lang === 'hi' ? 'सर्वाधिकार सुरक्षित।' : 'All rights reserved.'}</div>
   </div>
 </footer>
