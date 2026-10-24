@@ -2,7 +2,10 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (url.hostname === 'www.edistrictupseva.com') {
+    if (
+      url.hostname === 'www.edistrictupseva.com' ||
+      url.hostname === 'edistrictupseva.pages.dev'
+    ) {
       url.protocol = 'https:';
       url.hostname = 'edistrictupseva.com';
       return Response.redirect(url.toString(), 301);
