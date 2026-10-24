@@ -1,0 +1,168 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqs = [
+  { q: "Who is eligible for a domicile certificate in UP?", a: "A person who is a permanent resident of Uttar Pradesh — broadly, someone born in UP, or living in UP continuously for the prescribed period (generally 3 years or more), or whose parents are permanent residents of the state. The Lekhpal or Revenue Inspector verifies your actual residence during the field check, so the address you claim must be the one where you genuinely live." },
+  { q: "How much does a domicile certificate cost in UP?", a: "₹10–15 when you apply yourself on eSathi. Through a CSC it is ₹30 plus a facilitation charge of roughly ₹30–50. Do not pay anything beyond this to agents or middlemen." },
+  { q: "How long is a UP domicile certificate valid?", a: "A domicile (residence) certificate is valid for a lifetime in Uttar Pradesh. You normally apply once. Keep the digitally signed PDF safely stored — reprints from the same PDF remain valid because the certificate number and QR code can be verified online." },
+  { q: "How many days does it take to get a domicile certificate?", a: "The standard time is 7–15 working days. Most of this is the residence verification: the Lekhpal visits or enquires in your village or locality. During the July–September scholarship season the queue is longer." },
+  { q: "Can I get a domicile certificate if I live in a rented house?", a: "Yes, if UP is your permanent home — renting does not disqualify you. You will need address evidence such as a rent agreement, electricity bill, voter ID or Aadhaar with the UP address, and the field verification must confirm that you actually live there. Students living in hostels for studies alone generally claim domicile of their family's permanent home." },
+  { q: "What is the difference between a domicile and a residence certificate?", a: "In Uttar Pradesh they are the same document — निवास प्रमाण पत्र (niwas praman patra), called domicile certificate or residence certificate in English. It certifies permanent residence in the state, which is what state quotas and schemes require. A temporary address proof such as a rent agreement is a different, weaker document." },
+  { q: "My domicile application was rejected. What should I do?", a: "Check the remark in eSathi. Rejections usually come from weak residence proof, a wrong rural/urban selection, or the field verification not finding you at the address. Add stronger address evidence, correct the selection if needed, and reapply — there is no penalty." },
+  { q: "Can a person hold domicile certificates of two states?", a: "No. Domicile is meant to be of one state only — the state of your permanent residence. Claiming state quota benefits in two states on the basis of two domicile certificates can cancel both benefits and the certificates themselves. Apply only where you genuinely and permanently reside." },
+];
+---
+<Base lang="en" title="Domicile Certificate UP (Niwas Praman Patra): Apply Online, Documents, Validity" description="How to apply for a domicile certificate (niwas praman patra) online in Uttar Pradesh: residence conditions, documents, fees ₹10–15, lifetime validity, status check and download through eSathi." path="/en/domicile-certificate/" altPath="/domicile-certificate/" faqs={faqs} updated="22 October 2026">
+<div class="content-col">
+  <h1 class="page-title">Domicile Certificate in UP — Apply Online on eSathi</h1>
+
+  <section class="box">
+    <h2>What is a domicile certificate?</h2>
+    <p>A domicile certificate (निवास प्रमाण पत्र, niwas praman patra) is the official proof that you are a permanent resident of Uttar Pradesh. "Domicile" and "residence certificate" are two names for the same document — it is issued by the Tehsildar of your tehsil after local verification, and it certifies the state in which you permanently belong, as opposed to an address where you happen to be staying temporarily.</p>
+    <p>It is one of the most frequently demanded certificates in UP:</p>
+    <ul>
+      <li><strong>State quota admissions</strong> — the 85% state quota in medical counselling, state university seats and polytechnic admissions all require UP domicile.</li>
+      <li><strong>UP government jobs</strong> — state recruitments reserve posts and give benefits to candidates domiciled in UP.</li>
+      <li><strong>Scholarships</strong> — UP scholarship schemes are for students domiciled in the state.</li>
+      <li><strong>State welfare schemes</strong> — housing, pension and beneficiary schemes check domicile before approving.</li>
+    </ul>
+    <p>The whole process runs online through eSathi (esathi.up.gov.in), the citizen portal of eDistrict UP — application, tracking and download, with no tehsil visits in between. This guide explains who qualifies, which documents actually convince the verifying officer, and how the rural and urban verification paths differ.</p>
+  </section>
+
+  <section class="box">
+    <h2>Domicile certificate at a glance</h2>
+    <div class="table-scroll">
+    <table class="info">
+      <tr><th>Fee via eSathi (self-apply)</th><td>₹10–15</td></tr>
+      <tr><th>Fee via CSC</th><td>₹30 + ₹30–50 facilitation charge</td></tr>
+      <tr><th>Processing time</th><td>7–15 working days</td></tr>
+      <tr><th>Validity</th><td>Lifetime</td></tr>
+      <tr><th>Where to apply</th><td>esathi.up.gov.in (Citizen Login on edistrict.up.gov.in)</td></tr>
+      <tr><th>Issued by</th><td>Tehsildar of your tehsil, after Lekhpal / Revenue Inspector verification</td></tr>
+      <tr><th>Helpline</th><td>0522-2304706 · ceghelpdesk@gmail.com</td></tr>
+    </table>
+    </div>
+  </section>
+
+  <section class="box">
+    <h2>Residence conditions — who qualifies as a UP domicile?</h2>
+    <p>The certificate is granted on the basis of <strong>permanent residence</strong> in Uttar Pradesh. In practice, applicants qualify in one of these situations:</p>
+    <ul>
+      <li>You were born in UP and your family home is here.</li>
+      <li>You have been living in UP continuously for the prescribed period (generally 3 years or longer) with the intention of permanent residence.</li>
+      <li>Your parents are permanent residents of UP, even if you currently study or work elsewhere temporarily.</li>
+      <li>You own or hold ancestral property or land in UP and reside on that basis.</li>
+    </ul>
+    <p>Two warnings belong here. First, the verification is physical, not just documentary: the Lekhpal or Revenue Inspector enquires in your locality, and a claimed address where you do not actually live will fail. Second, domicile can belong to only one state — if you already hold a domicile certificate of another state and claim UP domicile for state-quota benefits, both can be cancelled when the conflict surfaces.</p>
+  </section>
+
+  <section class="box">
+    <h2>Documents required for a domicile certificate</h2>
+    <ul class="checklist">
+      <li>Aadhaar card of the applicant (with UP address, or updated to it)</li>
+      <li>Recent passport-size photograph</li>
+      <li>Ration card showing the family and address</li>
+      <li>Self-declaration form (swa-pramanit ghoshna patra), filled and signed — upload as JPEG</li>
+      <li>Old residence proof: an earlier document showing you lived at this address — old domicile of a parent, school records, or previous certificates</li>
+      <li>Electricity bill in your or a parent's name for the address</li>
+      <li>Voter ID card with the UP address</li>
+      <li>For land-owning families: khatauni or land records; for tenants: rent agreement</li>
+    </ul>
+    <div class="note"><strong>File rules:</strong> every upload under 100KB, JPEG or PDF — except the self-declaration, which must be a <strong>JPEG image only</strong>. You do not need every document on this list; two or three strong address proofs that agree with each other are worth more than six contradictory ones.</div>
+  </section>
+
+  <section class="box">
+    <h2>Rural and urban verification — why the distinction matters</h2>
+    <p>When you apply, you must declare whether your address is rural (ग्रामीण) or urban (नगरीय), and this single choice decides who verifies you:</p>
+    <ul>
+      <li><strong>Rural addresses</strong> are verified by the <strong>Lekhpal</strong> of your area, who knows the village families, checks with the Gram Pradhan and neighbours, and reports to the Tehsildar.</li>
+      <li><strong>Urban addresses</strong> are verified by the <strong>Revenue Inspector (Kanoongo)</strong>, typically using municipal and voter records plus a locality enquiry.</li>
+    </ul>
+    <p>Choosing the wrong category sends the file to an officer who has no jurisdiction over your address, and it bounces back — losing a week or more. If you live in an area recently converted from a panchayat to a nagar palika, select the category that matches your address on current records, not the old one.</p>
+  </section>
+
+  <section class="box">
+    <h2>How to apply for a domicile certificate online — step by step</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Register or log in on eSathi</h3>
+        <p>Go to esathi.up.gov.in. First-time users register through "New User Registration" (नवीन उपयोगकर्ता पंजीकरण): name as on Aadhaar, date of birth, address with district and PIN, Aadhaar-linked mobile, a 6–8 character login ID, Aadhaar OTP verification, and a permanent password set on first login. Existing users log in with ID, password and captcha.</p>
+        <figure class="shot"><img src="/images/esathi-login.webp" alt="eSathi citizen login page of Uttar Pradesh" loading="lazy" /><figcaption>The eSathi portal — all certificate applications begin with this login</figcaption></figure>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Open certificate services</h3>
+        <p>From your dashboard, open the certificate services (प्रमाण पत्र सेवाएं) list of the revenue department.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Select "Domicile Certificate"</h3>
+        <p>Choose the domicile/residence certificate (निवास प्रमाण पत्र) service and read the on-screen information about documents and fee for this certificate.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Fill the personal and address details</h3>
+        <p>Enter the applicant's name, father's or husband's name, date of birth, gender, and the complete permanent address — state district, tehsil, block, village or ward, house number and PIN. The address written here is the address that will be physically verified, so write the one where you actually live.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>State the basis of residence</h3>
+        <p>The form asks how long you have lived at this address and on what basis — birth, family home, long residence or property. Answer consistently with your documents: if your electricity bill is two years old and your ration card is ten years old, the period you claim should match what the papers show.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Select rural or urban</h3>
+        <p>Pick ग्रामीण or नगरीय as per your address so the file reaches the Lekhpal or Revenue Inspector who covers your area (see the section above on why this matters).</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Upload the documents</h3>
+        <p>Upload the photograph, Aadhaar, ration card, address proofs and the signed self-declaration (JPEG). Keep each file under 100KB and readable; the verifying officer reads these scans before visiting.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Submit and pay the fee</h3>
+        <p>Review the preview once — especially the address spelling and PIN — then submit and pay ₹10–15 through PAYGOV using UPI, net banking or a debit card. A debited-but-pending payment usually reconciles within 24–48 hours; do not pay a second time.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Save the SRN and stay reachable</h3>
+        <p>Note the Service Request Number (SRN) sent by SMS and on screen. During the verification days, keep a family member available at the address — the field enquiry carries real weight, and a house found locked with nobody aware of the application can produce a negative report.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="box">
+    <h2>Fees: applying yourself vs through a CSC</h2>
+    <div class="table-scroll">
+    <table class="data">
+      <tr><th>Route</th><th>Government fee</th><th>Extra charges</th><th>Total you should pay</th></tr>
+      <tr><td>eSathi (self-apply online)</td><td>₹10–15</td><td>None</td><td>₹10–15</td></tr>
+      <tr><td>CSC / Jan Seva Kendra</td><td>₹30</td><td>₹30–50 facilitation</td><td>₹60–80</td></tr>
+    </table>
+    </div>
+    <p>Through a CSC the operator files the form on your behalf using their operator credentials — your personal eSathi password stays with you. The <a href="/en/csc-guide/">CSC guide</a> explains how to use a centre safely.</p>
+  </section>
+
+  <section class="box">
+    <h2>Check status and download the certificate</h2>
+    <p>You can follow the file with your SRN at any time — how status tracking works, and what labels like Under Verification, Forwarded to Tehsildar and Approved mean, is detailed in the <a href="/en/#status-check">status check section of the homepage guide</a>. Once the status shows <strong>Certificate Generated</strong>, download it from eSathi: <strong>Completed Applications → your application → Print → Save as PDF</strong>. The signed PDF with its QR code is the permanent certificate — valid for life, so store it in email or cloud storage and in DigiLocker, where it appears after a few days.</p>
+    <figure class="shot"><img src="/images/status-page.webp" alt="Application status page on the eDistrict UP portal" loading="lazy" /><figcaption>Tracking an application with the SRN on the eDistrict UP portal</figcaption></figure>
+  </section>
+
+  <section class="box">
+    <h2>Common rejection reasons — and how to fix them</h2>
+    <ul>
+      <li><strong>Residence not confirmed in field verification</strong> — the officer could not establish that you live at the address. Reapply when you are actually residing there and inform neighbours and the Pradhan that an enquiry may come.</li>
+      <li><strong>Weak or conflicting address proof</strong> — Aadhaar showing another state, or bills in unrelated names. Update Aadhaar address first, or add the ration card and voter ID that match the claimed address.</li>
+      <li><strong>Wrong rural/urban selection</strong> — correct the category so the file reaches the right officer.</li>
+      <li><strong>Self-declaration missing, unsigned or sent as PDF</strong> — sign it and upload a clear JPEG under 100KB.</li>
+      <li><strong>Short or unclear residence period</strong> — if you recently moved, attach the strongest available proof of continuous residence; where the period genuinely falls short, the application cannot succeed yet.</li>
+      <li><strong>Name mismatch with Aadhaar</strong> — align spellings across the form and all documents.</li>
+    </ul>
+    <p>There is no penalty for a rejected application. Correct the pointed-out issue and apply again. For files pending more than 15 working days, raise a complaint on the portal or call <strong>0522-2304706</strong> with your SRN; you can also write to ceghelpdesk@gmail.com.</p>
+  </section>
+
+  <section class="box">
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="/en/income-certificate/">Income Certificate in UP</a> — the other certificate most admissions and scholarships ask for together with domicile.</li>
+      <li><a href="/en/caste-certificate/">Caste Certificate in UP</a> — SC/ST and OBC NCL certificates, documents and validity.</li>
+      <li><a href="/en/self-declaration-form/">Self-Declaration Form</a> — the mandatory signed declaration used in domicile applications.</li>
+      <li><a href="/en/parivar-register-nakal/">Parivar Register Nakal</a> — the family register copy from the panchayat, often used as supporting residence evidence.</li>
+    </ul>
+  </section>
+</div>
+</Base>

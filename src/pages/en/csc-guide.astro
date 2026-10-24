@@ -1,0 +1,126 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqs = [
+  { q: 'What is a CSC or Jan Seva Kendra?', a: 'A Common Service Centre (CSC), known locally as a Jan Seva Kendra or Lokvani Kendra, is a small neighbourhood centre run by a local operator (called a VLE) that delivers government services to citizens who cannot or do not want to apply online themselves. Almost every block and town area in UP has several of them.' },
+  { q: 'How much should a CSC charge for a certificate application?', a: 'For certificates like income, caste and domicile, the government fee is ₹30 and the centre may add a facilitation charge of about ₹30 to ₹50, so a fair total is around ₹60 to ₹80. Paying a few hundred rupees for a single certificate application means you are being overcharged.' },
+  { q: 'What should I do if a CSC operator overcharges me?', a: 'Ask for the printed receipt first — the government fee is printed on it. If the operator still demands much more than the standard charges, you can complain on the CM Helpline 1076 or the CSC helpline 14599. Keeping the receipt and the centre\'s name makes the complaint effective.' },
+  { q: 'How do I find the nearest CSC?', a: 'Use the official CSC locator at locator.csccloud.in — enter your state, district and block or village to see the centres near you with their locations. In practice, most people also know their local Jan Seva Kendra by asking around the market or near the tehsil and block offices.' },
+  { q: 'Should I give my eSathi login ID and password to the CSC operator?', a: 'No — never. Operators apply using their own VLE credentials on their own system, not your account. Your eSathi login is personal, like a bank password. Anyone who insists on taking your login ID and password, or creates an account in your name and keeps the password, is putting your records at risk.' },
+  { q: 'I applied through a CSC. How do I download my certificate later?', a: 'You do not need the operator for this. Create your own free account on eSathi and download issued certificates from there, or get them from DigiLocker, where portal-issued certificates appear under Issued Documents. The certificate belongs to you, not to the centre that filed the application.' },
+  { q: 'Is applying through a CSC faster than applying myself?', a: 'No. The CSC only submits the application; after that, verification by the Lekhpal and approval by the Tehsildar take the same 7 to 15 working days either way. A CSC saves you effort, not time — any operator promising a certificate in one or two days for extra money is misleading you.' },
+];
+---
+
+<Base lang="en" title="CSC / Jan Seva Kendra Guide UP: Charges, How to Find One & Safety Tips" description="What a CSC (Jan Seva Kendra) is, how it differs from eSathi, the official charges for certificate applications, how to find a centre on locator.csccloud.in, pros and cons, and the safety rules every applicant should know." path="/en/csc-guide/" altPath="/csc-guide/" faqs={faqs} updated="22 October 2026">
+  <div class="content-col">
+    <h1 class="page-title">CSC / Jan Seva Kendra Guide — Charges, Process and Safety Rules</h1>
+
+    <section class="box">
+      <p>Not everyone in Uttar Pradesh has a smartphone, a scanner and the confidence to fill a government form online. That gap is exactly why the <strong>Common Service Centre (CSC)</strong> exists. Known in UP as the <strong>Jan Seva Kendra</strong> (and in some districts as Lokvani Kendra), it is a small service point — often a single desk with a computer and printer in your local market — run by a trained local operator called a <strong>VLE</strong> (Village Level Entrepreneur).</p>
+      <p>Through a CSC you can get almost every eDistrict service done for you: income, caste and domicile certificates, birth and death certificates, the Parivar Register Nakal, pension applications and much more. You hand over your documents and the fee, the operator fills and submits the application, and you return to collect the printed certificate.</p>
+      <p>Used properly, a CSC is genuinely convenient. Used carelessly, it is where people get overcharged — or worse, hand over their personal login to a stranger. This guide explains what a fair charge looks like, how a CSC differs from applying yourself on eSathi, how to find a centre, and the few safety rules that protect you.</p>
+    </section>
+
+    <section class="box">
+      <h2>CSC and eSathi — What Is the Difference?</h2>
+      <p>The confusion starts here, because both routes end at the same government system. The difference is only in <strong>who operates the computer</strong>:</p>
+      <div class="table-scroll">
+        <table class="data">
+          <thead><tr><th>Point</th><th>eSathi (You Apply)</th><th>CSC / Jan Seva Kendra</th></tr></thead>
+          <tbody>
+            <tr><td>What it is</td><td>The citizen portal at esathi.up.gov.in</td><td>A physical centre run by an operator (VLE)</td></tr>
+            <tr><td>Who fills the form</td><td>You, on your own free account</td><td>The operator, for you</td></tr>
+            <tr><td>Login used</td><td>Your own personal login ID and password</td><td>The operator's own VLE credentials at eseva.csccloud.in</td></tr>
+            <tr><td>Cost for a certificate</td><td>₹10–15 portal fee</td><td>₹30 government fee + ₹30–50 facilitation</td></tr>
+            <tr><td>Verification and time taken</td><td colspan="2">Identical for both — Lekhpal verification, Tehsildar approval, usually 7–15 working days</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">eDistrict is the overall system behind both. eSathi is your own window into it; a CSC is someone opening the window on your behalf. Nothing about the certificate itself — its validity, format or legal value — changes with the route you choose.</p>
+    </section>
+
+    <section class="box">
+      <h2>CSC — Quick Information</h2>
+      <div class="table-scroll">
+        <table class="info">
+          <tr><th>Also called</th><td>Jan Seva Kendra, Lokvani Kendra, Common Service Centre</td></tr>
+          <tr><th>Run by</th><td>A local operator (VLE) authorised under the CSC scheme</td></tr>
+          <tr><th>Standard charges</th><td>₹30 government fee + around ₹30–50 facilitation per certificate application</td></tr>
+          <tr><th>Find a centre</th><td>locator.csccloud.in</td></tr>
+          <tr><th>CSC helpline</th><td>14599</td></tr>
+          <tr><th>Complaint (overcharging)</th><td>CM Helpline 1076 · CSC helpline 14599</td></tr>
+          <tr><th>eDistrict helpline</th><td>0522-2304706 · ceghelpdesk@gmail.com</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="box">
+      <h2>How Applying Through a CSC Works — Step by Step</h2>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body"><strong>Find a centre near you.</strong> Search on locator.csccloud.in by district and block, or visit the Jan Seva Kendra in your local market.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body"><strong>Carry your documents.</strong> Take your Aadhaar, the supporting documents for the certificate you need, and a signed <a href="/en/self-declaration-form/">self-declaration form</a> where the service requires one. Clear photocopies are enough for most applications; the operator scans them.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body"><strong>The operator fills and submits the form.</strong> The operator logs in with their own VLE credentials, enters your details, uploads the scans and submits the application in the same system your own eSathi application would use.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Pay and take the receipt.</strong> Pay the government fee plus the facilitation charge, and collect the printed receipt. The receipt shows the fee breakup and your application reference (SRN).</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-body"><strong>Note your SRN carefully.</strong> The Service Request Number on the receipt is your proof and your tracking ID. Photograph the receipt before you leave the centre.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-body"><strong>Track the status yourself.</strong> You do not need to visit the centre for updates — check the <a href="/en/#status-check">application status</a> online with your SRN any time.</div></div>
+        <div class="step"><div class="step-num">7</div><div class="step-body"><strong>Collect or download the certificate.</strong> When the status shows the certificate as generated, either collect the printed copy from the centre or download it yourself through your own eSathi account or DigiLocker, as explained below.</div></div>
+      </div>
+    </section>
+
+    <section class="box">
+      <h2>What a CSC Should Charge — and What Is Overcharging</h2>
+      <div class="table-scroll">
+        <table class="data">
+          <thead><tr><th>Item</th><th>Fair Amount</th><th>Watch Out</th></tr></thead>
+          <tbody>
+            <tr><td>Government fee (income, caste, domicile, birth, death and similar certificates)</td><td>₹30</td><td>This part is fixed and printed on the receipt</td></tr>
+            <tr><td>Facilitation / service charge</td><td>₹30–50</td><td>Reasonable for the operator's time, scanning and printing</td></tr>
+            <tr><td>Fair total per application</td><td>Around ₹60–80</td><td>Demands of ₹200–500 for one certificate are overcharging</td></tr>
+            <tr><td>Printing an issued certificate</td><td>Small printing charge</td><td>Downloading it yourself on eSathi or DigiLocker is free</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="warn">If an operator charges far above these amounts, refuses a receipt, or asks for extra money "to get it done fast", do not pay quietly. Note the centre's name and location and complain on the CM Helpline <strong>1076</strong> or the CSC helpline <strong>14599</strong>. Overcharging survives only because most people never report it.</p>
+    </section>
+
+    <section class="box">
+      <h2>Applying via CSC vs Doing It Yourself — Honest Pros and Cons</h2>
+      <div class="table-scroll">
+        <table class="data">
+          <thead><tr><th>Choosing a CSC</th><th>Applying Yourself on eSathi</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Pros:</strong> no computer or scanner needed; the operator knows the form and the local office's habits; useful for elderly applicants and anyone uncomfortable with online forms; printing done on the spot.</td><td><strong>Pros:</strong> cheapest route (₹10–15); your documents and login stay in your own hands; you can apply any time, including at night; status and download are fully under your control.</td></tr>
+            <tr><td><strong>Cons:</strong> costs more; you depend on the centre's timings and honesty; your personal documents pass through someone else's computer; a careless operator's typing mistake becomes your correction problem.</td><td><strong>Cons:</strong> you need a phone/computer, internet and a way to scan documents under 100KB; first-time registration takes 10–15 minutes of care.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>A middle path works well for many families: apply yourself for simple repeat work using our guides — <a href="/en/income-certificate/">income</a>, <a href="/en/caste-certificate/">caste</a>, <a href="/en/domicile-certificate/">domicile</a>, <a href="/en/birth-certificate/">birth</a> and <a href="/en/death-certificate/">death</a> certificates and the <a href="/en/parivar-register-nakal/">Parivar Register Nakal</a> — and use a CSC when you genuinely cannot manage the online steps.</p>
+    </section>
+
+    <section class="box">
+      <h2>Safety Rules Every CSC User Should Follow</h2>
+      <p class="warn"><strong>Never share your own eSathi login ID and password with a CSC operator.</strong> Operators have their own VLE credentials and their own login (eseva.csccloud.in) — your personal account is never needed for them to work. Treat your eSathi password like a bank password, because the account holds your identity documents and application history.</p>
+      <ul>
+        <li>If an operator creates an eSathi account "for you", insist on receiving the login ID and password yourself, written down, before you leave — and change the password later from home if you can.</li>
+        <li>Always take the printed receipt with the SRN; without it, tracking and complaints become difficult.</li>
+        <li>Read the filled form on the screen once before the operator submits — a wrong spelling of a name or a wrong date is the most common cause of later corrections.</li>
+        <li>Do not leave original documents at the centre. Operators need scans or photocopies, never your original Aadhaar or certificates.</li>
+        <li>Extra copies of an issued certificate do not need the operator at all: download the PDF free from your own eSathi account or from DigiLocker (digilocker.gov.in), where portal-issued certificates appear under Issued Documents, and print it anywhere.</li>
+      </ul>
+      <p class="note">Applied through a CSC and now want your certificate on your own phone? Create a free eSathi account in your name, and use the <a href="/en/#status-check">status check</a> with your SRN to follow the application. For any portal problem, the eDistrict helpline is 0522-2304706 and the email is ceghelpdesk@gmail.com.</p>
+    </section>
+
+    <section class="box">
+      <h2>Related Guides</h2>
+      <ul>
+        <li><a href="/en/income-certificate/">Income Certificate UP — apply online yourself in minutes</a></li>
+        <li><a href="/en/caste-certificate/">Caste Certificate UP — SC, ST and OBC NCL</a></li>
+        <li><a href="/en/domicile-certificate/">Domicile (Residence) Certificate UP</a></li>
+        <li><a href="/en/birth-certificate/">Birth Certificate UP — apply and download</a></li>
+        <li><a href="/en/death-certificate/">Death Certificate UP — apply, fees and correction</a></li>
+        <li><a href="/en/self-declaration-form/">Self-Declaration Form — fill and upload it correctly</a></li>
+      </ul>
+    </section>
+  </div>
+</Base>

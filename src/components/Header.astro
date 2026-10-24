@@ -1,0 +1,94 @@
+---
+interface Props { lang: 'hi' | 'en'; altPath: string; }
+const { lang, altPath } = Astro.props;
+const isHindi = lang === 'hi';
+const home = isHindi ? '/' : '/en/';
+const p = (slug: string) => (isHindi ? `/${slug}/` : `/en/${slug}/`);
+const currentPath = Astro.url.pathname;
+const isCurrent = (href: string) => currentPath === href;
+const labels = isHindi ? {
+  home: 'होम', login: 'लॉगिन गाइड', status: 'स्टेटस/सत्यापन', services: 'सेवाएं', about: 'हमारे बारे में',
+  contact: 'संपर्क', legal: 'कानूनी', guide: 'गाइड 2026', menu: 'मेन्यू खोलें',
+} : {
+  home: 'Home', login: 'Login Guide', status: 'Status Check', services: 'Services', about: 'About',
+  contact: 'Contact', legal: 'Legal', guide: 'Guide 2026', menu: 'Open menu',
+};
+const services = [
+  [isHindi ? 'आय प्रमाण पत्र' : 'Income Certificate', p('income-certificate'), 'income'],
+  [isHindi ? 'जाति प्रमाण पत्र' : 'Caste Certificate', p('caste-certificate'), 'caste'],
+  [isHindi ? 'निवास प्रमाण पत्र' : 'Domicile Certificate', p('domicile-certificate'), 'home'],
+  [isHindi ? 'जन्म प्रमाण पत्र' : 'Birth Certificate', p('birth-certificate'), 'heart'],
+  [isHindi ? 'मृत्यु प्रमाण पत्र' : 'Death Certificate', p('death-certificate'), 'file'],
+  [isHindi ? 'परिवार रजिस्टर नकल' : 'Parivar Register Nakal', p('parivar-register-nakal'), 'archive'],
+  [isHindi ? 'EWS प्रमाण पत्र' : 'EWS Certificate', p('ews-certificate'), 'file'],
+  [isHindi ? 'स्व-घोषणा पत्र' : 'Self Declaration Form', p('self-declaration-form'), 'edit'],
+  [isHindi ? 'CSC गाइड' : 'CSC Guide', p('csc-guide'), 'target'],
+];
+const legal = [
+  [isHindi ? 'गोपनीयता नीति' : 'Privacy Policy', p('privacy-policy')],
+  [isHindi ? 'अस्वीकरण' : 'Disclaimer', p('disclaimer')],
+];
+---
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href={home} aria-label="eDistrict UP home">
+      <span class="flag-mark" aria-hidden="true"><span class="flag-wheel">✺</span></span>
+      <span class="brand-copy"><strong>eDistrict UP</strong><small>{labels.guide}</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label={labels.menu} aria-expanded="false" aria-controls="primary-navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-shell" id="primary-navigation">
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a class:list={['nav-link', { active: isCurrent(home) }]} href={home}>{labels.home}</a>
+        <a class:list={['nav-link', { active: isCurrent(p('login-registration')) }]} href={p('login-registration')}>{labels.login}</a>
+        <a class:list={['nav-link', { active: isCurrent(p('status-verification')) }]} href={p('status-verification')}>{labels.status}</a>
+        <details class="nav-dropdown">
+          <summary class="nav-link">{labels.services}<span class="chevron" aria-hidden="true"></span></summary>
+          <div class="dropdown-panel services-menu">
+            {services.map(([label, href, icon]) => (
+              <a href={href} class:list={{ active: isCurrent(href) }}>
+                <span class={`service-icon icon-${icon}`} aria-hidden="true"></span><span>{label}</span>
+              </a>
+            ))}
+          </div>
+        </details>
+        <a class:list={['nav-link', { active: isCurrent(p('about-us')) }]} href={p('about-us')}>{labels.about}</a>
+        <a class:list={['nav-link', { active: isCurrent(p('contact-us')) }]} href={p('contact-us')}>{labels.contact}</a>
+        <details class="nav-dropdown legal-dropdown">
+          <summary class="nav-link">{labels.legal}<span class="chevron" aria-hidden="true"></span></summary>
+          <div class="dropdown-panel legal-menu">
+            {legal.map(([label, href]) => <a href={href} class:list={{ active: isCurrent(href) }}>{label}</a>)}
+          </div>
+        </details>
+      </nav>
+      <div class="lang-toggle" aria-label="Language selector">
+        <a href={isHindi ? Astro.url.pathname : altPath} class:list={{ active: isHindi }} lang="hi">हिंदी</a>
+        <a href={!isHindi ? Astro.url.pathname : altPath} class:list={{ active: !isHindi }} lang="en">English</a>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+  const header = document.querySelector('.site-header');
+  const toggle = header?.querySelector<HTMLButtonElement>('.menu-toggle');
+  const shell = header?.querySelector<HTMLElement>('.nav-shell');
+  const dropdowns = Array.from(header?.querySelectorAll<HTMLDetailsElement>('.nav-dropdown') ?? []);
+  toggle?.addEventListener('click', () => {
+    const open = shell?.classList.toggle('mobile-open') ?? false;
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  dropdowns.forEach((dropdown) => dropdown.addEventListener('toggle', () => {
+    if (!dropdown.open) return;
+    dropdowns.forEach((other) => { if (other !== dropdown) other.open = false; });
+  }));
+  document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Node) || header?.contains(event.target)) return;
+    dropdowns.forEach((dropdown) => { dropdown.open = false; });
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 1024) return;
+    shell?.classList.remove('mobile-open');
+    toggle?.setAttribute('aria-expanded', 'false');
+  });
+</script>

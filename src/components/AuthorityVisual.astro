@@ -1,0 +1,94 @@
+---
+interface Props { lang: 'hi' | 'en'; path: string; }
+const { lang, path } = Astro.props;
+const hi = lang === 'hi';
+const slug = path.replace(/^\/en\//, '/').replace(/^\//, '').replace(/\/$/, '') || 'home';
+
+const guides: Record<string, { icon: string; color: string; title: string[]; kicker: string[]; points: string[][]; note: string[] }> = {
+  home: {
+    icon: 'UP', color: '#2563eb',
+    kicker: ['एक नज़र में पूरी प्रक्रिया', 'The complete journey at a glance'],
+    title: ['आवेदन से डिजिटल प्रमाण पत्र तक', 'From application to digital certificate'],
+    points: [
+      ['eSathi खाता', 'eSathi account'], ['दस्तावेज़ अपलोड', 'Upload documents'],
+      ['SRN से ट्रैकिंग', 'Track with SRN'], ['PDF व QR सत्यापन', 'PDF & QR verification'],
+    ],
+    note: ['चार चरण • एक सुरक्षित डिजिटल रिकॉर्ड', 'Four stages • one secure digital record'],
+  },
+  'income-certificate': {
+    icon: '₹', color: '#0f766e', kicker: ['विज़ुअल चेकलिस्ट', 'Visual checklist'],
+    title: ['आय प्रमाण पत्र: क्या तैयार रखें', 'Income certificate: what to keep ready'],
+    points: [['आधार व फोटो', 'Aadhaar & photo'], ['आय का प्रमाण', 'Income evidence'], ['स्व-घोषणा JPEG', 'Declaration JPEG'], ['100 KB से छोटी फाइलें', 'Files below 100 KB']],
+    note: ['आय अवधि और परिवार की कुल आय एक जैसी लिखें', 'Keep the income period and total family income consistent'],
+  },
+  'caste-certificate': {
+    icon: 'ID', color: '#7c3aed', kicker: ['दस्तावेज़ मैप', 'Document map'],
+    title: ['जाति प्रमाण पत्र: सही प्रमाण श्रृंखला', 'Caste certificate: the evidence chain'],
+    points: [['आधार पहचान', 'Aadhaar identity'], ['पिता/परिवार का प्रमाण', 'Parent/family proof'], ['स्थानीय निवास प्रमाण', 'Local residence proof'], ['श्रेणी का सही चयन', 'Correct category selection']],
+    note: ['नाम और जाति की spelling हर रिकॉर्ड में समान रखें', 'Keep name and caste spelling identical across records'],
+  },
+  'domicile-certificate': {
+    icon: '⌂', color: '#0369a1', kicker: ['पता सत्यापन', 'Address verification'],
+    title: ['निवास प्रमाण पत्र: पता कैसे साबित होता है', 'Domicile certificate: proving residence'],
+    points: [['आधार/मतदाता ID', 'Aadhaar/Voter ID'], ['राशन कार्ड', 'Ration card'], ['बिजली/पानी बिल', 'Utility bill'], ['लेखपाल सत्यापन', 'Lekhpal verification']],
+    note: ['ग्रामीण/शहरी क्षेत्र और तहसील का चयन ध्यान से करें', 'Choose rural/urban area and tehsil carefully'],
+  },
+  'birth-certificate': {
+    icon: '★', color: '#d97706', kicker: ['जन्म रिकॉर्ड प्रवाह', 'Birth record flow'],
+    title: ['जन्म प्रमाण पत्र: अस्पताल से रिकॉर्ड तक', 'Birth certificate: hospital to official record'],
+    points: [['अस्पताल पर्ची', 'Hospital record'], ['माता-पिता ID', 'Parents’ IDs'], ['जन्म स्थान व तारीख', 'Place & date of birth'], ['नगर निकाय रिकॉर्ड', 'Local-body record']],
+    note: ['21 दिन के बाद पंजीकरण में अतिरिक्त अनुमति लग सकती है', 'Registration after 21 days may require additional approval'],
+  },
+  'death-certificate': {
+    icon: '✦', color: '#475569', kicker: ['रिकॉर्ड चेकलिस्ट', 'Record checklist'],
+    title: ['मृत्यु प्रमाण पत्र: जरूरी विवरण', 'Death certificate: essential details'],
+    points: [['मृतक की पहचान', 'Deceased person’s ID'], ['मृत्यु की तारीख/स्थान', 'Date/place of death'], ['अस्पताल/श्मशान रिकॉर्ड', 'Hospital/cremation record'], ['आवेदक का संबंध', 'Applicant relationship']],
+    note: ['नाम और तारीख जमा करने से पहले दोबारा मिलाएं', 'Recheck the name and date before submission'],
+  },
+  'parivar-register-nakal': {
+    icon: '家', color: '#15803d', kicker: ['परिवार रिकॉर्ड', 'Family record'],
+    title: ['परिवार रजिस्टर नकल: रिकॉर्ड मिलान', 'Parivar Register Nakal: record matching'],
+    points: [['ग्राम पंचायत', 'Gram Panchayat'], ['परिवार मुखिया', 'Head of family'], ['सदस्यों के नाम', 'Member names'], ['सचिव का सत्यापन', 'Secretary verification']],
+    note: ['सभी सदस्यों के नाम और रिश्ते पंचायत रिकॉर्ड से मिलाएं', 'Match every member’s name and relationship with Panchayat records'],
+  },
+  'self-declaration-form': {
+    icon: '✓', color: '#be123c', kicker: ['फॉर्म तैयार करने का तरीका', 'How to prepare the form'],
+    title: ['स्व-घोषणा पत्र: चार जरूरी जांच', 'Self-declaration: four essential checks'],
+    points: [['सही प्रारूप', 'Correct format'], ['पूरा विवरण', 'Complete details'], ['हस्ताक्षर', 'Signature'], ['JPEG, 100 KB से कम', 'JPEG below 100 KB']],
+    note: ['बिना हस्ताक्षर या PDF फाइल rejection का कारण बन सकती है', 'An unsigned form or PDF file can cause rejection'],
+  },
+  'csc-guide': {
+    icon: 'CSC', color: '#1d4ed8', kicker: ['सुरक्षित CSC विज़िट', 'A safer CSC visit'],
+    title: ['जन सेवा केंद्र पर क्या लेकर जाएं', 'What to take to a Jan Seva Kendra'],
+    points: [['मूल दस्तावेज़', 'Original documents'], ['चालू मोबाइल', 'Active mobile'], ['शुल्क पहले पूछें', 'Confirm fee first'], ['रसीद व SRN लें', 'Collect receipt & SRN']],
+    note: ['OTP खुद पढ़ें; पासवर्ड और दस्तावेज़ की कॉपी सुरक्षित रखें', 'Read your OTP yourself; protect your password and document copies'],
+  },
+};
+
+const guide = guides[slug];
+const t = (pair: string[]) => pair[hi ? 0 : 1];
+---
+{guide && (
+  <section class:list={['authority-visual-wrap', { 'authority-home': slug === 'home' }]} aria-labelledby={`visual-${slug}`}>
+    <div class="authority-visual" style={`--visual-accent:${guide.color}`}>
+      <div class="visual-heading">
+        <div class="visual-icon" aria-hidden="true">{guide.icon}</div>
+        <div>
+          <span class="visual-kicker">{t(guide.kicker)}</span>
+          <h2 id={`visual-${slug}`}>{t(guide.title)}</h2>
+        </div>
+      </div>
+      <div class="visual-flow">
+        {guide.points.map((point, index) => (
+          <div class="visual-step">
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <strong>{t(point)}</strong>
+          </div>
+        ))}
+      </div>
+      <div class="visual-note"><span aria-hidden="true">✓</span>{t(guide.note)}</div>
+      <span class="visual-watermark" aria-hidden="true">edistrictupseva.com</span>
+    </div>
+    <p class="visual-caption">{hi ? 'मूल विज़ुअल गाइड • संदर्भ के लिए, आधिकारिक दस्तावेज़ नहीं' : 'Original visual guide • For reference, not an official document'}</p>
+  </section>
+)}

@@ -1,0 +1,122 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqs = [
+  { q: 'What is the Swa Pramanit Ghoshna Patra (self-declaration form)?', a: 'It is a signed self-declaration in which you state, in your own words and under your own signature, that the information given in your certificate application is true. Uttar Pradesh made it a standard document for income, caste and domicile certificates in place of the old notarized affidavit.' },
+  { q: 'Why did the self-declaration replace the affidavit?', a: 'Earlier, applicants had to buy stamp paper and visit a notary for a sworn affidavit, which cost money and a full day of running around. The self-declaration reform removed that step: a plain signed declaration by the applicant carries the same responsibility, without stamp paper or notary charges.' },
+  { q: 'Where do I download the self-declaration form?', a: 'The form is available free on the official eDistrict UP portal, edistrict.up.gov.in, and is also provided inside the eSathi application flow for the certificates that need it. Never pay a shop or agent for this form — it is a free one-page document.' },
+  { q: 'In which format should I upload the self-declaration?', a: 'Upload it as a JPEG image only, kept under 100KB. For this particular document the portal rejects PDF files, which is a rule many applicants discover only after a rejection. Scan or photograph the signed form straight and in good light, then compress it below 100KB before uploading.' },
+  { q: 'What is the most common reason applications get rejected because of this form?', a: 'A missing signature. An unsigned self-declaration is the single biggest cause of rejection in income, caste and domicile applications — the form carries no weight without the applicant\'s signature (and thumb impression where used). The second most common problem is uploading it as a PDF instead of a JPEG.' },
+  { q: 'Can I write the declaration by hand instead of printing the form?', a: 'The safest practice is to print the standard form, fill it by hand in clear writing and sign it. If a printed form is genuinely not available, a neatly handwritten declaration containing the same details and your signature is generally what the verifying officer looks for — but use the printed format whenever possible to avoid a return.' },
+  { q: 'Do I need a separate self-declaration for every certificate?', a: 'Yes. Each application — income, caste, domicile — is verified separately, so each one needs its own signed declaration mentioning that certificate and your details. Do not upload the same scanned copy in three applications; sign a fresh one for every application.' },
+];
+---
+
+<Base lang="en" title="Self-Declaration Form UP (Swa Pramanit Ghoshna Patra): Download, Fill & Upload" description="What the self-declaration form is, why it replaced the affidavit, where to download it free from edistrict.up.gov.in, field-by-field filling guide, JPEG-only upload rule and the mistakes that cause rejection." path="/en/self-declaration-form/" altPath="/self-declaration-form/" faqs={faqs} updated="22 October 2026">
+  <div class="content-col">
+    <h1 class="page-title">Self-Declaration Form (Swa Pramanit Ghoshna Patra) — Download, Filling and Upload Guide</h1>
+
+    <section class="box">
+      <p>If you apply for an <a href="/en/income-certificate/">income certificate</a>, a <a href="/en/caste-certificate/">caste certificate</a> or a <a href="/en/domicile-certificate/">domicile certificate</a> in Uttar Pradesh, one document is asked for in every single application: the <strong>self-declaration form</strong>, called the <em>Swa Pramanit Ghoshna Patra</em> (स्व-प्रमाणित घोषणा पत्र) in Hindi.</p>
+      <p>It is a simple one-page declaration. By signing it, you state that the details you have given — your name, family, income, caste or residence — are true to the best of your knowledge, and that you accept responsibility if they turn out to be wrong. That signature is what gives the document its value: the verifying officer treats your application as backed by your own sworn word.</p>
+      <p>Not long ago, this step meant buying stamp paper of ₹10 to ₹100 and finding a notary to stamp an affidavit. The government replaced that system with self-declaration precisely to remove the cost and the middlemen. You now print a free form, fill it, sign it and upload a photo of it — yet a surprising number of applications still get rejected over this one page, almost always for the small mistakes listed at the end of this guide.</p>
+    </section>
+
+    <section class="box">
+      <h2>Self-Declaration Form — Quick Information</h2>
+      <div class="table-scroll">
+        <table class="info">
+          <tr><th>Needed for</th><td>Income certificate, caste certificate, domicile certificate (and some other revenue services)</td></tr>
+          <tr><th>Where to get it</th><td>Free download from the official portal edistrict.up.gov.in; also provided within the eSathi application</td></tr>
+          <tr><th>Cost</th><td>Free — no stamp paper, no notary, no fee</td></tr>
+          <tr><th>Upload format</th><td><strong>JPEG only</strong> — the portal rejects PDF for this document</td></tr>
+          <tr><th>File size</th><td>Under 100KB</td></tr>
+          <tr><th>Most important rule</th><td>The form must be signed — an unsigned declaration is the #1 cause of rejection</td></tr>
+          <tr><th>Helpline</th><td>0522-2304706 · ceghelpdesk@gmail.com</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="box">
+      <h2>How to Fill the Self-Declaration Form — Field by Field</h2>
+      <p>Print the form and fill it by hand with a pen, in the same language style as your other documents. This is what each part of the form asks for:</p>
+      <div class="table-scroll">
+        <table class="data">
+          <thead><tr><th>Field on the Form</th><th>What to Write</th><th>Keep in Mind</th></tr></thead>
+          <tbody>
+            <tr><td>Applicant's full name</td><td>Your name exactly as on Aadhaar</td><td>Do not use a short or pet name; it must match the application form</td></tr>
+            <tr><td>Father's / husband's name</td><td>Full name of father or husband, as applicable</td><td>Should match the entry in your other documents</td></tr>
+            <tr><td>Complete address</td><td>Village/ward, post office, block, tehsil, district and PIN code</td><td>Write the address of the place you actually live — this is what gets verified</td></tr>
+            <tr><td>Subject of declaration</td><td>The fact you are declaring — for example, your caste, your annual family income, or that you are a permanent resident of the village/town</td><td>Keep it specific to the certificate you are applying for; one declaration per application</td></tr>
+            <tr><td>Declaration statement</td><td>The printed statement confirming the information is true and that you accept responsibility for it</td><td>Read it before signing; do not leave the statement area blank or altered</td></tr>
+            <tr><td>Place and date</td><td>Your place and the date of signing</td><td>Use the current date, close to the date you submit the application</td></tr>
+            <tr><td>Signature / thumb impression</td><td>Your signature in the marked space; thumb impression if you do not sign</td><td><strong>Mandatory.</strong> Most rejections happen because this space was left empty</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="checklist">
+        <li>Write clearly, in one ink, without cutting or overwriting — if you make a mistake, print a fresh form</li>
+        <li>Every detail on the declaration must match the online application and your Aadhaar</li>
+        <li>Sign a separate declaration for each certificate application, even on the same day</li>
+        <li>Scan or photograph the signed form straight, in daylight, with all four corners visible</li>
+        <li>Save the scan as JPEG and compress it below 100KB before uploading</li>
+      </ul>
+    </section>
+
+    <section class="box">
+      <h2>Step by Step — From Download to Upload</h2>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body"><strong>Download the form.</strong> Get the self-declaration format free from the official portal edistrict.up.gov.in, or use the format provided inside your eSathi application. Never pay anyone for this form.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body"><strong>Print it on plain paper.</strong> A normal A4 printout is enough — no stamp paper is required for a self-declaration.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body"><strong>Fill every field by hand.</strong> Name, father's/husband's name, full address and the subject of the declaration, following the field guide above.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Sign it.</strong> Put your signature (or thumb impression) in the marked space, with place and date. Do not skip this — it is the whole point of the document.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-body"><strong>Scan or photograph the signed form.</strong> Keep the page flat and fully visible, with sharp, readable text. A blurred photo is treated like a missing document.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-body"><strong>Convert to JPEG and compress under 100KB.</strong> This document must be a JPEG — a PDF upload is rejected by the portal for the self-declaration. Free compressor tools can reduce the size without spoiling readability; a black-and-white scan at about 200 DPI usually lands well under the limit.</div></div>
+        <div class="step"><div class="step-num">7</div><div class="step-body"><strong>Upload it in the application.</strong> In your eSathi application, attach the JPEG in the self-declaration / ghoshna patra slot, and check the preview once to confirm the signature is visible.</div></div>
+        <div class="step"><div class="step-num">8</div><div class="step-body"><strong>Keep the paper original.</strong> The Lekhpal or verifying officer may ask to see the physical signed form during field verification — file it with your other documents.</div></div>
+      </div>
+    </section>
+
+    <section class="box">
+      <h2>Fees — There Are None</h2>
+      <div class="table-scroll">
+        <table class="data">
+          <thead><tr><th>Item</th><th>Old Affidavit System</th><th>Self-Declaration (Now)</th></tr></thead>
+          <tbody>
+            <tr><td>Stamp paper</td><td>₹10–100</td><td>Not required</td></tr>
+            <tr><td>Notary charges</td><td>Commonly ₹50–200</td><td>Not required</td></tr>
+            <tr><td>Form cost</td><td>Paid at the notary/agent</td><td>Free download from edistrict.up.gov.in</td></tr>
+            <tr><td>Total</td><td>Often ₹150–300 with travel</td><td>₹0 — print and sign at home</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="warn">If a CSC operator or shopkeeper tries to sell you the form itself, or insists a notarized affidavit is still compulsory for income, caste or domicile certificates, that is wrong. The certificates themselves carry their normal small fees (₹10–15 on eSathi), but the declaration is free.</p>
+    </section>
+
+    <section class="box">
+      <h2>The Mistakes That Get Applications Rejected</h2>
+      <p>Verification officers see the same handful of errors again and again. All of them are avoidable in two minutes of checking:</p>
+      <ul>
+        <li><strong>No signature on the form</strong> — the biggest single cause of rejection across income, caste and domicile applications. An unsigned declaration proves nothing.</li>
+        <li><strong>Uploaded as PDF</strong> — for this document the portal accepts JPEG only; the PDF rule that works for your other documents does not apply here.</li>
+        <li><strong>File larger than 100KB</strong> — the upload fails or is returned; compress the scan first.</li>
+        <li><strong>Details do not match</strong> — a different spelling of your name, an old address, or an income figure on the declaration that differs from the application form will send the file back.</li>
+        <li><strong>One declaration reused everywhere</strong> — the subject line mentions a specific certificate; using the caste declaration inside an income application is a mismatch.</li>
+        <li><strong>Blurred or cropped photo</strong> — if the officer cannot read the text and see the signature, the document is treated as not submitted.</li>
+        <li><strong>Wrong applicant signing</strong> — the person whose certificate it is should sign the declaration (a parent or guardian signs for a minor).</li>
+      </ul>
+      <p class="note">If your application does come back, the reason shown in eSathi will point to the exact problem. Fix only that, upload a clean signed JPEG, and resubmit — there is no penalty, and the SRN stays the same in a correction round. Our <a href="/en/#status-check">status guide</a> explains what each status label means.</p>
+    </section>
+
+    <section class="box">
+      <h2>Related Guides</h2>
+      <ul>
+        <li><a href="/en/income-certificate/">Income Certificate UP — the main certificate this form supports</a></li>
+        <li><a href="/en/caste-certificate/">Caste Certificate UP — SC, ST and OBC NCL</a></li>
+        <li><a href="/en/domicile-certificate/">Domicile (Residence) Certificate UP</a></li>
+        <li><a href="/en/parivar-register-nakal/">Parivar Register Nakal — certified family register copy</a></li>
+        <li><a href="/en/csc-guide/">CSC / Jan Seva Kendra Guide — charges and how to find one</a></li>
+      </ul>
+    </section>
+  </div>
+</Base>

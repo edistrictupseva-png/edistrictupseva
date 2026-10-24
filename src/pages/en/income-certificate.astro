@@ -1,0 +1,161 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqs = [
+  { q: "Who can apply for an income certificate in UP?", a: "Any resident of Uttar Pradesh can apply. The application is usually made in the name of the person whose income needs to be certified — for a student's scholarship, parents often apply in their own name because the family's income is what gets assessed. Aadhaar and a mobile number linked to Aadhaar are required for the eSathi account." },
+  { q: "How much does an income certificate cost in UP?", a: "Applying yourself on eSathi costs ₹10–15 as the government fee. If you apply through a CSC (Jan Seva Kendra), you pay ₹30 plus a facilitation charge of roughly ₹30–50. No other charge is official — do not pay agents more than this." },
+  { q: "How long is a UP income certificate valid?", a: "An income certificate issued in Uttar Pradesh is generally valid for 3 years from the date of issue. Some schemes or institutions ask for a certificate from the current financial year, so check the requirement of the scheme you are applying to before reusing an old certificate." },
+  { q: "How many days does it take to get an income certificate?", a: "The normal processing time is 7–15 working days. The Lekhpal's field verification is the slowest stage. During the July–September scholarship season, applications surge and files can take longer, so apply well before any deadline." },
+  { q: "What income is counted in the certificate?", a: "The certificate records the total annual income of the family from all sources — salary, pension, agriculture, business, rent and any other regular earnings of family members living together. The Lekhpal verifies the declared figures during the field visit, and a mismatch is a common reason for rejection." },
+  { q: "My income certificate application was rejected. What should I do?", a: "Log in to eSathi and read the rejection remark carefully — it names the exact problem, such as a blurry scan or missing self-declaration. Fix that issue and submit a fresh application. There is no penalty or extra fee for reapplying." },
+  { q: "Can I download the income certificate online?", a: "Yes. Once the status shows Certificate Generated, log in to eSathi, open Completed Applications, click your application and use Print → Save as PDF. The digitally signed PDF is the final certificate; it is also available in DigiLocker after a few days." },
+  { q: "Is the self-declaration compulsory for an income certificate?", a: "Yes. The self-declaration (swa-pramanit ghoshna patra) is a mandatory document for income, caste and domicile certificates in UP. Fill it, sign it, scan it and upload it as a JPEG image under 100KB — the portal does not accept this particular document as a PDF." },
+];
+---
+<Base lang="en" title="Income Certificate UP (Aay Praman Patra): Apply Online, Fees, Documents & Status" description="How to apply for an income certificate (aay praman patra) online in Uttar Pradesh through eSathi: documents required, fees ₹10–15, family income calculation, processing time, status check and download." path="/en/income-certificate/" altPath="/income-certificate/" faqs={faqs} updated="22 October 2026">
+<div class="content-col">
+  <h1 class="page-title">Income Certificate in UP — Apply Online on eSathi</h1>
+
+  <section class="box">
+    <h2>What is an income certificate?</h2>
+    <p>An income certificate (आय प्रमाण पत्र, aay praman patra) is an official document issued by the Uttar Pradesh revenue department that certifies the annual income of a person or family. It states, in writing and with the digital signature of the Tehsildar, how much the family earns in a year from all sources combined.</p>
+    <p>You will be asked for this certificate in many everyday situations:</p>
+    <ul>
+      <li><strong>Scholarships and fee concessions</strong> — UP scholarship schemes and school or college fee waivers are income-tested, and this certificate is the standard proof.</li>
+      <li><strong>EWS reservation</strong> — the Economically Weaker Section quota in jobs and admissions requires income proof below the prescribed limit.</li>
+      <li><strong>Government schemes and pensions</strong> — widow pension, old-age pension and many welfare schemes check family income before approving benefits.</li>
+      <li><strong>Loans and subsidies</strong> — banks and departments ask for it for education loans, housing subsidies and similar assistance.</li>
+    </ul>
+    <p>The good news is that you no longer need to visit the tehsil office repeatedly. The entire process — application, tracking and download — happens online on the eSathi portal (esathi.up.gov.in), which is the citizen front-end of eDistrict UP. This guide covers the documents, the exact steps, the fees, and what to do if your application gets stuck or rejected.</p>
+  </section>
+
+  <section class="box">
+    <h2>Income certificate at a glance</h2>
+    <div class="table-scroll">
+    <table class="info">
+      <tr><th>Fee via eSathi (self-apply)</th><td>₹10–15</td></tr>
+      <tr><th>Fee via CSC</th><td>₹30 + ₹30–50 facilitation charge</td></tr>
+      <tr><th>Processing time</th><td>7–15 working days</td></tr>
+      <tr><th>Validity</th><td>3 years from the date of issue</td></tr>
+      <tr><th>Where to apply</th><td>esathi.up.gov.in (Citizen Login on edistrict.up.gov.in)</td></tr>
+      <tr><th>Issued by</th><td>Tehsildar of your tehsil, after Lekhpal verification</td></tr>
+      <tr><th>Helpline</th><td>0522-2304706 · ceghelpdesk@gmail.com</td></tr>
+    </table>
+    </div>
+  </section>
+
+  <section class="box">
+    <h2>Documents required for an income certificate</h2>
+    <p>Keep clear scans or photos of the following ready before you start. Preparing them in advance is the simplest way to avoid a rejection.</p>
+    <ul class="checklist">
+      <li>Aadhaar card of the applicant</li>
+      <li>Recent passport-size photograph</li>
+      <li>Ration card (family details and income group are cross-checked against it)</li>
+      <li>Self-declaration form (swa-pramanit ghoshna patra), filled and signed — upload as JPEG</li>
+      <li>Income proof matching your occupation: salary slip or employer certificate for salaried applicants</li>
+      <li>Bank statement or passbook pages (useful for pensioners and self-employed applicants)</li>
+      <li>For agricultural income: khatauni or land records showing the holding</li>
+      <li>For business income: any available proof such as a trade licence or previous ITR, if filed</li>
+    </ul>
+    <div class="note"><strong>File rules:</strong> every upload must be under 100KB, in JPEG or PDF format. The one exception is the self-declaration — it must be uploaded as a <strong>JPEG image only</strong>; the portal rejects it as a PDF. A black-and-white scan at around 200 DPI usually stays within the size limit while remaining readable.</div>
+  </section>
+
+  <section class="box">
+    <h2>How family income is calculated</h2>
+    <p>Many applicants are confused about whose income goes into the certificate. The rule is simple: the certificate covers the <strong>total annual income of the whole family from every source</strong>. That includes the earnings of the applicant, spouse and other earning members living in the same household — salary, pension, farming income, business or shop income, rent from property, and any other regular earning.</p>
+    <p>A few practical points:</p>
+    <ul>
+      <li><strong>Students:</strong> a student usually has no income of their own, so the application is made by a parent or guardian and the parents' income is certified. This is the certificate scholarship forms ask for.</li>
+      <li><strong>Joint families:</strong> if several brothers live together as one household with a single ration card, their combined income is generally counted together.</li>
+      <li><strong>Honesty matters:</strong> during field verification the Lekhpal asks neighbours and checks local records. Declaring far less than the visible reality — a large house, vehicles, a running shop — invites queries and rejection.</li>
+    </ul>
+    <p>Add up one full year of income from every source before filling the form, and enter figures you can support with the documents you are uploading.</p>
+  </section>
+
+  <section class="box">
+    <h2>How to apply for an income certificate online — step by step</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Create your eSathi account (first-time users)</h3>
+        <p>Open esathi.up.gov.in and click "New User Registration" (नवीन उपयोगकर्ता पंजीकरण). Fill in your name exactly as on Aadhaar, date of birth, address with district and PIN, and a mobile number linked to Aadhaar. Create a login ID of 6–8 characters (letters and numbers, e.g. ram2026) and check its availability. Verify the Aadhaar OTP, then log in once with the OTP as a temporary password and set a permanent password. If you already have an account, skip to the next step.</p>
+        <figure class="shot"><img src="/images/esathi-login.webp" alt="eSathi citizen login page of Uttar Pradesh" loading="lazy" /><figcaption>The eSathi login page — new users register here, existing users log in with their login ID</figcaption></figure>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Log in and open certificate services</h3>
+        <p>Log in with your login ID, password and captcha. On the dashboard, open the certificate services section (प्रमाण पत्र सेवाएं) where all revenue department certificates are listed.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Select "Income Certificate"</h3>
+        <p>Choose the income certificate (आय प्रमाण पत्र) service from the list. Read the service information shown on screen — it repeats the document list and fee for this specific certificate.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Fill the application form</h3>
+        <p>Enter the applicant's details: name, father's or husband's name, date of birth, gender, full address with district, tehsil, block and village or ward. Then fill the income section carefully — income from each source (salary, agriculture, business, pension, other) and the total annual family income. The total in the form must match the figure in your self-declaration.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Choose rural or urban correctly</h3>
+        <p>Select whether the address is rural (ग्रामीण) or urban (नगरीय) based on where you actually live. This decides whether the Lekhpal or the Revenue Inspector handles your verification, and choosing the wrong one is a frequent cause of files going back and forth.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Upload the documents</h3>
+        <p>Upload each document in its own field: photograph, Aadhaar, ration card, income proof and the signed self-declaration as JPEG. Check every file is under 100KB and that the text is readable when you zoom in. A blurry upload is the single most common reason income applications are returned.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Review and submit</h3>
+        <p>Go through the preview once — names should match Aadhaar spellings, the income total should match your declaration, and the mobile number should be one you actually use, because updates come by SMS. Then submit the application.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Pay the fee through PAYGOV</h3>
+        <p>Pay the ₹10–15 fee online through the PAYGOV gateway using UPI, net banking or a debit card. If money is debited but the payment shows "pending", do not pay again — such cases normally reconcile on their own within 24–48 hours.</p>
+      </div></div>
+      <div class="step"><div class="step-num"></div><div class="step-body">
+        <h3>Save your SRN</h3>
+        <p>After payment, the portal issues a Service Request Number (SRN), also sent by SMS. Note it down or take a screenshot — you need the SRN to track the application without logging in, and the helpline will ask for it if anything goes wrong.</p>
+      </div></div>
+    </div>
+    <div class="note">After submission, your file goes to the Lekhpal of your area for field verification. He confirms your residence and income locally, sends his report to the Tehsildar, and the Tehsildar signs the certificate digitally. This chain is why the process takes days rather than hours.</div>
+  </section>
+
+  <section class="box">
+    <h2>Fees: applying yourself vs through a CSC</h2>
+    <div class="table-scroll">
+    <table class="data">
+      <tr><th>Route</th><th>Government fee</th><th>Extra charges</th><th>Total you should pay</th></tr>
+      <tr><td>eSathi (self-apply online)</td><td>₹10–15</td><td>None</td><td>₹10–15</td></tr>
+      <tr><td>CSC / Jan Seva Kendra</td><td>₹30</td><td>₹30–50 facilitation</td><td>₹60–80</td></tr>
+    </table>
+    </div>
+    <p>Applying yourself is cheaper and you keep control of your own login ID and password. Use a CSC only if you have no smartphone or computer access — and even there, never share your eSathi password with the operator; their job is to fill the form on your behalf through their own operator login.</p>
+  </section>
+
+  <section class="box">
+    <h2>Check status and download the certificate</h2>
+    <p>Once the status of your application shows <strong>Certificate Generated</strong>, your income certificate is ready. You can track it any time with your SRN on the portal — the full method, and the meaning of every status label such as Under Verification or Approved, is explained in the <a href="/en/#status-check">status check section of the homepage guide</a>.</p>
+    <p>To download: log in to eSathi → open <strong>Completed Applications</strong> → click your application → press <strong>Print</strong> → choose <strong>Save as PDF</strong> in the browser print dialog. This digitally signed PDF, with its certificate number and QR code, is the original certificate — print as many copies as you need. It also appears under Issued Documents in DigiLocker after a few days. Note that "Approved" and "Certificate Generated" are different stages; if it only shows Approved, wait 24–48 hours for the signed PDF to be generated.</p>
+    <figure class="shot"><img src="/images/status-page.webp" alt="Application status page on the eDistrict UP portal" loading="lazy" /><figcaption>Tracking an application by SRN on the eDistrict UP portal</figcaption></figure>
+  </section>
+
+  <section class="box">
+    <h2>Common rejection reasons — and how to fix them</h2>
+    <ul>
+      <li><strong>Self-declaration missing or unsigned</strong> — the most frequent cause. Fill the form completely, sign it, and upload a clear JPEG.</li>
+      <li><strong>Income figures do not match</strong> — the total in the online form, the self-declaration and your income proof must agree. Recalculate and resubmit with consistent figures.</li>
+      <li><strong>Blurry or oversized documents</strong> — rescan at around 200 DPI in black and white, keep each file under 100KB.</li>
+      <li><strong>Name mismatch with Aadhaar</strong> — even a spelling difference slows verification. Use exactly the Aadhaar spelling everywhere.</li>
+      <li><strong>Wrong rural/urban selection</strong> — the file goes to the wrong verifying officer. Pick the category that matches your actual address.</li>
+      <li><strong>Lekhpal could not verify</strong> — if nobody was available at the address during the field visit, the report can go against you. Keep someone informed at home during the expected verification days.</li>
+    </ul>
+    <p>A rejection is not a punishment and carries no penalty. Read the remark in your eSathi account, correct the specific problem, and apply again. If your file stays "Under Verification" for more than 15 working days, file a complaint on the portal or call the helpline at <strong>0522-2304706</strong> with your SRN ready.</p>
+  </section>
+
+  <section class="box">
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="/en/caste-certificate/">Caste Certificate in UP</a> — SC/ST and OBC Non-Creamy Layer certificates, documents and validity explained.</li>
+      <li><a href="/en/domicile-certificate/">Domicile Certificate in UP</a> — residence conditions and the online application process.</li>
+      <li><a href="/en/self-declaration-form/">Self-Declaration Form</a> — the mandatory declaration for income, caste and domicile applications, with format guidance.</li>
+      <li><a href="/en/csc-guide/">CSC / Jan Seva Kendra Guide</a> — how to apply through a CSC and how to avoid overcharging.</li>
+    </ul>
+  </section>
+</div>
+</Base>

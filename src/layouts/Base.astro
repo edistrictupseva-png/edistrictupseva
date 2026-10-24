@@ -1,0 +1,104 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import AuthorityVisual from '../components/AuthorityVisual.astro';
+
+interface Faq { q: string; a: string; }
+interface Props {
+  lang: 'hi' | 'en';
+  title: string;
+  description: string;
+  path: string;      // canonical path of this page, e.g. /income-certificate/
+  altPath: string;   // same page in other language
+  faqs?: Faq[];
+  updated?: string;  // display string
+  faqTitle?: string;
+}
+const { lang, title, description, path, altPath, faqs = [], updated, faqTitle } = Astro.props;
+const site = 'https://edistrictupseva.com';
+const canonical = site + path;
+const altUrl = site + altPath;
+const homePath = lang === 'hi' ? '/' : '/en/';
+const faqSchema = faqs.length ? {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+} : null;
+const crumbSchema = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: lang === 'hi' ? 'मुख्य पृष्ठ' : 'Home', item: site + homePath },
+    { '@type': 'ListItem', position: 2, name: title, item: canonical },
+  ],
+};
+const resolvedFaqTitle = faqTitle ?? (lang === 'hi' ? 'अक्सर पूछे जाने वाले प्रश्न' : 'Frequently Asked Questions');
+const websiteSchema = {
+  '@context': 'https://schema.org', '@type': 'WebSite', name: 'eDistrict UP Seva', url: site,
+  inLanguage: ['hi-IN', 'en-IN'],
+  description: lang === 'hi' ? 'उत्तर प्रदेश eDistrict और eSathi सेवाओं की स्वतंत्र जानकारी गाइड' : 'Independent guide to Uttar Pradesh eDistrict and eSathi services',
+};
+---
+<!doctype html>
+<html lang={lang === 'hi' ? 'hi' : 'en'}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="alternate" hreflang={lang === 'hi' ? 'en' : 'hi'} href={altUrl} />
+  <link rel="alternate" hreflang={lang} href={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="eDistrict UP Seva" />
+  <meta property="og:locale" content={lang === 'hi' ? 'hi_IN' : 'en_IN'} />
+  <meta name="twitter:card" content="summary" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script type="application/ld+json" set:html={JSON.stringify(crumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+</head>
+<body>
+  <a class="skip-link" href="#main-content">{lang === 'hi' ? 'मुख्य सामग्री पर जाएं' : 'Skip to main content'}</a>
+  <Header lang={lang} altPath={altPath} />
+  <main id="main-content">
+    <slot />
+    <AuthorityVisual lang={lang} path={path} />
+    <script>
+      const visual = document.querySelector('.authority-visual-wrap');
+      const firstArticleBox = document.querySelector('main .content-col .box');
+      if (visual && firstArticleBox) {
+        firstArticleBox.insertAdjacentElement('afterend', visual);
+        if (location.hash && visual.querySelector(location.hash)) visual.scrollIntoView({ block: 'center' });
+      }
+    </script>
+    {faqs.length > 0 && (
+      <div class="content-col" style="padding-bottom:1rem">
+        <div class="box">
+          <h2>{resolvedFaqTitle}</h2>
+          {faqs.map(f => (
+            <details class="faq-item">
+              <summary>{f.q}</summary>
+              <div class="faq-a">{f.a}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    )}
+    {updated && <div class="content-col"><p class="updated-line">{lang === 'hi' ? 'अंतिम अपडेट: ' : 'Last updated: '}{updated}</p></div>}
+    <aside class="content-col source-policy" aria-label={lang === 'hi' ? 'आधिकारिक जानकारी नोट' : 'Official-information note'}>
+      <strong>{lang === 'hi' ? 'आवेदन से पहले official check' : 'Check before applying'}</strong>
+      <p>{lang === 'hi'
+        ? 'Portal की service list, शुल्क, processing time, document format/size और certificate की स्वीकार्य issue date बदल सकती है। आवेदन वाले दिन official portal पर दिखाई गई requirement और जिस संस्था में certificate देना है उसका current notice final मानें। यह स्वतंत्र guide कभी OTP, password या payment collect नहीं करती।'
+        : 'Service availability, charges, processing time, upload format/size and acceptable certificate issue date can change. On the day you apply, treat the official portal and the current notice of the receiving institution as final. This independent guide never collects an OTP, password or payment.'}</p>
+    </aside>
+  </main>
+  <Footer lang={lang} />
+</body>
+</html>

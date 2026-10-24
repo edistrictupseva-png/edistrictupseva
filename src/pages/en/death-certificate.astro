@@ -1,0 +1,140 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqs = [
+  { q: 'How long does it take to get a death certificate in UP?', a: 'When the application is complete and verification goes smoothly, the certificate is usually issued within 7 to 15 working days. Delays are most common when the death was registered late or when a document is unclear, because those cases need an extra round of checking by the local registrar office.' },
+  { q: 'Within how many days should a death be registered?', a: 'A death should normally be registered within 21 days. Registration after 21 days is still possible with a late fee, and older cases may need permission from the designated authority. Very old, unregistered deaths can require an order from the competent magistrate, so it is always easier to register on time.' },
+  { q: 'What is the fee for a death certificate through eSathi and CSC?', a: 'Applying yourself on eSathi costs about ₹10 to ₹15. If a CSC or Jan Seva Kendra operator applies for you, the government fee is ₹30 and the centre may add a facilitation charge of roughly ₹30 to ₹50. Anything far above this is overcharging — you can complain on the CM Helpline 1076.' },
+  { q: 'Can I download the death certificate online after approval?', a: 'Yes. Once the status shows the certificate has been generated, log in to your eSathi account, open the completed application and use the Print option to save the digitally signed PDF. Certificates issued through the portal also become available in DigiLocker after a few days.' },
+  { q: 'There is a spelling mistake in the name on the death certificate. Can it be corrected?', a: 'Yes, minor errors such as spelling of the name, a wrong date entry or an incomplete address can be corrected by applying for correction with supporting documents, such as the hospital record and the Aadhaar of the deceased. Always check the downloaded certificate immediately, because corrections are simplest soon after issue.' },
+  { q: 'The death happened at home, not in a hospital. Can we still get a certificate?', a: 'Yes. For a death at home, the cremation or burial receipt and a declaration by the family, verified through the local Panchayat or municipal body, are used in place of a hospital report. Register the death with the registrar of the area where the death took place.' },
+  { q: 'Is a death certificate needed to close the deceased person\'s bank account?', a: 'In most cases, yes. Banks generally ask for the death certificate along with the nominee or legal heir documents before closing the account or transferring the balance. Insurance companies, pension offices and property mutation work also almost always require it, so obtain a few extra printed copies.' },
+];
+---
+
+<Base lang="en" title="Death Certificate UP: Apply Online, Fees, Download & Correction" description="How to apply for a death certificate in Uttar Pradesh through eSathi or CSC — documents required, fees, registration timing, late registration, download process and how to correct mistakes." path="/en/death-certificate/" altPath="/death-certificate/" faqs={faqs} updated="22 October 2026">
+  <div class="content-col">
+    <h1 class="page-title">Death Certificate in Uttar Pradesh — Online Application, Download and Correction</h1>
+
+    <section class="box">
+      <p>A death certificate is the official record that a person has passed away, issued by the local registrar of births and deaths after the death is registered. In Uttar Pradesh you can apply for it online through the eDistrict portal's citizen service, eSathi, or get it done at a Common Service Centre (CSC / Jan Seva Kendra) near you.</p>
+      <p>Families usually need this document soon after a death, often at a difficult time, because almost every formal closure connected with the deceased depends on it:</p>
+      <ul>
+        <li>Claiming life insurance and other policy settlements</li>
+        <li>Transferring property, land records and mutation (dakhil kharij) into the names of legal heirs</li>
+        <li>Closing the deceased's bank accounts or transferring the balance to the nominee</li>
+        <li>Stopping a pension and applying for family pension for the spouse or dependants</li>
+        <li>Succession matters, updating the ration card, and settling loans or deposits</li>
+      </ul>
+      <p>This guide explains the documents you need, the correct order of registration and application, the official fees, and what to do if the death was not registered on time or the certificate carries a mistake. If you also need the family's record updated, see our guide to the <a href="/en/parivar-register-nakal/">Parivar Register Nakal</a>, which is often required alongside a death certificate for succession work.</p>
+    </section>
+
+    <section class="box">
+      <h2>Death Certificate UP — Quick Information</h2>
+      <div class="table-scroll">
+        <table class="info">
+          <tr><th>Where to apply online</th><td>eSathi citizen portal (esathi.up.gov.in), through the eDistrict UP website</td></tr>
+          <tr><th>Offline option</th><td>CSC / Jan Seva Kendra, or the registrar office — Gram Panchayat in villages, Nagar Palika / Nagar Nigam in towns and cities</td></tr>
+          <tr><th>Fee on eSathi</th><td>₹10–15 (self-application)</td></tr>
+          <tr><th>Fee at CSC</th><td>₹30 government fee + around ₹30–50 facilitation charge</td></tr>
+          <tr><th>Processing time</th><td>Usually 7–15 working days after complete submission</td></tr>
+          <tr><th>Registration timing</th><td>Death should be registered within 21 days; late registration is possible with a late fee and, for older cases, official permission</td></tr>
+          <tr><th>Validity</th><td>Permanent — a death certificate never expires</td></tr>
+          <tr><th>Helpline</th><td>0522-2304706 · ceghelpdesk@gmail.com</td></tr>
+        </table>
+      </div>
+      <p class="note">The death is registered in the area where the death took place, not necessarily where the family lives. A death in a hospital in another district is registered with that area's registrar.</p>
+    </section>
+
+    <section class="box">
+      <h2>Documents Required for a Death Certificate</h2>
+      <p>Keep clear scanned copies or photos of the following ready before you start the application. Each uploaded file must be under 100KB, in JPEG or PDF format.</p>
+      <ul class="checklist">
+        <li>Hospital death report or medical certificate of cause of death, if the death occurred in a hospital</li>
+        <li>Cremation ground receipt or burial receipt, especially when the death occurred at home</li>
+        <li>Aadhaar card of the deceased (if available)</li>
+        <li>Applicant's own ID — usually Aadhaar card (the applicant is normally a close family member)</li>
+        <li>Ration card of the family, if the deceased's name has to be removed from it later</li>
+        <li>An older ID of the deceased such as voter ID or PAN, in case the name needs to be matched across records</li>
+      </ul>
+      <p class="note">Names must match across documents as closely as possible. If the hospital record uses a short name (for example, only a first name) and Aadhaar uses the full name, mention both spellings clearly in the application to avoid a correction round later.</p>
+    </section>
+
+    <section class="box">
+      <h2>How to Apply for a Death Certificate Online — Step by Step</h2>
+      <figure class="shot">
+        <img src="/images/esathi-login.webp" alt="eSathi citizen login page of the eDistrict UP portal" loading="lazy" />
+        <figcaption>The eSathi login page — registration and login are free; you pay only when you submit a certificate application.</figcaption>
+      </figure>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-body"><strong>Open the eDistrict UP portal.</strong> Go to edistrict.up.gov.in and click on the Citizen Login (eSathi) option to reach esathi.up.gov.in.</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-body"><strong>Register if you are a new user.</strong> Choose New User Registration, create a login ID of 6–8 characters, fill in your details and verify the OTP sent to your Aadhaar-linked mobile number. Registration is free.</div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-body"><strong>Log in and set your password.</strong> On first login you use the OTP as a temporary password; the system then asks you to set a permanent one.</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Select the death certificate service.</strong> From the dashboard, open the certificate services and choose the death certificate / death registration application.</div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-body"><strong>Fill in the details of the deceased.</strong> Enter the full name, date and place of death, address, and the applicant's relationship with the deceased, exactly as they appear in the hospital or cremation records.</div></div>
+        <div class="step"><div class="step-num">6</div><div class="step-body"><strong>Upload the documents.</strong> Attach the hospital death report or cremation/burial receipt, the deceased's Aadhaar (if available) and your own ID. Every file must be clear and under 100KB.</div></div>
+        <div class="step"><div class="step-num">7</div><div class="step-body"><strong>Pay the fee online.</strong> The portal accepts payment through PAYGOV — UPI, net banking and debit cards work. Keep the transaction ID until the payment status shows as confirmed.</div></div>
+        <div class="step"><div class="step-num">8</div><div class="step-body"><strong>Submit and save the SRN.</strong> After submission you receive a Service Request Number (SRN) by SMS. This number is your tracking ID — note it down carefully.</div></div>
+        <div class="step"><div class="step-num">9</div><div class="step-body"><strong>Track the status.</strong> Use the Application Status option on the portal with your SRN, or check the dashboard after logging in. Verification is done by the local registrar office.</div></div>
+        <div class="step"><div class="step-num">10</div><div class="step-body"><strong>Download the certificate.</strong> When the status shows the certificate has been generated, open the completed application and save the digitally signed PDF through the Print option, as described below.</div></div>
+      </div>
+    </section>
+
+    <section class="box">
+      <h2>Death Certificate Fees in UP</h2>
+      <div class="table-scroll">
+        <table class="data">
+          <thead><tr><th>Channel</th><th>Government Fee</th><th>Extra Charge</th><th>Typical Total</th></tr></thead>
+          <tbody>
+            <tr><td>eSathi (apply yourself)</td><td>₹10–15</td><td>None</td><td>₹10–15</td></tr>
+            <tr><td>CSC / Jan Seva Kendra</td><td>₹30</td><td>₹30–50 facilitation</td><td>₹60–80</td></tr>
+            <tr><td>Late registration</td><td>Base fee as above</td><td>Late fee as per delay period</td><td>Varies with how late the registration is</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="warn">If a centre demands several hundred rupees for a death certificate, it is overcharging. Always take the printed receipt showing the government fee, and report unreasonable demands on the CM Helpline 1076 or the CSC helpline 14599.</p>
+    </section>
+
+    <section class="box">
+      <h2>Registration Timing and Late Registration</h2>
+      <p>Every death is expected to be registered within <strong>21 days</strong>. Hospitals usually start this process themselves for deaths that occur there, but the family should always confirm and collect the registration details. For a death at home, informing the local registrar — the Gram Panchayat in a village or the municipal body in a town — within the same window is the family's responsibility.</p>
+      <p>If the 21 days have passed, the registration does not become impossible; it simply becomes slower. A late fee applies, and as the delay grows, the approval of a designated officer may be required. For deaths that were never registered even after a year, an order from the competent authority or magistrate is generally needed, along with whatever proof of the death is available — hospital records, cremation receipts, or statements verified locally. Because insurance claims and property transfers cannot move without this document, it is worth completing even an old registration rather than leaving it pending.</p>
+    </section>
+
+    <section class="box">
+      <h2>How to Check Status and Download the Certificate</h2>
+      <figure class="shot">
+        <img src="/images/status-page.webp" alt="Application status search page on the eDistrict UP portal" loading="lazy" />
+        <figcaption>Application status can be checked without logging in — you only need the SRN and the captcha.</figcaption>
+      </figure>
+      <p>The fastest way is the <a href="/en/#status-check">status check</a> on the eDistrict portal: enter your SRN and the captcha, and the current stage of your application appears. Typical stages move from submitted, to under verification at the registrar office, to approved, and finally to certificate generated.</p>
+      <p>Once the certificate is generated, log in to eSathi, open <strong>Completed Applications</strong>, select your application and click <strong>Print</strong> — choose "Save as PDF" in the print dialog. What you download is the official certificate: a digitally signed PDF with a certificate number and QR code, valid across India under the IT Act, 2000. Print several copies for the bank, insurer and property work, and keep the PDF backed up. The same certificate also appears in DigiLocker (digilocker.gov.in) under Issued Documents a few days after issue.</p>
+    </section>
+
+    <section class="box">
+      <h2>Corrections and Common Reasons for Delay</h2>
+      <p>Check the downloaded certificate the same day. Mistakes in the spelling of the deceased's name, the date of death or the address are the most common problems, and they matter because banks and insurers match the certificate against their own records. Small errors can be corrected through a correction application supported by the hospital record and ID proofs; the corrected certificate is then re-issued with the same registration details.</p>
+      <p>Applications are most often delayed or sent back when:</p>
+      <ul>
+        <li>The name on the hospital report and the Aadhaar of the deceased do not match at all</li>
+        <li>The cremation or burial receipt is missing for a death that happened at home</li>
+        <li>Uploaded documents are blurred, cut off, or larger than 100KB</li>
+        <li>The death was registered in a different area from the one selected in the application</li>
+        <li>Payment shows as pending — this usually resolves itself within 24–48 hours; keep the transaction ID and contact the helpline on 0522-2304706 only if it stays pending after that</li>
+      </ul>
+      <p class="note">A rejection is not a penalty. Read the reason shown in your eSathi account, correct that one point, and apply again — the fee for a fresh application is the same small amount.</p>
+    </section>
+
+    <section class="box">
+      <h2>Related Guides</h2>
+      <ul>
+        <li><a href="/en/birth-certificate/">Birth Certificate UP — apply online, fees and download</a></li>
+        <li><a href="/en/parivar-register-nakal/">Parivar Register Nakal — certified family register copy</a></li>
+        <li><a href="/en/income-certificate/">Income Certificate UP — documents, fees and process</a></li>
+        <li><a href="/en/caste-certificate/">Caste Certificate UP — SC, ST and OBC NCL</a></li>
+        <li><a href="/en/domicile-certificate/">Domicile (Residence) Certificate UP</a></li>
+        <li><a href="/en/csc-guide/">CSC / Jan Seva Kendra Guide — charges and how to find one</a></li>
+      </ul>
+    </section>
+  </div>
+</Base>

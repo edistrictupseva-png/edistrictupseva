@@ -1,0 +1,563 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const faqs = [
+  { q: "What is the eDistrict UP citizen login URL?", a: "The citizen login is at esathi.up.gov.in. You can also start from edistrict.up.gov.in and click the Citizen Login (eSathi) option. The old address edistrict.up.nic.in no longer works directly — it redirects to edistrict.up.gov.in." },
+  { q: "Are the Login ID and mobile number the same thing?", a: "No. Your Login ID is the permanent 6–8 character username you chose during registration (for example, atul123). It is not your mobile number. If you forget it, use the Forgot Login ID option on the login page and it will be sent to your registered mobile by SMS." },
+  { q: "How much does a certificate cost on eDistrict UP?", a: "Charges can vary by service and application channel. Treat the current amount displayed by the official portal as final. At a CSC, ask for the government/user charge and facilitation charge separately and insist on an itemised receipt." },
+  { q: "How long does a certificate take to be issued?", a: "Most certificates take 7–15 working days. The Haisiyat certificate takes longer, around 15–21 days. Field verification by the Lekhpal is the slowest stage, and applications move slower during the July–September scholarship season." },
+  { q: "Is a digitally signed certificate valid?", a: "A document issued and digitally signed by the competent authority can be verified as an electronic record. Acceptance, required issue date and format for a particular court, university, bank or recruitment follow that institution's current rules." },
+  { q: "Are eDistrict UP and eSathi the same thing?", a: "They are two parts of one system. eDistrict is the back-end platform that connects district offices and departments, while eSathi is the citizen-facing portal where you register, log in, apply and download. When people say eDistrict UP login, they mean the eSathi citizen login." },
+  { q: "Do I need Aadhaar to register on eSathi?", a: "Follow the identity and OTP method currently shown on the official registration screen. Keep an active mobile ready; if Aadhaar e-KYC is requested, complete it only through the official flow." },
+  { q: "How do I check my application status without logging in?", a: "Open edistrict.up.gov.in, click Application Status (आवेदन की स्थिति), enter your Service Request Number (SRN) and the captcha, and search. The SRN was sent to you by SMS when you submitted the application and is also visible on your eSathi dashboard." },
+  { q: "What is an SRN and how is it different from a certificate number?", a: "The SRN (Service Request Number) is the tracking number you receive at submission — use it on the status page. The Certificate Number is printed only on the final approved certificate and is what universities, employers and other third parties use for verification. The two numbers are different and not interchangeable." },
+  { q: "I forgot my Login ID or password. What should I do?", a: "Use the links on the eSathi login page. For a forgotten password: Forgot Password, enter your mobile number, verify the OTP and set a new password. For a forgotten Login ID: the ID is sent to your registered mobile by SMS. If your mobile number itself has changed, contact the helpline on 0522-2304706 or email ceghelpdesk@gmail.com." },
+  { q: "The OTP is not arriving. What can I check?", a: "Confirm you are checking the mobile number linked to Aadhaar, wait out the 2–3 minute cooldown before requesting another OTP, and look in the SMS spam folder. During the peak July–September season, early morning (6–8 AM) attempts usually succeed faster. Temporarily switching off DND can also help." },
+  { q: "How do I download my certificate after approval?", a: "Use the official citizen account's issued/completed applications area and prefer the portal download control. Use DigiLocker only when the document appears under Issued Documents from the authoritative issuer; do not assume every service syncs automatically." },
+  { q: "My application was rejected. What happens now?", a: "Log in to eSathi and read the rejection reason shown against your application. Common causes are blurry document scans, a name mismatch with Aadhaar, a missing self-declaration form, a wrong rural/urban selection, or the Lekhpal being unable to verify you at your address. Correct the issue and apply again — there is no penalty for reapplying." },
+  { q: "How can a university or employer verify my certificate?", a: "Anyone can verify a certificate without logging in. On edistrict.up.gov.in, open Certificate Verification, enter the Certificate Number printed on the document (not the SRN), and match the details shown with the certificate. Scanning the QR code on the certificate opens the same verification page in seconds." },
+  { q: "Why does my downloaded PDF show 'signature invalid'?", a: "This is a reader problem, not a certificate problem. Most PDF readers do not include Indian Certifying Authority root certificates in their trust stores, so they warn about the digital signature. Open the file in Adobe Acrobat Reader, click the signature and choose Validate Signature — a genuine certificate will show as valid." },
+  { q: "What documents do I need for income, caste and domicile certificates?", a: "Identity, address, photograph, declaration and service-specific evidence are commonly requested. Read the current checklist and follow the size/format displayed for each upload field rather than assuming one universal 100 KB rule." },
+  { q: "My application has been stuck for more than 15 days. What can I do?", a: "Start with a complaint on the portal itself, then call the helpline 0522-2304706 with your SRN ready. If it still does not move, raise it on CM Helpline 1076 or IGRS. Under the UP Janhit Guarantee Act, 2011, you can file a first appeal to the ADM within 30 days of the prescribed time limit expiring, and a second appeal to the DM within 60 days." },
+  { q: "Can I get my certificate made at a CSC instead of applying myself?", a: "Yes. At a CSC or Lokvani centre, the operator applies on your behalf using their own VLE credentials (eseva.csccloud.in). You pay the government fee plus a facilitation charge, which is higher than the ₹10–15 self-service cost. Never share your personal eSathi Login ID or password with any operator — they do not need it." },
+  { q: "How long is each certificate valid?", a: "Birth and death registrations are permanent civil records, but an institution can require a recently issued extract. For income, OBC-NCL, EWS, domicile and other certificates, follow the current issuing-authority rule and the notice of the institution receiving it." },
+  { q: "Can I apply for a UP certificate from outside Uttar Pradesh?", a: "You can open the portal and apply from anywhere, but eligibility depends on the certificate. Domicile and caste certificates, for example, are issued on the basis of your Uttar Pradesh residence and records, and verification happens at your UP address — so the applicant must genuinely belong to Uttar Pradesh for those services." },
+];
+---
+
+<Base lang="en" title="eDistrict UP 2026: eSathi Login, Status, Download & Apply Online" description="Complete eDistrict UP guide 2026 — eSathi registration and login, certificate fees, application status check with SRN, certificate download and verification, and fixes for common problems." path="/en/" altPath="/" faqs={faqs} updated="22 October 2026">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="pills">
+      <span class="pill">325+ Services</span>
+      <span class="pill">75 Districts</span>
+      <span class="pill">47 Departments</span>
+    </div>
+    <h1>eDistrict UP 2026: Login, Certificate Status, Download &amp; Online Application</h1>
+    <p class="sub">One complete guide to Uttar Pradesh's certificate portal — how to register on eSathi, apply for income, caste, domicile, birth and death certificates, track your application with an SRN, download the signed PDF, and fix the problems that stop most people.</p>
+    <div class="cta-row">
+      <a class="btn" href="#certificates">Apply for a Certificate</a>
+      <a class="btn btn-outline" href="#status-check">Check Status</a>
+    </div>
+  </div>
+</section>
+
+<section class="quick">
+  <div class="wrap">
+    <div class="quick-grid">
+      <a class="quick-card" href="/en/income-certificate/">
+        <div class="qc-icon">📄</div>
+        <div class="qc-title">Income Certificate</div>
+        <div class="qc-sub">For scholarships, admissions &amp; schemes</div>
+      </a>
+      <a class="quick-card" href="/en/caste-certificate/">
+        <div class="qc-icon">🪪</div>
+        <div class="qc-title">Caste Certificate</div>
+        <div class="qc-sub">SC, ST &amp; OBC (NCL) categories</div>
+      </a>
+      <a class="quick-card" href="/en/domicile-certificate/">
+        <div class="qc-icon">🏠</div>
+        <div class="qc-title">Domicile Certificate</div>
+        <div class="qc-sub">Proof of residence in Uttar Pradesh</div>
+      </a>
+      <a class="quick-card" href="/en/birth-certificate/">
+        <div class="qc-icon">👶</div>
+        <div class="qc-title">Birth Certificate</div>
+        <div class="qc-sub">For school, passport &amp; ID proof</div>
+      </a>
+      <a class="quick-card" href="/en/death-certificate/">
+        <div class="qc-icon">📜</div>
+        <div class="qc-title">Death Certificate</div>
+        <div class="qc-sub">For claims, pension &amp; succession</div>
+      </a>
+      <a class="quick-card" href="/en/parivar-register-nakal/">
+        <div class="qc-icon">👨‍👩‍👧</div>
+        <div class="qc-title">Parivar Register Nakal</div>
+        <div class="qc-sub">Certified copy of the family register</div>
+      </a>
+      <a class="quick-card" href="/en/ews-certificate/">
+        <div class="qc-icon">₹</div><div class="qc-title">EWS Certificate</div><div class="qc-sub">Income, asset eligibility &amp; application</div>
+      </a>
+      <a class="quick-card" href="/en/status-verification/">
+        <div class="qc-icon">✓</div><div class="qc-title">Status &amp; Verification</div><div class="qc-sub">Track an application or verify a certificate</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="content-col">
+
+  <div class="toc">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#what-is-edistrict">What is eDistrict UP?</a></li>
+      <li><a href="#edistrict-vs-esathi-csc">eDistrict vs eSathi vs CSC — the difference</a></li>
+      <li><a href="#certificates">Certificates you can get</a></li>
+      <li><a href="#fees">Certificate fees: eSathi vs CSC</a></li>
+      <li><a href="#registration-login">Registration and login, step by step</a></li>
+      <li><a href="#status-check">How to check application status</a></li>
+      <li><a href="#download">How to download your certificate</a></li>
+      <li><a href="#verify">How to verify a certificate</a></li>
+      <li><a href="#online-vs-csc">Online vs CSC vs Tehsil office</a></li>
+      <li><a href="#common-problems">Common problems and fixes</a></li>
+      <li><a href="#legal-rights">Delays and your legal rights</a></li>
+      <li><a href="#tips">Practical tips before you apply</a></li>
+    </ol>
+  </div>
+
+  <div class="box" id="what-is-edistrict">
+    <h2>What is eDistrict UP?</h2>
+    <p>eDistrict UP is the Uttar Pradesh government's online service-delivery platform for citizen certificates and related services. Through this single system, a resident of the state can apply for a certificate, follow its progress and download the final digitally signed document — without repeated trips to the tehsil or block office. The platform covers all 75 districts of Uttar Pradesh and brings together more than 325 services from 47 government departments.</p>
+    <p>The system was launched in December 2008 under the National e-Governance Plan and is developed and run by the NIC UP State Unit, based at Yojana Bhawan in Lucknow. Since its launch, more than 36.90 crore certificates have been issued through it, which gives a sense of how central it has become to everyday paperwork in the state — scholarships, admissions, government jobs, bank work and court matters all routinely ask for certificates that originate here. In 2019, the platform received a Gems of Digital India Award (Analyst's Choice).</p>
+    <p>One point that confuses many first-time users: citizens never deal with the "eDistrict" back office directly. Everything a citizen touches — registration, login, application, payment, status and download — happens on the citizen portal called <strong>eSathi</strong>, explained in the next section.</p>
+    <div class="table-scroll">
+      <table class="info">
+        <tr><th>Official portal</th><td>edistrict.up.gov.in</td></tr>
+        <tr><th>Citizen login (eSathi)</th><td>esathi.up.gov.in</td></tr>
+        <tr><th>Helpline</th><td>0522-2304706</td></tr>
+        <tr><th>Email</th><td>ceghelpdesk@gmail.com</td></tr>
+        <tr><th>Payment</th><td>PAYGOV — UPI, net banking, debit card</td></tr>
+        <tr><th>DigiLocker</th><td>Connected — issued certificates are available at digilocker.gov.in</td></tr>
+        <tr><th>Coverage</th><td>325+ services, 47 departments, all 75 districts of UP</td></tr>
+      </table>
+    </div>
+    <div class="note"><strong>Used the old address?</strong> If you earlier used edistrict.up.nic.in, note that it now redirects automatically to edistrict.up.gov.in. Update your bookmarks to the .gov.in address and be careful with look-alike websites — the official portal ends with <strong>up.gov.in</strong> only.</div>
+    <p class="note" style="background:#fff;border-style:dashed">This page is an independent guide published by eDistrict UP Seva to help citizens use the official portal correctly. We are not the official website — see our <a href="/en/disclaimer/">disclaimer</a> and <a href="/en/about-us/">about us</a> pages.</p>
+  </div>
+
+  <div class="box" id="edistrict-vs-esathi-csc">
+    <h2>eDistrict vs eSathi vs CSC — the difference most people miss</h2>
+    <p>Three names come up again and again in this process, and mixing them up is the source of half the confusion (and half the login mistakes). Here is what each one actually is:</p>
+    <p><strong>eDistrict</strong> is the back-end system. It connects district offices, tehsils and departments and moves your file from one officer to the next. As a citizen, you never log in to it — it works behind the scenes.</p>
+    <p><strong>eSathi</strong> (eServices Access To Help Individuals) is the citizen portal at esathi.up.gov.in. This is where you register, log in, apply, pay and download. When anyone says "eDistrict UP login", this is what they mean.</p>
+    <p><strong>CSC</strong> (Common Service Centre — Jan Seva Kendra / Lokvani Kendra) is a physical centre where an operator applies on your behalf. Operators use their own VLE credentials on a separate operator system — never your personal account. Read our <a href="/en/csc-guide/">CSC guide</a> before visiting one, so you know the correct charges and how to avoid overpaying.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <tr><th></th><th>eDistrict</th><th>eSathi</th><th>CSC</th></tr>
+        <tr><td><strong>What it is</strong></td><td>Back-end system linking district offices</td><td>Citizen portal</td><td>Physical service centre</td></tr>
+        <tr><td><strong>Who uses it</strong></td><td>Government officers</td><td>You, the citizen</td><td>Operators, on your behalf</td></tr>
+        <tr><td><strong>Fee per certificate</strong></td><td>—</td><td>₹10–15</td><td>₹30 + extra facilitation charges</td></tr>
+        <tr><td><strong>Where</strong></td><td>edistrict.up.gov.in (information &amp; status)</td><td>esathi.up.gov.in</td><td>Your nearest Jan Seva Kendra / Lokvani centre</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="box" id="certificates">
+    <h2>Certificates available on eDistrict UP</h2>
+    <p>Revenue-department certificates are the most demanded services on the portal. Each of the main certificates below has its own detailed guide on this website — with the full document list, the exact application steps, rejection reasons and FAQs. Three further certificates (Haisiyat, Character and EWS) are covered in short sections right here, because most applicants only need the essentials for them.</p>
+
+    <h3><a href="/en/income-certificate/">Income Certificate (आय प्रमाण पत्र)</a></h3>
+    <p>Certifies your family's annual income and is asked for in scholarship applications, school and college admissions, fee concessions and government scheme benefits. It is the single most applied-for certificate on the portal. Valid for 3 years.</p>
+
+    <h3><a href="/en/caste-certificate/">Caste Certificate (जाति प्रमाण पत्र)</a></h3>
+    <p>Needed to claim reservation benefits in education and government jobs. Certificates for SC/ST categories remain valid for a lifetime, while an OBC Non-Creamy Layer certificate is valid for 1–3 years and must be renewed as required. Our guide covers both cases separately.</p>
+
+    <h3><a href="/en/domicile-certificate/">Domicile Certificate (निवास प्रमाण पत्र)</a></h3>
+    <p>Proves that you are a resident of Uttar Pradesh — required for state quota admissions, state government jobs and many state schemes. Once issued, it is valid for a lifetime and normally never needs renewal.</p>
+
+    <h3><a href="/en/birth-certificate/">Birth Certificate (जन्म प्रमाण पत्र)</a></h3>
+    <p>The first legal identity document of a child, needed for school admission, passport and most ID applications later in life. A birth certificate is a permanent record and never expires.</p>
+
+    <h3><a href="/en/death-certificate/">Death Certificate (मृत्यु प्रमाण पत्र)</a></h3>
+    <p>Required by families for insurance claims, pension closure or transfer, bank accounts, property succession and most legal settlements after a death in the family. It is a permanent record.</p>
+
+    <h3><a href="/en/parivar-register-nakal/">Parivar Register Nakal (परिवार रजिस्टर नकल)</a></h3>
+    <p>A certified copy of your family's entry in the village or ward family register. It is commonly used for ration card work, pension cases and property succession. Note that it is different from the newer UP Family ID — the two documents are not interchangeable.</p>
+
+    <h3><a href="/en/self-declaration-form/">Self-Declaration Form (स्व-प्रमाणित घोषणा पत्र)</a></h3>
+    <p>Not a certificate, but a mandatory upload for income, caste and domicile applications. It must be filled, signed and uploaded as a <strong>JPEG</strong> image — the portal does not accept it as a PDF. Our guide explains how to fill it correctly, because an unsigned or wrongly formatted declaration is a leading cause of rejection.</p>
+
+    <h3 id="haisiyat-certificate">Haisiyat Certificate (हैसियत प्रमाण पत्र) — Solvency Certificate</h3>
+    <p>The Haisiyat certificate states your financial standing — essentially, official proof of what you are worth. It is most commonly demanded from contractors and firms bidding for government tenders and contracts, and anywhere else a department or institution needs verified proof of solvency before trusting you with work or money. Because it certifies a financial position rather than a simple fact, it is priced and processed differently from ordinary certificates: the fee is <strong>₹120</strong> on eSathi (₹120 plus extra charges at a CSC), processing takes <strong>15–21 days</strong>, and the certificate remains valid for <strong>3 years</strong>. Apply well before any tender deadline — this is not a document that can be arranged at the last moment.</p>
+
+    <h3 id="character-certificate">Character Certificate (चरित्र प्रमाण पत्र)</h3>
+    <p>A character certificate confirms that you have a clean conduct record, and it is typically demanded during job joining — especially in government and uniformed services — and in some visa and institutional processes. The application goes through the same eSathi route as other certificates and carries the standard <strong>₹10–15</strong> fee, with the usual 7–15 working day processing time. Unlike income or domicile certificates, it has no fixed statutory validity — the organisation asking for it usually wants a recently issued one, so apply close to the date you actually need to submit it rather than months in advance.</p>
+
+    <h3 id="ews-certificate">EWS Certificate (आर्थिक रूप से कमजोर वर्ग प्रमाण पत्र)</h3>
+    <p>The EWS certificate is for applicants from the general category whose family income falls within the Economically Weaker Section limit. It is used to claim the EWS reservation in government jobs and educational admissions. It carries the standard <strong>₹10–15</strong> eSathi fee and 7–15 working day processing, but note its validity carefully: an EWS certificate is valid for <strong>one financial year only</strong>. If your admission or recruitment process crosses into a new financial year, you will need a fresh certificate — plan the timing before you apply.</p>
+  </div>
+
+  <div class="box" id="fees">
+    <h2>Certificate fees — eSathi vs CSC (2026)</h2>
+    <p>Applying yourself on eSathi is always the cheapest route. At a CSC you pay the government fee plus the centre's facilitation charges. The table below shows the standard position for the main certificates — fees can change, so always confirm the amount shown on edistrict.up.gov.in at the time you apply.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <tr><th>Certificate</th><th>eSathi</th><th>CSC</th><th>Processing</th><th>Validity</th></tr>
+        <tr><td>Income</td><td>₹10–15</td><td>₹30 + extra</td><td>7–15 days</td><td>3 years</td></tr>
+        <tr><td>Caste (SC/ST)</td><td>₹10–15</td><td>₹30 + extra</td><td>7–15 days</td><td>Lifetime</td></tr>
+        <tr><td>Caste (OBC NCL)</td><td>₹10–15</td><td>₹30 + extra</td><td>7–15 days</td><td>1–3 years</td></tr>
+        <tr><td>Domicile</td><td>₹10–15</td><td>₹30 + extra</td><td>7–15 days</td><td>Lifetime</td></tr>
+        <tr><td>Birth</td><td>₹10–15</td><td>₹30 + extra</td><td>7–15 days</td><td>Permanent</td></tr>
+        <tr><td>Death</td><td>₹10–15</td><td>₹30 + extra</td><td>7–15 days</td><td>Permanent</td></tr>
+        <tr><td>Haisiyat (Solvency)</td><td>₹120</td><td>₹120 + extra</td><td>15–21 days</td><td>3 years</td></tr>
+        <tr><td>EWS</td><td>₹10–15</td><td>₹30 + extra</td><td>7–15 days</td><td>1 financial year</td></tr>
+      </table>
+    </div>
+    <p>Processing time depends mainly on how fast field verification moves in your area — a Lekhpal or Revenue Inspector has to verify your details on the ground. Where officers are active, revenue certificates are sometimes completed in 3–5 days; where files pile up, the full 15 days is normal. Do not pay anyone a "speed money" bribe to jump this queue — if someone demands extra money, use the complaint and helpline routes described in the <a href="#legal-rights">legal rights section</a> below.</p>
+  </div>
+
+  <div class="box" id="registration-login">
+    <h2>Registration and login on eSathi — step by step</h2>
+    <p>Every certificate application starts with a free eSathi account. Registration takes about ten minutes if you keep everything ready. <strong>Before you start, you need:</strong> a mobile number that is linked to your Aadhaar (the OTP comes only on that number — this is compulsory), your Aadhaar number (details are auto-filled from it during e-KYC), and an internet connection. Use the Chrome browser for the fewest problems.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Open the official portal</h3>
+          <p>Go to <strong>edistrict.up.gov.in</strong>. This is the entry point for everything — status check, verification and the citizen login all start here.</p>
+          <figure class="shot">
+            <img src="/images/edistrict-home.webp" alt="Official eDistrict UP portal homepage" loading="lazy" />
+            <figcaption>The official eDistrict UP portal home page — start here for login, status and verification.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Click Citizen Login (eSathi)</h3>
+          <p>On the portal, choose the Citizen Login option. This takes you to esathi.up.gov.in, the citizen portal where your account will live.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Click "New User Registration"</h3>
+          <p>On the eSathi login page, select नवीन उपयोगकर्ता पंजीकरण (New User Registration) to begin creating your account.</p>
+          <figure class="shot">
+            <img src="/images/esathi-login.webp" alt="eSathi login page with New User Registration option" loading="lazy" />
+            <figcaption>The eSathi login page — the New User Registration link is what first-time users need.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Create your Login ID</h3>
+          <p>Choose a Login ID of <strong>6–8 characters</strong>, letters and numbers only (for example, atul123 or raj2026), and confirm it with the "Check Availability" option. <strong>Write it down — this is your permanent username. It is not your mobile number</strong>, and you will need it for every login for years to come.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Fill in your details</h3>
+          <p>Enter your name <strong>exactly as it appears on Aadhaar</strong>, date of birth, gender, full address with PIN code, district, mobile number and email (optional). A spelling mismatch between this form and your Aadhaar is one of the most common causes of later trouble, so check every field before moving on.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Enter the captcha and save</h3>
+          <p>Type the captcha shown on screen and click Save to submit the registration form.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Verify with the Aadhaar OTP</h3>
+          <p>An OTP is sent to your Aadhaar-linked mobile number. Enter it to complete verification — your name and photo are pulled from Aadhaar automatically at this stage.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>First login and set your password</h3>
+          <p>Log in for the first time with your Login ID and the OTP as a temporary password. The system will ask you to set a permanent password. Registration is complete — remember, registration itself is free; you pay only when you submit a certificate application.</p>
+        </div>
+      </div>
+    </div>
+    <h3>Logging in afterwards</h3>
+    <p>Open esathi.up.gov.in, enter your Login ID, password and the captcha, click Submit, and your dashboard opens with all your applications in one place.</p>
+    <h3>Forgot your password or Login ID?</h3>
+    <p><strong>Forgot password:</strong> on the login page choose "Forgot Password", enter your registered mobile number, verify the OTP and set a new password. <strong>Forgot Login ID:</strong> choose the "Forgot Login ID" option and the ID is sent to your registered mobile by SMS. <strong>Mobile number changed?</strong> Recovery through the portal is not possible in that case — contact the helpline on <strong>0522-2304706</strong> or email <strong>ceghelpdesk@gmail.com</strong>.</p>
+    <h3>The three types of login — only one is yours</h3>
+    <ul>
+      <li><strong>Citizen login (eSathi)</strong> — the one you use, at esathi.up.gov.in.</li>
+      <li><strong>CSC operator login</strong> — operators log in with their own VLE credentials at eseva.csccloud.in. Never hand your eSathi Login ID or password to a CSC operator; they do not need it to apply for you.</li>
+      <li><strong>Department login</strong> — for officers such as the Lekhpal, Tehsildar and SDM who process your file. Citizens never use this.</li>
+    </ul>
+    <h3>Common login errors and what they mean</h3>
+    <div class="table-scroll">
+      <table class="data">
+        <tr><th>Error / problem</th><th>What it means and the fix</th></tr>
+        <tr><td>"Login ID already exists"</td><td>Someone has taken that username. Pick a different one — adding digits (for example, atul2026) usually works.</td></tr>
+        <tr><td>OTP not received</td><td>Check that the number is the one linked to Aadhaar. Wait out the 2–3 minute cooldown before retrying, check the SMS spam folder, and in peak season (July–September) try early morning, 6–8 AM.</td></tr>
+        <tr><td>Captcha keeps failing</td><td>Clear the browser cache, use Chrome, try an incognito window (Ctrl+Shift+N) and switch off ad-blockers for the portal.</td></tr>
+        <tr><td>"Invalid Login ID or Password"</td><td>The most common cause: entering your mobile number as the username. The Login ID is the 6–8 character username you created at registration. Also check Caps Lock before retrying.</td></tr>
+        <tr><td>"Mobile number already registered"</td><td>One number can hold only one account. You almost certainly registered earlier — recover the existing account through "Forgot Login ID" instead of creating a new one.</td></tr>
+        <tr><td>Portal not opening / very slow</td><td>Traffic peaks during scholarship (July–September) and exam seasons. Try between 6–8 AM or after 10 PM, on Chrome, with the cache cleared.</td></tr>
+        <tr><td>"Session expired"</td><td>The portal logs you out after roughly 15–20 minutes of inactivity. Keep every detail and document ready before you start, and fill the form in one sitting.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="box" id="status-check">
+    <h2>How to check your application status</h2>
+    <p>The fastest way needs no login at all — just the SRN (Service Request Number) you received by SMS when you submitted the application.</p>
+    <h3>Without login — using your SRN</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Open edistrict.up.gov.in</h3>
+          <p>Go to the official portal home page.</p>
+          <figure class="shot">
+            <img src="/images/status-page.webp" alt="Application status page on the eDistrict UP portal" loading="lazy" />
+            <figcaption>The application status page — your SRN and the captcha are all it asks for.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Click "Application Status"</h3>
+          <p>Choose आवेदन की स्थिति (Application Status) on the portal.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Enter your SRN</h3>
+          <p>Type the Service Request Number from your submission SMS. It is also visible against the application on your eSathi dashboard if you have lost the message.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Captcha, then Search</h3>
+          <p>Fill the captcha and search — the current stage of your application is displayed.</p>
+        </div>
+      </div>
+    </div>
+    <h3>With login</h3>
+    <p>Log in at esathi.up.gov.in and your dashboard lists every application together — SRN, certificate type, submission date and current status — which is more convenient when you have applied for several certificates.</p>
+    <h3>What every status label means</h3>
+    <div class="table-scroll">
+      <table class="data">
+        <tr><th>Status shown</th><th>Meaning</th><th>What you should do</th></tr>
+        <tr><td>प्रेषित (Submitted)</td><td>Your application has entered the system.</td><td>Wait — it is normally assigned to the Lekhpal within 1–2 days.</td></tr>
+        <tr><td>सत्यापनाधीन (Under Verification)</td><td>The Lekhpal / Revenue Inspector is carrying out field verification.</td><td>This is the longest stage (about 5–10 days). Make sure someone is present at the address to meet the verifying officer.</td></tr>
+        <tr><td>लेखपाल रिपोर्ट प्रतीक्षित (Lekhpal Report Awaited)</td><td>The Lekhpal has not yet sent the verification report.</td><td>Wait up to 15 days in total, then escalate using the routes in the legal rights section.</td></tr>
+        <tr><td>तहसीलदार को अग्रेषित (Forwarded to Tehsildar)</td><td>Verification is done and the file is with the Tehsildar.</td><td>Good news — signing usually follows within 2–5 days.</td></tr>
+        <tr><td>स्वीकृत (Approved)</td><td>Your application is approved and the signed PDF is being generated.</td><td>Wait 24–48 hours for the status to change to Certificate Generated.</td></tr>
+        <tr><td>प्रमाण पत्र जारी (Certificate Generated)</td><td>The certificate has been issued and is ready.</td><td>Download it — see the download section below.</td></tr>
+        <tr><td>अस्वीकृत (Rejected)</td><td>The application has been rejected; the reason is recorded in eSathi.</td><td>Log in, read the reason, correct the problem and apply again. There is no penalty.</td></tr>
+        <tr><td>संशोधनाधीन (Correction Required)</td><td>A small defect needs fixing before the file can move ahead.</td><td>Log in, read the correction note, fix it and resubmit — your SRN stays the same.</td></tr>
+      </table>
+    </div>
+    <h3>Why applications "get stuck" — the verification chain</h3>
+    <p>Understanding the chain explains almost every delay. You submit the application; the system assigns it to the Lekhpal (in rural areas) or Revenue Inspector (in urban areas); that officer carries out <strong>field verification</strong> — physically checking your details at your address, which is where most of the waiting happens; the report then goes to the Tehsildar, who applies a Digital Signature (DSC); and only then is the certificate issued. A file sitting at "Under Verification" is almost always waiting on that one field visit, not lost.</p>
+    <div class="note"><strong>SRN vs Certificate Number — do not mix them up.</strong> The SRN is the tracking number given at submission and is what the status page accepts. The Certificate Number is printed on the final, approved certificate and is what universities, employers and courts use for verification. Entering one where the other is expected returns no result.</div>
+  </div>
+
+  <div class="box" id="download">
+    <h2>How to download your certificate</h2>
+    <p><strong>Precondition:</strong> your status must show <strong>"प्रमाण पत्र जारी" (Certificate Generated)</strong>. If it only shows "स्वीकृत" (Approved), wait 24–48 hours for the signed PDF to be generated.</p>
+    <h3>From eSathi</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Log in to eSathi</h3>
+          <p>Open esathi.up.gov.in and log in with your Login ID and password.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Open "Completed Applications"</h3>
+          <p>Click पूर्ण आवेदन (Completed Applications) on your dashboard.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Click your application</h3>
+          <p>Find your application in the list and click its name — the full application opens.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Print → Save as PDF</h3>
+          <p>Click the "Print" button in the opened application. In the browser's print dialog, choose "Save as PDF" and save the file. That PDF is your certificate.</p>
+        </div>
+      </div>
+    </div>
+    <h3>From DigiLocker</h3>
+    <p>Issued certificates also sync to DigiLocker. Log in at digilocker.gov.in, open Issued Documents and look for your certificate there. The sync can take a few days after issue, so if it is not visible yet, download from eSathi first and check DigiLocker later.</p>
+    <h3>What you actually get</h3>
+    <p>The download is a <strong>digitally signed PDF</strong> carrying your Certificate Number, a QR code and the Digital Signature (DSC) of the Tehsildar/SDM. That PDF is the official certificate — there is no separate physical version to collect. You may print as many copies as you need; the QR code and Certificate Number remain verifiable on every copy.</p>
+    <p><strong>Legal validity:</strong> under Section 5 of the IT Act, 2000, this digitally signed certificate is valid across India — in courts, universities, government offices and banks. No separate attestation is needed.</p>
+    <h3>If the download is not working</h3>
+    <ul>
+      <li>Use Chrome; clear the cache, switch off ad-blockers, or try an incognito window.</li>
+      <li>On a phone, enable "Desktop site" mode in the browser.</li>
+      <li>If the PDF opens blank, delete it and download again on a stable internet connection.</li>
+      <li><strong>Applied through a CSC?</strong> You can still download it yourself — create your own free eSathi account, or go back to the CSC, or use DigiLocker.</li>
+      <li><strong>Check the details immediately after downloading.</strong> If something is wrong, do not try to edit the PDF — editing breaks the digital signature. The remedy is a fresh application with the correct information.</li>
+      <li>Keep a backup in Google Drive or email, and print 3–5 copies for your records.</li>
+    </ul>
+  </div>
+
+  <div class="box" id="verify">
+    <h2>How to verify any eDistrict UP certificate</h2>
+    <p>Verification is mostly done by third parties, not by you: universities check caste and domicile certificates during admission, recruitment boards and employers check income and domicile certificates for jobs, banks verify death certificates for insurance claims, and courts verify certificates produced as evidence. The good news is that anyone can verify a certificate — no login is needed.</p>
+    <h3>Method 1 — by Certificate Number</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Open edistrict.up.gov.in</h3>
+          <p>Go to the official portal.</p>
+          <figure class="shot">
+            <img src="/images/verify-page.webp" alt="Certificate verification page on the eDistrict UP portal" loading="lazy" />
+            <figcaption>The certificate verification page — enter the Certificate Number printed on the document.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Click "Certificate Verification"</h3>
+          <p>Choose प्रमाण पत्र सत्यापन (Certificate Verification) on the portal.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Enter the Certificate Number</h3>
+          <p>Type the number printed on the issued certificate. It must be the Certificate Number — <strong>not the SRN</strong>, which will return no result here.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Captcha and search</h3>
+          <p>Complete the captcha and search.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Match the details</h3>
+          <p>The portal displays the applicant's name, certificate type, date and issuing officer. Compare these against the document in front of you — they must agree exactly.</p>
+        </div>
+      </div>
+    </div>
+    <h3>Method 2 — QR code (fastest)</h3>
+    <p>Point your phone camera at the QR code printed on the certificate, tap the link that appears, and the verification page opens with the result — the whole check takes under ten seconds.</p>
+    <div class="warn"><strong>"Signature invalid" in your PDF reader? Do not panic.</strong> Most PDF readers do not recognise Indian Certifying Authorities, because the Indian CCA root certificates are not in the reader's trust store — so the reader warns about a perfectly genuine signature. Open the file in Adobe Acrobat Reader, click on the signature and choose "Validate Signature". If it shows "Valid", the certificate is genuine and the earlier warning was only about the reader, not your document.</div>
+    <p><strong>If verification keeps failing:</strong> first confirm you entered the Certificate Number (not the SRN) and check for typing errors; then try the QR code. If a document still produces no record at all, it may not be genuine — report it to the issuing tehsil office and to edistrict@nic.in.</p>
+  </div>
+
+  <div class="box" id="online-vs-csc">
+    <h2>Applying online vs CSC vs the tehsil office</h2>
+    <p>There are three ways to get the same certificate. The document you receive is identical — what changes is cost, effort and how easily you can follow up.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <tr><th>Factor</th><th>eSathi (online, yourself)</th><th>CSC / Jan Seva Kendra</th><th>Tehsil / block office</th></tr>
+        <tr><td>Cost</td><td>₹10–15 government fee</td><td>₹30 fee + ₹30–50 facilitation charges</td><td>No fixed official fee, but agent/tout charges of ₹200–500 are common</td></tr>
+        <tr><td>Effort</td><td>Apply from home in minutes</td><td>One visit to the centre</td><td>Repeated office visits</td></tr>
+        <tr><td>Tracking</td><td>Live status with your SRN, anytime</td><td>Depends on the operator informing you</td><td>Manual follow-up at the office</td></tr>
+        <tr><td>Payment</td><td>PAYGOV — UPI, net banking, debit card</td><td>Cash or digital at the centre</td><td>Cash and stamp paper</td></tr>
+        <tr><td>Fixing mistakes</td><td>Correct and resubmit online; SRN often stays the same</td><td>Another visit to the centre</td><td>Another office visit</td></tr>
+        <tr><td>Certificate you get</td><td>Digitally signed PDF with QR code</td><td>Same digitally signed PDF</td><td>Paper copy with manual signature and stamp</td></tr>
+      </table>
+    </div>
+    <p>Our recommendation: if you have a smartphone and an Aadhaar-linked mobile number, apply yourself on eSathi — it is the cheapest route and the only one where you can watch your file move. Use a CSC when you have no device or connectivity, and read the <a href="/en/csc-guide/">CSC guide</a> first so you know the correct charges.</p>
+  </div>
+
+  <div class="box" id="common-problems">
+    <h2>8 common problems — and their fixes</h2>
+    <h3>1. OTP is not arriving</h3>
+    <p>Check your network first, then confirm the number is the one linked to Aadhaar. Wait out the 2–3 minute cooldown before requesting a fresh OTP, look in the SMS spam folder, and during the peak July–September season try in the morning. Temporarily switching off DND also helps some users.</p>
+    <h3>2. Document upload keeps failing</h3>
+    <p>Every file must be below <strong>100 KB</strong>, in JPEG or PDF format. A black-and-white scan at 200 DPI usually lands within the limit; free online compressors can shrink larger files. One special rule catches many people: the <a href="/en/self-declaration-form/">self-declaration form</a> must be uploaded as a <strong>JPEG</strong> — the portal rejects it as a PDF.</p>
+    <h3>3. Application stuck at "Under Verification" for weeks</h3>
+    <p>The normal window is 7–15 working days, most of it field verification. If 15 working days have genuinely passed, stop waiting silently — file a complaint on the portal and use the escalation ladder in the <a href="#legal-rights">legal rights section</a>.</p>
+    <h3>4. Money deducted but status shows "Payment Pending"</h3>
+    <p>Do not pay again. Payment reconciliation is automatic and usually completes within 24–48 hours. If it is still pending after that, contact the helpline with your transaction ID and a screenshot of the deduction.</p>
+    <h3>5. Portal not opening or showing server errors</h3>
+    <p>Scholarship season (July–September) and exam periods flood the portal with traffic. The reliable windows are early morning (6–8 AM) and after 10 PM. Use Chrome, clear the cache, and switch between Wi-Fi and mobile data if one is struggling.</p>
+    <h3>6. Application rejected</h3>
+    <p>Log in to eSathi and read the recorded reason. The usual causes are blurry scans, a name that does not match Aadhaar, a missing self-declaration form, selecting rural instead of urban (or the reverse), and the Lekhpal being unable to verify anyone at the given address. Fix the specific issue and reapply — there is no fine or penalty.</p>
+    <h3>7. Forgot Login ID</h3>
+    <p>Use "Forgot Login ID" on the eSathi login page — the ID is sent by SMS to your registered mobile. Do not create a second account on the same mobile number; the portal will block it as already registered.</p>
+    <h3>8. Session expires mid-form</h3>
+    <p>The portal times out after about 15–20 minutes. Keep all details and scanned documents ready before you log in, and complete the form in one sitting instead of leaving it open.</p>
+  </div>
+
+  <div class="box" id="legal-rights">
+    <h2>Certificate delayed? Your legal rights under the Janhit Guarantee Act</h2>
+    <p>Most applicants do not know this: timely delivery of these certificates is not a favour, it is a legal guarantee. The <strong>UP Janhit Guarantee Act, 2011</strong> covers most eDistrict revenue certificates and fixes a prescribed time limit for them — typically <strong>7–15 working days</strong>. If that limit passes without your certificate being issued, the Act gives you a formal appeal route, and officers who delay without a valid reason can be fined.</p>
+    <h3>The escalation ladder — use it in this order</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Complain on the portal</h3>
+          <p>Note your application date and the prescribed time limit. Once the limit has passed, file a complaint (शिकायत) through the portal after logging in at edistrict.up.gov.in, quoting your SRN.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Call the helpline</h3>
+          <p>Call <strong>0522-2304706</strong> with your SRN ready and note the complaint reference you are given.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>CM Helpline 1076 / IGRS</h3>
+          <p>If a week passes without resolution, raise the matter on the CM Helpline (1076) or through IGRS, the state's grievance system, again citing your SRN and application date.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>First appeal — to the ADM</h3>
+          <p>Under the Janhit Guarantee Act, you may file a written first appeal to the Additional District Magistrate (ADM) <strong>within 30 days</strong> of the prescribed time limit expiring. The appellate authority is required to hear and decide the appeal within the Act's own time frame.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Second appeal — to the DM</h3>
+          <p>If the first appeal does not resolve it, a second appeal lies to the District Magistrate (DM) <strong>within 60 days</strong>, who exercises powers similar to a civil court in these matters.</p>
+        </div>
+      </div>
+    </div>
+    <p>This route matters most when a hard deadline is attached to your certificate — UP Scholarship last dates, document verification for UPPSC/SSC recruitments, and NEET state-quota counselling are the situations where a delayed certificate can cost a full year. Apply early in those cases, and start escalating the moment the prescribed limit is crossed rather than waiting and hoping.</p>
+  </div>
+
+  <div class="box" id="tips">
+    <h2>Practical tips before you apply</h2>
+    <p><strong>Mind the season.</strong> July to September is scholarship season, when lakhs of students apply for income and caste certificates at once — the portal slows down and verification queues grow. If your need falls in that window, apply as early as you possibly can, use the early-morning hours for the portal, and never leave a certificate to the final week before a deadline.</p>
+    <h3>Master documents checklist</h3>
+    <p>Keep these scanned and ready before you log in — for almost every certificate on this page, the list is the same core set:</p>
+    <ul class="checklist">
+      <li>Aadhaar card of the applicant</li>
+      <li>Mobile number linked to Aadhaar (for OTP — non-negotiable)</li>
+      <li>Passport-size photograph</li>
+      <li>Ration card, where available</li>
+      <li>Signed self-declaration form, scanned as a JPEG</li>
+      <li>Address proof — voter ID or a recent utility bill</li>
+      <li>Income proof for the income certificate — salary slip, bank statement or similar</li>
+      <li>Supporting caste proof for the caste certificate — for example, a parent's caste certificate where available</li>
+    </ul>
+    <h3>File rules that save rejections</h3>
+    <ul>
+      <li>Every upload must be <strong>below 100 KB</strong>, in JPEG or PDF format.</li>
+      <li>Scan in black and white at 200 DPI — clear enough to read, small enough to upload.</li>
+      <li>The self-declaration is the exception: <strong>JPEG only</strong>, never PDF, and it must be signed.</li>
+      <li>Your name must match Aadhaar <strong>character for character</strong> across every form and document.</li>
+      <li>Save your SRN the moment you get it — screenshot it, note it, and keep the SMS. Every status check, complaint and appeal runs on that number.</li>
+    </ul>
+    <p>Follow these basics and the process is genuinely straightforward: one registration, one application, a wait of about one to two weeks, and a signed certificate you can download, verify and print for the rest of its validity. Start with the certificate you need from the <a href="#certificates">certificates section</a> above, and use the dedicated guide for that certificate — each one walks through its documents and steps in full detail.</p>
+  </div>
+
+</div>
+
+</Base>
