@@ -8,10 +8,10 @@ const currentPath = Astro.url.pathname;
 const isCurrent = (href: string) => currentPath === href;
 const labels = isHindi ? {
   home: 'होम', login: 'लॉगिन गाइड', status: 'स्टेटस/सत्यापन', services: 'सेवाएं', about: 'हमारे बारे में',
-  contact: 'संपर्क', legal: 'कानूनी', guide: 'गाइड 2026', menu: 'मेन्यू खोलें',
+  contact: 'संपर्क', legal: 'कानूनी', brandGuide: 'गाइड 2026', menu: 'मेन्यू खोलें',
 } : {
   home: 'Home', login: 'Login Guide', status: 'Status Check', services: 'Services', about: 'About',
-  contact: 'Contact', legal: 'Legal', guide: 'Guide 2026', menu: 'Open menu',
+  contact: 'Contact', legal: 'Legal', brandGuide: 'Guide 2026', menu: 'Open menu',
 };
 const services = [
   [isHindi ? 'आय प्रमाण पत्र' : 'Income Certificate', p('income-certificate'), 'income'],
@@ -32,8 +32,8 @@ const legal = [
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href={home} aria-label="eDistrict UP home">
-      <span class="flag-mark" aria-hidden="true"><span class="flag-wheel">✺</span></span>
-      <span class="brand-copy"><strong>eDistrict UP</strong><small>{labels.guide}</small></span>
+      <span class="flag-mark" aria-hidden="true"><span class="flag-wheel"></span></span>
+      <span class="brand-copy"><strong>eDistrict UP Seva</strong><small>{labels.brandGuide}</small></span>
     </a>
     <button class="menu-toggle" type="button" aria-label={labels.menu} aria-expanded="false" aria-controls="primary-navigation">
       <span></span><span></span><span></span>
