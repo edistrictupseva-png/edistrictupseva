@@ -11,10 +11,27 @@ const faqs = [
   { q: "My caste certificate application was rejected. What now?", a: "Open eSathi and read the rejection remark. Common causes are weak caste proof, a missing or unsigned self-declaration, or a name mismatch with Aadhaar. Correct the specific issue and apply again — there is no penalty for reapplying." },
   { q: "Can I apply for a caste certificate from another district?", a: "Apply in the district and tehsil where you permanently reside and where your family's caste records and local verification are possible. The Lekhpal of your own area verifies caste, so applying from an unrelated tehsil usually leads to the file being returned." },
 ];
+
+const howto = {
+  name: "Caste Certificate in UP — Apply Online on eSathi",
+  steps: [
+    { name: "Register or log in on eSathi", text: "Open esathi.up.gov.in. New users click \"New User Registration\" (नवीन उपयोगकर्ता पंजीकरण), fill name (exactly as on Aadhaar), date of birth, address, district and an Aadhaar-linked mobile number, create a 6–8 character login ID, verify the Aadhaar OTP and set a password." },
+    { name: "Open the certificate services list", text: "From the dashboard, go to certificate services (प्रमाण पत्र सेवाएं), which lists all revenue department certificates available online." },
+    { name: "Select \"Caste Certificate\" and your category", text: "Choose the caste certificate (जाति प्रमाण पत्र) service and select your category — SC, ST or OBC. For OBC, the form proceeds on the Non-Creamy Layer basis, so keep the family's income details ready." },
+    { name: "Fill the applicant's details", text: "Enter name, father's name, date of birth, gender and complete address — district, tehsil, block, village or ward. Write your caste name exactly as it appears in the UP state list; free-text variations cause verification queries." },
+    { name: "Enter the caste proof details", text: "If your father or a relative already holds a caste certificate, enter its certificate number and issuing details in the form. This links your application to an existing verified record and noticeably speeds up verification." },
+    { name: "Select rural or urban", text: "Choose ग्रामीण (rural) or नगरीय (urban) according to your actual residence. This routes the file to the correct verifying officer — the Lekhpal for villages, the Revenue Inspector for urban areas." },
+    { name: "Upload the documents", text: "Upload the photograph, Aadhaar, ration card, caste proof and the signed self-declaration (JPEG only). Every file under 100KB and clearly readable — the Lekhpal and Tehsildar decide from these scans before the field visit." },
+    { name: "Review, submit and pay", text: "Check the preview against your Aadhaar and caste proof, submit, and pay the ₹10–15 fee through PAYGOV (UPI, net banking or debit card). If a payment debits but shows pending, wait 24–48 hours for reconciliation instead of paying twice." },
+    { name: "Note your SRN", text: "The portal generates a Service Request Number (SRN), also sent by SMS. Keep it safe — it is your tracking reference and the first thing the helpline will ask for." },
+  ],
+};
 ---
-<Base lang="en" title="Caste Certificate UP (Jati Praman Patra): SC/ST & OBC Apply Online, Documents, Validity" description="How to apply for a caste certificate (jati praman patra) online in Uttar Pradesh: SC/ST and OBC Non-Creamy Layer documents, fees ₹10–15, validity, processing time, status check and download on eSathi." path="/en/caste-certificate/" altPath="/caste-certificate/" faqs={faqs} updated="22 October 2026">
+<Base lang="en" title="Caste Certificate UP (Jati Praman Patra): SC/ST & OBC" description="Apply for a UP caste certificate (SC/ST/OBC) online — documents, ₹10–15 fee, validity rules and NCL explained. Step-by-step eSathi guide." path="/en/caste-certificate/" altPath="/caste-certificate/" faqs={faqs} updated="27 October 2026" datePublished="2026-10-22" dateModified="2026-10-27" howto={howto}>
 <div class="content-col">
   <h1 class="page-title">Caste Certificate in UP — Apply Online on eSathi</h1>
+
+  <p class="note">Note: This is an independent information guide — it is not the official portal (edistrict.up.gov.in).</p>
 
   <section class="box">
     <h2>What is a caste certificate?</h2>
@@ -53,6 +70,35 @@ const faqs = [
     <h3>OBC Non-Creamy Layer certificates</h3>
     <p>For OBC applicants, reservation benefits are limited to the <strong>Non-Creamy Layer (NCL)</strong> — families below a prescribed income and status ceiling (broadly ₹8 lakh annual income for central purposes). Because a family's income can rise over time, NCL status is treated as temporary: the certificate is generally valid for <strong>1–3 years</strong>, and universities, recruiting boards and scholarship departments frequently insist on a certificate from the current financial year. Along with caste proof, an OBC applicant's family income is also examined, which is why the income documents listed below become important for OBC applications.</p>
     <div class="warn"><strong>Practical advice:</strong> if you need an OBC NCL certificate for a specific admission or recruitment, apply for a fresh one in that financial year instead of relying on an older certificate — old NCL certificates are a very common reason applications stall at document verification.</div>
+  </section>
+
+  <section class="box">
+    <h2>The spelling trap — write your caste exactly as listed</h2>
+    <p>One of the most common reasons caste applications are returned is a caste name written differently from the official list. Caste names have variant spellings, and the portal matches what you type against the notified list — a near match is not a match.</p>
+    <ul>
+      <li><strong>One community, several spellings:</strong> Chamar, Dhusia, Jhusia and Jatava are variant names for the same listed entry. Use the spelling that appears in the UP state list for your application, and make sure it matches your father's certificate and school records.</li>
+      <li><strong>Similar names, separate communities:</strong> Kurmi and Kushwaha are different communities, not spelling variants of one another. Writing one where the other is listed will send the file back.</li>
+      <li><strong>Watch the endings too:</strong> Lodh and Lodhi are another pair applicants mix up — check which form your family's records use.</li>
+    </ul>
+    <p>Before you type the caste name, copy it from the strongest proof you hold — your father's caste certificate or the school leaving certificate — and use that exact spelling everywhere in the application.</p>
+  </section>
+
+  <section class="box">
+    <h2>How many castes, and which certificate for which exam or job</h2>
+    <p>Uttar Pradesh's notified lists cover <strong>66 Scheduled Castes</strong>, <strong>15 Scheduled Tribes</strong> and around <strong>79 OBC communities</strong>. The reservation percentages differ between central and state recruitment, and the certificate you need depends on which list the recruiting body follows:</p>
+    <div class="table-scroll">
+    <table class="data">
+      <tr><th></th><th>SC</th><th>ST</th><th>OBC</th></tr>
+      <tr><td>Central government — UPSC, NEET, JEE</td><td>15%</td><td>7.5%</td><td>27% (NCL)</td></tr>
+      <tr><td>Uttar Pradesh state — UPPSC, UP Police, state admissions</td><td>21%</td><td>2%</td><td>27% (NCL)</td></tr>
+    </table>
+    </div>
+    <ul>
+      <li><strong>NEET / JEE / UPSC (central):</strong> use the central-format certificate issued against the central list — a state-format certificate alone may not be accepted at central document verification.</li>
+      <li><strong>UPPSC / UP Police / UP state admissions:</strong> the UP state-format certificate issued on eSathi is the one required.</li>
+      <li><strong>OBC in both cases:</strong> the certificate must show Non-Creamy Layer status — an OBC certificate without NCL does not carry reservation benefit.</li>
+    </ul>
+    <p>If you are applying to both a central and a state process, check each notice separately: the same caste can sit on both lists, but the format and the issuing authority the notice asks for can differ.</p>
   </section>
 
   <section class="box">
@@ -112,6 +158,19 @@ const faqs = [
       </div></div>
     </div>
     <div class="note">What happens next: the Lekhpal verifies your caste in the field — he speaks to neighbours, checks the Pradhan's records and any old documents — and reports to the Tehsildar, who issues the certificate with a digital signature. For first-time family applications this enquiry is more detailed, so allow the full 15 working days.</div>
+  </section>
+
+  <section class="box">
+    <h2>What the Lekhpal checks when verifying your caste</h2>
+    <p>Caste verification is a local enquiry, not a document check alone. The Lekhpal confirms that the family genuinely belongs to the claimed community:</p>
+    <ul>
+      <li><strong>Family history</strong> — how long the family has been known in the village or locality under this caste, and whether the claim matches the family's known background.</li>
+      <li><strong>Community recognition</strong> — whether neighbours and members of the community itself recognise the family as belonging to it.</li>
+      <li><strong>Ancestral Parivar Register entries</strong> — old family-register entries that record the family's caste over generations.</li>
+      <li><strong>Old land records</strong> — revenue and land records that mention the family's caste, which carry weight because they predate the application.</li>
+      <li><strong>The Pradhan's statement</strong> — the Gram Pradhan's confirmation of the family's caste in rural areas.</li>
+    </ul>
+    <p>First-time family applications get the most detailed enquiry, which is why they take the full 15 working days. Keep the family's oldest proofs ready — a father's certificate, the Parivar Register entry or old land records — because they answer the Lekhpal's questions before he has to ask them.</p>
   </section>
 
   <section class="box">

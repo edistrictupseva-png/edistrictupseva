@@ -10,11 +10,29 @@ const faqs = [
   { q: 'The death happened at home, not in a hospital. Can we still get a certificate?', a: 'Yes. For a death at home, the cremation or burial receipt and a declaration by the family, verified through the local Panchayat or municipal body, are used in place of a hospital report. Register the death with the registrar of the area where the death took place.' },
   { q: 'Is a death certificate needed to close the deceased person\'s bank account?', a: 'In most cases, yes. Banks generally ask for the death certificate along with the nominee or legal heir documents before closing the account or transferring the balance. Insurance companies, pension offices and property mutation work also almost always require it, so obtain a few extra printed copies.' },
 ];
+
+const howto = {
+  name: "Death Certificate in Uttar Pradesh — Online Application, Download and Correction",
+  steps: [
+    { name: "Open the eDistrict UP portal", text: "Go to edistrict.up.gov.in and click on the Citizen Login (eSathi) option to reach esathi.up.gov.in." },
+    { name: "Register if you are a new user", text: "Choose New User Registration, create a login ID of 6–8 characters, fill in your details and verify the OTP sent to your Aadhaar-linked mobile number. Registration is free." },
+    { name: "Log in and set your password", text: "On first login you use the OTP as a temporary password; the system then asks you to set a permanent one." },
+    { name: "Select the death certificate service", text: "From the dashboard, open the certificate services and choose the death certificate / death registration application." },
+    { name: "Fill in the details of the deceased", text: "Enter the full name, date and place of death, address, and the applicant's relationship with the deceased, exactly as they appear in the hospital or cremation records." },
+    { name: "Upload the documents", text: "Attach the hospital death report or cremation/burial receipt, the deceased's Aadhaar (if available) and your own ID. Every file must be clear and under 100KB." },
+    { name: "Pay the fee online", text: "The portal accepts payment through PAYGOV — UPI, net banking and debit cards work. Keep the transaction ID until the payment status shows as confirmed." },
+    { name: "Submit and save the SRN", text: "After submission you receive a Service Request Number (SRN) by SMS. This number is your tracking ID — note it down carefully." },
+    { name: "Track the status", text: "Use the Application Status option on the portal with your SRN, or check the dashboard after logging in. Verification is done by the local registrar office." },
+    { name: "Download the certificate", text: "When the status shows the certificate has been generated, open the completed application and save the digitally signed PDF through the Print option, as described below." },
+  ],
+};
 ---
 
-<Base lang="en" title="Death Certificate UP: Apply Online, Fees, Download & Correction" description="How to apply for a death certificate in Uttar Pradesh through eSathi or CSC — documents required, fees, registration timing, late registration, download process and how to correct mistakes." path="/en/death-certificate/" altPath="/death-certificate/" faqs={faqs} updated="22 October 2026">
+<Base lang="en" title="Death Certificate UP: Apply Online, Fees & Download" description="How to apply for a death certificate in Uttar Pradesh through eSathi or CSC — documents, fees, registration timing, late registration, download and corrections." path="/en/death-certificate/" altPath="/death-certificate/" faqs={faqs} updated="27 October 2026" datePublished="2026-10-22" dateModified="2026-10-27" howto={howto}>
   <div class="content-col">
     <h1 class="page-title">Death Certificate in Uttar Pradesh — Online Application, Download and Correction</h1>
+
+    <p class="note">Note: This is an independent information guide — it is not the official portal (edistrict.up.gov.in).</p>
 
     <section class="box">
       <p>A death certificate is the official record that a person has passed away, issued by the local registrar of births and deaths after the death is registered. In Uttar Pradesh you can apply for it online through the eDistrict portal's citizen service, eSathi, or get it done at a Common Service Centre (CSC / Jan Seva Kendra) near you.</p>
@@ -30,7 +48,7 @@ const faqs = [
     </section>
 
     <section class="box">
-      <h2>Death Certificate UP — Quick Information</h2>
+      <h2>At a glance</h2>
       <div class="table-scroll">
         <table class="info">
           <tr><th>Where to apply online</th><td>eSathi citizen portal (esathi.up.gov.in), through the eDistrict UP website</td></tr>

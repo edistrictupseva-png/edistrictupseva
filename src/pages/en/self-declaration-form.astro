@@ -10,11 +10,28 @@ const faqs = [
   { q: 'Can I write the declaration by hand instead of printing the form?', a: 'The safest practice is to print the standard form, fill it by hand in clear writing and sign it. If a printed form is genuinely not available, a neatly handwritten declaration containing the same details and your signature is generally what the verifying officer looks for — but use the printed format whenever possible to avoid a return.' },
   { q: 'Do I need a separate self-declaration for every certificate?', a: 'Yes. Each application — income, caste, domicile — is verified separately, so each one needs its own signed declaration mentioning that certificate and your details. Do not upload the same scanned copy in three applications; sign a fresh one for every application.' },
 ];
+
+const howto = {
+  name: "Self-Declaration Form (Swa Pramanit Ghoshna Patra) — Download, Filling and Upload Guide",
+  steps: [
+    { name: "Download the form", text: "Get the self-declaration format free from the official portal edistrict.up.gov.in, or use the format provided inside your eSathi application. Never pay anyone for this form." },
+    { name: "Print it on plain paper", text: "A normal A4 printout is enough — no stamp paper is required for a self-declaration." },
+    { name: "Fill every field by hand", text: "Name, father's/husband's name, full address and the subject of the declaration, following the field guide above." },
+    { name: "Sign it", text: "Put your signature (or thumb impression) in the marked space, with place and date. Do not skip this — it is the whole point of the document." },
+    { name: "Scan or photograph the signed form", text: "Keep the page flat and fully visible, with sharp, readable text. A blurred photo is treated like a missing document." },
+    { name: "Convert to JPEG and compress under 100KB", text: "This document must be a JPEG — a PDF upload is rejected by the portal for the self-declaration. Free compressor tools can reduce the size without spoiling readability; a black-and-white scan at about 200 DPI usually lands well under the limit." },
+    { name: "Upload it in the application", text: "In your eSathi application, attach the JPEG in the self-declaration / ghoshna patra slot, and check the preview once to confirm the signature is visible." },
+    { name: "Keep the paper original", text: "The Lekhpal or verifying officer may ask to see the physical signed form during field verification — file it with your other documents." },
+  ],
+};
 ---
 
-<Base lang="en" title="Self-Declaration Form UP (Swa Pramanit Ghoshna Patra): Download, Fill & Upload" description="What the self-declaration form is, why it replaced the affidavit, where to download it free from edistrict.up.gov.in, field-by-field filling guide, JPEG-only upload rule and the mistakes that cause rejection." path="/en/self-declaration-form/" altPath="/self-declaration-form/" faqs={faqs} updated="22 October 2026">
+<Base lang="en" title="Self-Declaration Form UP (Swa Pramanit): Download" description="Self-declaration form UP (Swa Pramanit Ghoshna Patra) — download, fill and upload. Format, rules and JPEG upload guide for income, caste and domicile." path="/en/self-declaration-form/" altPath="/self-declaration-form/" faqs={faqs} updated="27 October 2026" datePublished="2026-10-22" dateModified="2026-10-27" howto={howto}>
   <div class="content-col">
     <h1 class="page-title">Self-Declaration Form (Swa Pramanit Ghoshna Patra) — Download, Filling and Upload Guide</h1>
+
+    <p class="note">Note: This is an independent information guide — it is not the official portal (edistrict.up.gov.in).</p>
+    <div class="note"><strong>Download a sample form:</strong> practise filling it with our <a href="/downloads/self-declaration-form-up.pdf">sample self-declaration form PDF (Hindi + English)</a>. This is an <strong>unofficial sample</strong> — for your application, use only the form available on the official portal edistrict.up.gov.in.</div>
 
     <section class="box">
       <p>If you apply for an <a href="/en/income-certificate/">income certificate</a>, a <a href="/en/caste-certificate/">caste certificate</a> or a <a href="/en/domicile-certificate/">domicile certificate</a> in Uttar Pradesh, one document is asked for in every single application: the <strong>self-declaration form</strong>, called the <em>Swa Pramanit Ghoshna Patra</em> (स्व-प्रमाणित घोषणा पत्र) in Hindi.</p>

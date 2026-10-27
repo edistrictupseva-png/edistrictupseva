@@ -11,10 +11,27 @@ const faqs = [
   { q: "My domicile application was rejected. What should I do?", a: "Check the remark in eSathi. Rejections usually come from weak residence proof, a wrong rural/urban selection, or the field verification not finding you at the address. Add stronger address evidence, correct the selection if needed, and reapply — there is no penalty." },
   { q: "Can a person hold domicile certificates of two states?", a: "No. Domicile is meant to be of one state only — the state of your permanent residence. Claiming state quota benefits in two states on the basis of two domicile certificates can cancel both benefits and the certificates themselves. Apply only where you genuinely and permanently reside." },
 ];
+
+const howto = {
+  name: "Domicile Certificate in UP — Apply Online on eSathi",
+  steps: [
+    { name: "Register or log in on eSathi", text: "Go to esathi.up.gov.in. First-time users register through \"New User Registration\" (नवीन उपयोगकर्ता पंजीकरण): name as on Aadhaar, date of birth, address with district and PIN, Aadhaar-linked mobile, a 6–8 character login ID, Aadhaar OTP verification, and a permanent password set on first login." },
+    { name: "Open certificate services", text: "From your dashboard, open the certificate services (प्रमाण पत्र सेवाएं) list of the revenue department." },
+    { name: "Select \"Domicile Certificate\"", text: "Choose the domicile/residence certificate (निवास प्रमाण पत्र) service and read the on-screen information about documents and fee for this certificate." },
+    { name: "Fill the personal and address details", text: "Enter the applicant's name, father's or husband's name, date of birth, gender, and the complete permanent address — state district, tehsil, block, village or ward, house number and PIN. The address written here is the address that will be physically verified, so write the one where you actually live." },
+    { name: "State the basis of residence", text: "The form asks how long you have lived at this address and on what basis — birth, family home, long residence or property. Answer consistently with your documents: if your electricity bill is two years old and your ration card is ten years old, the period you claim should match what the papers show." },
+    { name: "Select rural or urban", text: "Pick ग्रामीण or नगरीय as per your address so the file reaches the Lekhpal or Revenue Inspector who covers your area (see the section above on why this matters)." },
+    { name: "Upload the documents", text: "Upload the photograph, Aadhaar, ration card, address proofs and the signed self-declaration (JPEG). Keep each file under 100KB and readable; the verifying officer reads these scans before visiting." },
+    { name: "Submit and pay the fee", text: "Review the preview once — especially the address spelling and PIN — then submit and pay ₹10–15 through PAYGOV using UPI, net banking or a debit card. A debited-but-pending payment usually reconciles within 24–48 hours; do not pay a second time." },
+    { name: "Save the SRN and stay reachable", text: "Note the Service Request Number (SRN) sent by SMS and on screen. During the verification days, keep a family member available at the address — the field enquiry carries real weight, and a house found locked with nobody aware of the application can produce a negative report." },
+  ],
+};
 ---
-<Base lang="en" title="Domicile Certificate UP (Niwas Praman Patra): Apply Online, Documents, Validity" description="How to apply for a domicile certificate (niwas praman patra) online in Uttar Pradesh: residence conditions, documents, fees ₹10–15, lifetime validity, status check and download through eSathi." path="/en/domicile-certificate/" altPath="/domicile-certificate/" faqs={faqs} updated="22 October 2026">
+<Base lang="en" title="Domicile Certificate UP (Niwas Praman Patra): Apply & Fees" description="How to apply for a domicile certificate (niwas praman patra) in Uttar Pradesh: documents, fees ₹10–15, lifetime validity, status check and download." path="/en/domicile-certificate/" altPath="/domicile-certificate/" faqs={faqs} updated="27 October 2026" datePublished="2026-10-22" dateModified="2026-10-27" howto={howto}>
 <div class="content-col">
   <h1 class="page-title">Domicile Certificate in UP — Apply Online on eSathi</h1>
+
+  <p class="note">Note: This is an independent information guide — it is not the official portal (edistrict.up.gov.in).</p>
 
   <section class="box">
     <h2>What is a domicile certificate?</h2>
