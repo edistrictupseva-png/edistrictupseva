@@ -7,8 +7,28 @@ const slugs = [
   'privacy-policy', 'disclaimer',
 ];
 export function GET() {
-  const lastmod = '2026-10-24';
+  // Per-slug lastmod: 2026-10-27 = pages content-edited in this fix round;
+  // 2026-10-22 = trust pages not edited in this round.
+  const lastmodBySlug = {
+    '': '2026-10-27',
+    'income-certificate': '2026-10-27',
+    'caste-certificate': '2026-10-27',
+    'domicile-certificate': '2026-10-27',
+    'birth-certificate': '2026-10-27',
+    'death-certificate': '2026-10-27',
+    'parivar-register-nakal': '2026-10-27',
+    'self-declaration-form': '2026-10-27',
+    'csc-guide': '2026-10-27',
+    'login-registration': '2026-10-27',
+    'status-verification': '2026-10-27',
+    'ews-certificate': '2026-10-27',
+    'about-us': '2026-10-22',
+    'contact-us': '2026-10-22',
+    'privacy-policy': '2026-10-22',
+    'disclaimer': '2026-10-22',
+  };
   const entries = slugs.flatMap((s) => {
+    const lastmod = lastmodBySlug[s];
     const hi = `${SITE}/${s ? s + '/' : ''}`;
     const en = `${SITE}/en/${s ? s + '/' : ''}`;
     const alternates = `
