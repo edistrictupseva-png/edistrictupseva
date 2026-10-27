@@ -11,10 +11,27 @@ const faqs = [
   { q: "Can I download the income certificate online?", a: "Yes. Once the status shows Certificate Generated, log in to eSathi, open Completed Applications, click your application and use Print → Save as PDF. The digitally signed PDF is the final certificate; it is also available in DigiLocker after a few days." },
   { q: "Is the self-declaration compulsory for an income certificate?", a: "Yes. The self-declaration (swa-pramanit ghoshna patra) is a mandatory document for income, caste and domicile certificates in UP. Fill it, sign it, scan it and upload it as a JPEG image under 100KB — the portal does not accept this particular document as a PDF." },
 ];
+
+const howto = {
+  name: "Income Certificate in UP — Apply Online on eSathi",
+  steps: [
+    { name: "Create your eSathi account (first-time users)", text: "Open esathi.up.gov.in and click \"New User Registration\" (नवीन उपयोगकर्ता पंजीकरण). Fill in your name exactly as on Aadhaar, date of birth, address with district and PIN, and a mobile number linked to Aadhaar." },
+    { name: "Log in and open certificate services", text: "Log in with your login ID, password and captcha. On the dashboard, open the certificate services section (प्रमाण पत्र सेवाएं) where all revenue department certificates are listed." },
+    { name: "Select \"Income Certificate\"", text: "Choose the income certificate (आय प्रमाण पत्र) service from the list. Read the service information shown on screen — it repeats the document list and fee for this specific certificate." },
+    { name: "Fill the application form", text: "Enter the applicant's details: name, father's or husband's name, date of birth, gender, full address with district, tehsil, block and village or ward. Then fill the income section carefully — income from each source (salary, agriculture, business, pension, other) and the total annual family income." },
+    { name: "Choose rural or urban correctly", text: "Select whether the address is rural (ग्रामीण) or urban (नगरीय) based on where you actually live. This decides whether the Lekhpal or the Revenue Inspector handles your verification, and choosing the wrong one is a frequent cause of files going back and forth." },
+    { name: "Upload the documents", text: "Upload each document in its own field: photograph, Aadhaar, ration card, income proof and the signed self-declaration as JPEG. Check every file is under 100KB and that the text is readable when you zoom in." },
+    { name: "Review and submit", text: "Go through the preview once — names should match Aadhaar spellings, the income total should match your declaration, and the mobile number should be one you actually use, because updates come by SMS. Then submit the application." },
+    { name: "Pay the fee through PAYGOV", text: "Pay the ₹10–15 fee online through the PAYGOV gateway using UPI, net banking or a debit card. If money is debited but the payment shows \"pending\", do not pay again — such cases normally reconcile on their own within 24–48 hours." },
+    { name: "Save your SRN", text: "After payment, the portal issues a Service Request Number (SRN), also sent by SMS. Note it down or take a screenshot — you need the SRN to track the application without logging in, and the helpline will ask for it if anything goes wrong." },
+  ],
+};
 ---
-<Base lang="en" title="Income Certificate UP (Aay Praman Patra): Apply Online, Fees, Documents & Status" description="How to apply for an income certificate (aay praman patra) online in Uttar Pradesh through eSathi: documents required, fees ₹10–15, family income calculation, processing time, status check and download." path="/en/income-certificate/" altPath="/income-certificate/" faqs={faqs} updated="22 October 2026">
+<Base lang="en" title="Income Certificate UP (Aay Praman Patra): Apply, Fees" description="Apply for a UP income certificate online on eSathi — documents, ₹10–15 fee, 3-year validity and status check. Step-by-step 2026 guide." path="/en/income-certificate/" altPath="/income-certificate/" faqs={faqs} updated="27 October 2026" datePublished="2026-10-22" dateModified="2026-10-27" howto={howto}>
 <div class="content-col">
   <h1 class="page-title">Income Certificate in UP — Apply Online on eSathi</h1>
+
+  <p class="note">Note: This is an independent information guide — it is not the official portal (edistrict.up.gov.in).</p>
 
   <section class="box">
     <h2>What is an income certificate?</h2>
@@ -63,6 +80,19 @@ const faqs = [
   <section class="box">
     <h2>How family income is calculated</h2>
     <p>Many applicants are confused about whose income goes into the certificate. The rule is simple: the certificate covers the <strong>total annual income of the whole family from every source</strong>. That includes the earnings of the applicant, spouse and other earning members living in the same household — salary, pension, farming income, business or shop income, rent from property, and any other regular earning.</p>
+    <div class="table-scroll">
+    <table class="data">
+      <tr><th>Income source</th><th>Counted in the certificate?</th></tr>
+      <tr><td>Salary and wages, including daily wages</td><td>Yes</td></tr>
+      <tr><td>Agricultural income</td><td>Yes</td></tr>
+      <tr><td>Business or shop income</td><td>Yes</td></tr>
+      <tr><td>Monthly pension</td><td>Yes</td></tr>
+      <tr><td>Rent from property</td><td>Yes</td></tr>
+      <tr><td>House Rent Allowance (HRA) and Travelling Allowance (TA)</td><td>Commonly excluded</td></tr>
+      <tr><td>Commutation of pension (the lump sum taken in place of part of a pension)</td><td>Commonly excluded</td></tr>
+    </table>
+    </div>
+    <p>Two rules sit behind this table. First, the income of <strong>every earning family member living in the same household</strong> is added together — not only the applicant's. Second, declare only income you can <strong>prove with a document</strong>: the Lekhpal checks the declared figures against the proofs you upload, and a figure with no supporting paper behind it is a common reason for queries.</p>
     <p>A few practical points:</p>
     <ul>
       <li><strong>Students:</strong> a student usually has no income of their own, so the application is made by a parent or guardian and the parents' income is certified. This is the certificate scholarship forms ask for.</li>
@@ -70,6 +100,23 @@ const faqs = [
       <li><strong>Honesty matters:</strong> during field verification the Lekhpal asks neighbours and checks local records. Declaring far less than the visible reality — a large house, vehicles, a running shop — invites queries and rejection.</li>
     </ul>
     <p>Add up one full year of income from every source before filling the form, and enter figures you can support with the documents you are uploading.</p>
+  </section>
+
+  <section class="box">
+    <h2>Income limits by purpose — one certificate, different ceilings</h2>
+    <p>The certificate records your family's income, but whether that figure qualifies you depends on the purpose you are applying for. Each scheme sets its own ceiling:</p>
+    <div class="table-scroll">
+    <table class="data">
+      <tr><th>Purpose</th><th>Income limit</th></tr>
+      <tr><td>UP scholarship — SC/ST students</td><td>₹2.5 lakh per year</td></tr>
+      <tr><td>UP scholarship — General, OBC and minority students</td><td>₹2 lakh per year</td></tr>
+      <tr><td>OBC Non-Creamy Layer status</td><td>₹8 lakh per year</td></tr>
+      <tr><td>EWS reservation</td><td>₹8 lakh per year</td></tr>
+      <tr><td>PMAY housing and SSPY pension schemes</td><td>Limits vary by scheme — check the scheme notice</td></tr>
+    </table>
+    </div>
+    <p>Always check the limit in the current notice of the scheme, admission or recruitment you are applying to — limits are set by the scheme, not by this certificate, and a certificate that is fine for one purpose can be over the limit for another.</p>
+    <p class="note"><strong>Scholarship-season timing:</strong> scholarship applications open in April–June. Apply for your income certificate in that window, not in August — by August the portal is crowded, verification queues are long, and a delayed certificate can cost you the scholarship deadline. Get the certificate made early, well before the scholarship form opens.</p>
   </section>
 
   <section class="box">
@@ -114,6 +161,20 @@ const faqs = [
       </div></div>
     </div>
     <div class="note">After submission, your file goes to the Lekhpal of your area for field verification. He confirms your residence and income locally, sends his report to the Tehsildar, and the Tehsildar signs the certificate digitally. This chain is why the process takes days rather than hours.</div>
+  </section>
+
+  <section class="box">
+    <h2>What the Lekhpal actually checks during field verification</h2>
+    <p>Field verification is the stage where most income applications are decided, and it is not a formality. The Lekhpal visits or enquires in your locality and builds a picture of the family's real income from several angles:</p>
+    <ul>
+      <li><strong>Living standard</strong> — the size and condition of the house, vehicles and visible assets, compared with the income declared.</li>
+      <li><strong>Land records</strong> — the family's land holding as recorded in the khatauni and revenue records, and the income that land can produce.</li>
+      <li><strong>Occupation</strong> — what the earning members actually do — farming, a shop, a job, daily-wage work — and whether the declared income fits that occupation.</li>
+      <li><strong>Bank passbook</strong> — entries in the passbook or bank statement that show regular income coming in.</li>
+      <li><strong>Local knowledge</strong> — what neighbours and people in the locality say about the family's work and standing.</li>
+      <li><strong>The Pradhan's view</strong> — the Gram Pradhan's confirmation of the family's circumstances in rural areas.</li>
+    </ul>
+    <p>Because the report is built from the ground up, a declared figure that contradicts the visible reality — a large house and vehicles against a very low declared income — invites queries. Declare the income you can prove, keep someone at home during the verification days, and make sure the neighbours and the Pradhan know an enquiry may come.</p>
   </section>
 
   <section class="box">

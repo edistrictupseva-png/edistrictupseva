@@ -11,13 +11,30 @@ const faqs = [
   { q: "What documents are needed for a hospital birth?", a: "The hospital's birth report or discharge summary, Aadhaar cards of both parents, and the self-declaration where asked. For births in a hospital or nursing home, the institution itself reports the birth to the registrar — the parents mainly follow up, verify the details and obtain the certificate." },
   { q: "How many days does a birth certificate take through eSathi?", a: "After registration data reaches the registrar and is approved, the certificate is normally ready within 7–15 working days through the online route. Timely hospital registrations are on the faster side; late registrations with magistrate orders take longer by the nature of the extra step." },
 ];
+
+const howto = {
+  name: "Birth Certificate in UP — Apply Online on eSathi",
+  steps: [
+    { name: "Confirm the registration has been initiated", text: "For a hospital birth, confirm the institution has sent the birth report to the registrar. For a home birth, report the birth to the local registrar within 21 days." },
+    { name: "Register or log in on eSathi", text: "Open esathi.up.gov.in. New users register via \"New User Registration\" (नवीन उपयोगकर्ता पंजीकरण) with name as on Aadhaar, date of birth, address, district, Aadhaar-linked mobile and a 6–8 character login ID, verify the Aadhaar OTP, and set a password after the first login." },
+    { name: "Select the birth certificate service", text: "From the dashboard's certificate services, choose the birth certificate (जन्म प्रमाण पत्र) service. If your case is a delayed registration, first complete the permission or SDM order step described above — the online application proceeds on the basis of that order." },
+    { name: "Enter the child's details", text: "Fill in the date of birth, time and place of birth, gender, and the child's name if it has been decided — registration is allowed without a name, which can be added later. Enter the spellings exactly as you want them to appear permanently; this record follows the child for life." },
+    { name: "Enter both parents' details", text: "Fill the mother's and father's names exactly as on their Aadhaar cards, along with their Aadhaar numbers and the family's permanent and current address. Mismatches with Aadhaar are the most common cause of queries in birth applications." },
+    { name: "Upload the documents", text: "Upload the hospital birth report or discharge summary, both parents' Aadhaar cards, and the self-declaration as JPEG — every file under 100KB and clearly readable." },
+    { name: "Review every spelling, then submit", text: "Read the preview slowly, character by character: child's name, parents' names, date of birth. A spelling error caught here costs nothing; the same error caught after issue means a formal correction process." },
+    { name: "Pay the fee", text: "Pay the ₹10–15 fee through PAYGOV (UPI, net banking or debit card). If the amount debits but the status shows pending, wait 24–48 hours for reconciliation rather than paying again." },
+    { name: "Save the SRN", text: "Note the Service Request Number (SRN) shown on screen and sent by SMS — you will use it to track the application and for any enquiry with the registrar or helpline." },
+  ],
+};
 ---
-<Base lang="en" title="Birth Certificate UP (Janm Praman Patra): Apply Online, Late Registration & Corrections" description="How to get a birth certificate (janm praman patra) in Uttar Pradesh: register within 21 days, hospital and home births, late registration with magistrate order, documents, fees and download through eSathi." path="/en/birth-certificate/" altPath="/birth-certificate/" faqs={faqs} updated="22 October 2026">
+<Base lang="en" title="Birth Certificate UP (Janm Praman Patra): Apply Online" description="Apply for a UP birth certificate online — documents, ₹10–15 fee, 21-day rule, late registration and name correction. Step-by-step eSathi guide." path="/en/birth-certificate/" altPath="/birth-certificate/" faqs={faqs} updated="27 October 2026" datePublished="2026-10-22" dateModified="2026-10-27" howto={howto}>
 <div class="content-col">
   <h1 class="page-title">Birth Certificate in UP — Apply Online on eSathi</h1>
 
+  <p class="note">Note: This is an independent information guide — it is not the official portal (edistrict.up.gov.in).</p>
+
   <section class="box">
-    <h2>What is a birth certificate?</h2>
+    <h2>What is this document?</h2>
     <p>A birth certificate (जन्म प्रमाण पत्र, janm praman patra) is the first legal identity document of a child — the official record of the child's name (when given), date and place of birth, and the parents' names. In Uttar Pradesh, births are registered with the local registrar of births and deaths — the municipal body in towns and the designated registrar for rural areas — and the certificate is issued from that registration record.</p>
     <p>This single document is demanded throughout life:</p>
     <ul>
@@ -30,7 +47,7 @@ const faqs = [
   </section>
 
   <section class="box">
-    <h2>Birth certificate at a glance</h2>
+    <h2>At a glance</h2>
     <div class="table-scroll">
     <table class="info">
       <tr><th>Register the birth within</th><td>21 days of the birth</td></tr>
@@ -66,7 +83,7 @@ const faqs = [
   </section>
 
   <section class="box">
-    <h2>Documents required for a birth certificate</h2>
+    <h2>Documents needed</h2>
     <ul class="checklist">
       <li>Birth report or discharge summary from the hospital (for institutional births)</li>
       <li>Aadhaar card of the mother</li>
@@ -79,7 +96,7 @@ const faqs = [
   </section>
 
   <section class="box">
-    <h2>How to apply for a birth certificate online — step by step</h2>
+    <h2>How to apply online — step by step</h2>
     <div class="steps">
       <div class="step"><div class="step-num"></div><div class="step-body">
         <h3>Confirm the registration has been initiated</h3>
@@ -122,7 +139,7 @@ const faqs = [
   </section>
 
   <section class="box">
-    <h2>Name and date corrections on a birth certificate</h2>
+    <h2>Name and date corrections</h2>
     <p>Corrections fall into three levels of difficulty:</p>
     <ul>
       <li><strong>Adding a name</strong> — if the birth was registered without the child's name, the name can be entered later through the registrar on the parents' application. This is a routine, expected process.</li>

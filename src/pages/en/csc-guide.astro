@@ -10,11 +10,26 @@ const faqs = [
   { q: 'I applied through a CSC. How do I download my certificate later?', a: 'You do not need the operator for this. Create your own free account on eSathi and download issued certificates from there, or get them from DigiLocker, where portal-issued certificates appear under Issued Documents. The certificate belongs to you, not to the centre that filed the application.' },
   { q: 'Is applying through a CSC faster than applying myself?', a: 'No. The CSC only submits the application; after that, verification by the Lekhpal and approval by the Tehsildar take the same 7 to 15 working days either way. A CSC saves you effort, not time — any operator promising a certificate in one or two days for extra money is misleading you.' },
 ];
+
+const howto = {
+  name: "CSC / Jan Seva Kendra Guide — Charges, Process and Safety Rules",
+  steps: [
+    { name: "Find a centre near you", text: "Search on locator.csccloud.in by district and block, or visit the Jan Seva Kendra in your local market." },
+    { name: "Carry your documents", text: "Take your Aadhaar, the supporting documents for the certificate you need, and a signed self-declaration form where the service requires one. Clear photocopies are enough for most applications; the operator scans them." },
+    { name: "The operator fills and submits the form", text: "The operator logs in with their own VLE credentials, enters your details, uploads the scans and submits the application in the same system your own eSathi application would use." },
+    { name: "Pay and take the receipt", text: "Pay the government fee plus the facilitation charge, and collect the printed receipt. The receipt shows the fee breakup and your application reference (SRN)." },
+    { name: "Note your SRN carefully", text: "The Service Request Number on the receipt is your proof and your tracking ID. Photograph the receipt before you leave the centre." },
+    { name: "Track the status yourself", text: "You do not need to visit the centre for updates — check the application status online with your SRN any time." },
+    { name: "Collect or download the certificate", text: "When the status shows the certificate as generated, either collect the printed copy from the centre or download it yourself through your own eSathi account or DigiLocker, as explained below." },
+  ],
+};
 ---
 
-<Base lang="en" title="CSC / Jan Seva Kendra Guide UP: Charges, How to Find One & Safety Tips" description="What a CSC (Jan Seva Kendra) is, how it differs from eSathi, the official charges for certificate applications, how to find a centre on locator.csccloud.in, pros and cons, and the safety rules every applicant should know." path="/en/csc-guide/" altPath="/csc-guide/" faqs={faqs} updated="22 October 2026">
+<Base lang="en" title="CSC / Jan Seva Kendra Guide UP: Charges & Safety" description="What a CSC (Jan Seva Kendra) is, how it differs from eSathi, official charges, how to find a centre, and safety rules every applicant should know." path="/en/csc-guide/" altPath="/csc-guide/" faqs={faqs} updated="27 October 2026" datePublished="2026-10-22" dateModified="2026-10-27" howto={howto}>
   <div class="content-col">
     <h1 class="page-title">CSC / Jan Seva Kendra Guide — Charges, Process and Safety Rules</h1>
+
+    <p class="note">Note: This is an independent information guide — it is not the official portal (edistrict.up.gov.in).</p>
 
     <section class="box">
       <p>Not everyone in Uttar Pradesh has a smartphone, a scanner and the confidence to fill a government form online. That gap is exactly why the <strong>Common Service Centre (CSC)</strong> exists. Known in UP as the <strong>Jan Seva Kendra</strong> (and in some districts as Lokvani Kendra), it is a small service point — often a single desk with a computer and printer in your local market — run by a trained local operator called a <strong>VLE</strong> (Village Level Entrepreneur).</p>
