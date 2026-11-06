@@ -43,6 +43,7 @@ const legal = [
         <a class:list={['nav-link', { active: isCurrent(home) }]} href={home}>{labels.home}</a>
         <a class:list={['nav-link', { active: isCurrent(p('login-registration')) }]} href={p('login-registration')}>{labels.login}</a>
         <a class:list={['nav-link', { active: isCurrent(p('status-verification')) }]} href={p('status-verification')}>{labels.status}</a>
+        {isHindi && <a class:list={['nav-link', { active: currentPath.startsWith('/blog/') }]} href="/blog/">ब्लॉग</a>}
         <details class="nav-dropdown">
           <summary class="nav-link">{labels.services}<span class="chevron" aria-hidden="true"></span></summary>
           <div class="dropdown-panel services-menu">
