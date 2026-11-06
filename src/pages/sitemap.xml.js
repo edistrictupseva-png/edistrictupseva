@@ -40,9 +40,18 @@ export function GET() {
       `  <url><loc>${en}</loc><lastmod>${lastmod}</lastmod>${alternates}\n  </url>`,
     ];
   });
+  // Blog: Hindi-only for now (no /en/ versions yet), so listed without alternates.
+  const blogSlugs = [
+    'blog',
+    'blog/kasganj-certificate-clearance-october-2026',
+    'blog/up-scholarship-verification-november-2026',
+    'blog/janhit-guarantee-appeal-delayed-certificate',
+  ];
+  const blogEntries = blogSlugs.map((s) => `  <url><loc>${SITE}/${s}/</loc><lastmod>2026-11-06</lastmod>\n  </url>`);
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${entries.join('\n')}
+${blogEntries.join('\n')}
 </urlset>`;
   return new Response(body, { headers: { 'Content-Type': 'application/xml' } });
 }
