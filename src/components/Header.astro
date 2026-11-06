@@ -8,10 +8,10 @@ const currentPath = Astro.url.pathname;
 const isCurrent = (href: string) => currentPath === href;
 const labels = isHindi ? {
   home: 'होम', login: 'लॉगिन गाइड', status: 'स्टेटस/सत्यापन', services: 'सेवाएं', about: 'हमारे बारे में',
-  contact: 'संपर्क', legal: 'कानूनी', brandGuide: 'गाइड 2026', menu: 'मेन्यू खोलें',
+  contact: 'संपर्क', legal: 'कानूनी', brandGuide: 'गाइड 2026', menu: 'मेन्यू खोलें', blog: 'ब्लॉग',
 } : {
   home: 'Home', login: 'Login Guide', status: 'Status Check', services: 'Services', about: 'About',
-  contact: 'Contact', legal: 'Legal', brandGuide: 'Guide 2026', menu: 'Open menu',
+  contact: 'Contact', legal: 'Legal', brandGuide: 'Guide 2026', menu: 'Open menu', blog: 'Blog',
 };
 const services = [
   [isHindi ? 'आय प्रमाण पत्र' : 'Income Certificate', p('income-certificate'), 'income'],
@@ -43,7 +43,7 @@ const legal = [
         <a class:list={['nav-link', { active: isCurrent(home) }]} href={home}>{labels.home}</a>
         <a class:list={['nav-link', { active: isCurrent(p('login-registration')) }]} href={p('login-registration')}>{labels.login}</a>
         <a class:list={['nav-link', { active: isCurrent(p('status-verification')) }]} href={p('status-verification')}>{labels.status}</a>
-        {isHindi && <a class:list={['nav-link', { active: currentPath.startsWith('/blog/') }]} href="/blog/">ब्लॉग</a>}
+        <a class:list={['nav-link', { active: currentPath.startsWith('/blog/') || currentPath.startsWith('/en/blog/') }]} href={p('blog')}>{labels.blog}</a>
         <details class="nav-dropdown">
           <summary class="nav-link">{labels.services}<span class="chevron" aria-hidden="true"></span></summary>
           <div class="dropdown-panel services-menu">
