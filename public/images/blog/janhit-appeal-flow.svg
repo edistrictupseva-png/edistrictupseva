@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 230" role="img" aria-label="Janhit Guarantee appeal chain: Tehsildar to SDM to District Magistrate">
+  <rect width="900" height="230" fill="#eff6ff"/>
+  <text x="450" y="26" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#111827">Janhit Guarantee Act, 2011 — Appeal Chain</text>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <rect x="40" y="70" width="230" height="100" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <text x="155" y="100" font-size="15" font-weight="700" fill="#1d4ed8">Tehsildar</text>
+    <text x="155" y="122" font-size="12.5" fill="#374151">Application — decision</text>
+    <text x="155" y="142" font-size="12.5" fill="#374151">in ~20 days</text>
+    <path d="M 275 120 h 50" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+    <path d="M 315 112 l 12 8 l -12 8 z" fill="#2563eb"/>
+    <rect x="335" y="70" width="230" height="100" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <text x="450" y="100" font-size="15" font-weight="700" fill="#1d4ed8">SDM</text>
+    <text x="450" y="122" font-size="12.5" fill="#374151">First appeal — within</text>
+    <text x="450" y="142" font-size="12.5" fill="#374151">30 days</text>
+    <path d="M 570 120 h 50" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+    <path d="M 610 112 l 12 8 l -12 8 z" fill="#2563eb"/>
+    <rect x="630" y="70" width="230" height="100" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="2"/>
+    <text x="745" y="100" font-size="15" font-weight="700" fill="#166534">District Magistrate</text>
+    <text x="745" y="122" font-size="12.5" fill="#374151">Second appeal — within</text>
+    <text x="745" y="142" font-size="12.5" fill="#374151">60 days</text>
+  </g>
+  <text x="450" y="205" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#374151">Penalty up to ₹500–₹5,000 if the first appeal is not decided in time (Section 7)</text>
+</svg>
