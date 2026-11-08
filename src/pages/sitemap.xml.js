@@ -8,6 +8,8 @@ const slugs = [
   'blog', 'blog/kasganj-certificate-clearance-october-2026',
   'blog/up-scholarship-verification-november-2026',
   'blog/janhit-guarantee-appeal-delayed-certificate',
+  'blog/rani-laxmibai-scooty-yojana-verification-november-2026',
+  'blog/up-scholarship-deadline-extension-13-november-2026',
 ];
 export function GET() {
   // Per-slug lastmod: 2026-10-27 = pages content-edited in this fix round;
@@ -29,10 +31,12 @@ export function GET() {
     'contact-us': '2026-10-22',
     'privacy-policy': '2026-10-22',
     'disclaimer': '2026-10-22',
-    'blog': '2026-11-06',
+    'blog': '2026-11-08',
     'blog/kasganj-certificate-clearance-october-2026': '2026-11-06',
     'blog/up-scholarship-verification-november-2026': '2026-11-06',
     'blog/janhit-guarantee-appeal-delayed-certificate': '2026-11-06',
+    'blog/rani-laxmibai-scooty-yojana-verification-november-2026': '2026-11-08',
+    'blog/up-scholarship-deadline-extension-13-november-2026': '2026-11-08',
   };
   const entries = slugs.flatMap((s) => {
     const lastmod = lastmodBySlug[s];
