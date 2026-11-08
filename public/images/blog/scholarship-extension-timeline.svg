@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" role="img" aria-label="UP Scholarship 2026-27 reported dates timeline">
+  <rect width="900" height="250" fill="#eff6ff"/>
+  <text x="450" y="28" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#111827">UP Scholarship 2026-27 — Reported Dates (Not Official)</text>
+  <line x1="60" y1="125" x2="840" y2="125" stroke="#93c5fd" stroke-width="3" stroke-linecap="round"/>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <circle cx="110" cy="125" r="9" fill="#2563eb"/>
+    <text x="110" y="100" font-size="14" font-weight="700" fill="#1d4ed8">13 Nov</text>
+    <text x="110" y="82" font-size="12" fill="#374151">Online form last date</text>
+    <text x="110" y="66" font-size="12" fill="#374151">(Dashmottar, reported)</text>
+    <circle cx="330" cy="125" r="9" fill="#2563eb"/>
+    <text x="330" y="160" font-size="14" font-weight="700" fill="#1d4ed8">15–16 Nov</text>
+    <text x="330" y="178" font-size="12" fill="#374151">Final print + hard copy</text>
+    <text x="330" y="194" font-size="12" fill="#374151">to college (reported)</text>
+    <circle cx="570" cy="125" r="9" fill="#2563eb"/>
+    <text x="570" y="100" font-size="14" font-weight="700" fill="#1d4ed8">17 Nov</text>
+    <text x="570" y="82" font-size="12" fill="#374151">Institution verification</text>
+    <text x="570" y="66" font-size="12" fill="#374151">(reported)</text>
+    <circle cx="800" cy="125" r="9" fill="#16a34a"/>
+    <text x="800" y="160" font-size="14" font-weight="700" fill="#166534">25 Nov</text>
+    <text x="800" y="178" font-size="12" fill="#374151">University verification</text>
+    <text x="800" y="194" font-size="12" fill="#374151">(official schedule)</text>
+  </g>
+  <text x="450" y="235" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6b7280">Check the date on scholarship.up.gov.in before applying — edistrictupseva.com</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" role="img" aria-label="Rani Laxmibai Scooty Yojana certificate verification flow">
+  <rect width="900" height="250" fill="#eff6ff"/>
+  <text x="450" y="28" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#111827">Scooty Yojana — Certificate Verification Flow</text>
+  <line x1="60" y1="125" x2="840" y2="125" stroke="#93c5fd" stroke-width="3" stroke-linecap="round"/>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <circle cx="110" cy="125" r="9" fill="#2563eb"/>
+    <text x="110" y="100" font-size="14" font-weight="700" fill="#1d4ed8">Step 1</text>
+    <text x="110" y="82" font-size="12" fill="#374151">Student checks certificate</text>
+    <text x="110" y="66" font-size="12" fill="#374151">on e-District portal</text>
+    <circle cx="330" cy="125" r="9" fill="#2563eb"/>
+    <text x="330" y="160" font-size="14" font-weight="700" fill="#1d4ed8">Step 2 · by 10 Nov</text>
+    <text x="330" y="178" font-size="12" fill="#374151">DM-level verification</text>
+    <text x="330" y="194" font-size="12" fill="#374151">(CDO / ADM nodal officer)</text>
+    <circle cx="570" cy="125" r="9" fill="#2563eb"/>
+    <text x="570" y="100" font-size="14" font-weight="700" fill="#1d4ed8">Step 3</text>
+    <text x="570" y="82" font-size="12" fill="#374151">Verified data sent to vendor</text>
+    <text x="570" y="66" font-size="12" fill="#374151">through the DM</text>
+    <circle cx="800" cy="125" r="9" fill="#16a34a"/>
+    <text x="800" y="160" font-size="14" font-weight="700" fill="#166534">Step 4</text>
+    <text x="800" y="178" font-size="12" fill="#374151">Distribution announced</text>
+    <text x="800" y="194" font-size="12" fill="#374151">from November (no firm date)</text>
+  </g>
+  <text x="450" y="235" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6b7280">10 November date as per reports — confirm with your college or district officer — edistrictupseva.com</text>
+</svg>
