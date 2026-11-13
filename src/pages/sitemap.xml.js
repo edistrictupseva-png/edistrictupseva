@@ -28,7 +28,7 @@ export function GET() {
     'self-declaration-form': '2026-10-27',
     'csc-guide': '2026-10-27',
     'login-registration': '2026-10-27',
-    'status-verification': '2026-10-27',
+    'status-verification': '2026-11-14',
     'ews-certificate': '2026-10-27',
     'about-us': '2026-10-22',
     'contact-us': '2026-10-22',
