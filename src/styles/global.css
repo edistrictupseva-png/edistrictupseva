@@ -202,7 +202,7 @@ figure.blog-featured figcaption{font-size:.85rem;color:var(--gray-500);margin-to
 .sidebar-helpline p{margin:.3rem 0 .55rem;font-size:.93rem}
 @media(min-width:1024px){
   .page-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:1.75rem;align-items:start;padding:0 1rem}
-  .site-sidebar{margin:1.6rem 0 0;position:sticky;top:6.25rem;max-height:calc(100vh - 7.5rem);overflow-y:auto}
+  .site-sidebar{margin:1.6rem 0 0}
   /* homepage quick-services grid: 6 columns were designed for the full-width wrap;
      inside the content column 3 wider columns read better next to the sidebar */
   .page-layout-main .quick-grid{grid-template-columns:repeat(3,1fr)}
