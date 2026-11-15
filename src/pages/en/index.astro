@@ -101,7 +101,6 @@ const faqs = [
       <li><a href="#what-is-edistrict">What is eDistrict UP?</a></li>
       <li><a href="#edistrict-vs-esathi-csc">eDistrict vs eSathi vs CSC — the difference</a></li>
       <li><a href="#certificates">Certificates you can get</a></li>
-      <li><a href="#blog-latest">Latest blog posts</a></li>
       <li><a href="#fees">Certificate fees: eSathi vs CSC</a></li>
       <li><a href="#registration-login">Registration and login, step by step</a></li>
       <li><a href="#status-check">How to check application status</a></li>
@@ -111,6 +110,7 @@ const faqs = [
       <li><a href="#common-problems">Common problems and fixes</a></li>
       <li><a href="#legal-rights">Delays and your legal rights</a></li>
       <li><a href="#tips">Practical tips before you apply</a></li>
+    <li><a href="#blog-latest">Latest blog posts</a></li>
     </ol>
   </div>
 
@@ -186,24 +186,7 @@ const faqs = [
     <p>The EWS certificate is for applicants from the general category whose family income falls within the Economically Weaker Section limit. It is used to claim the EWS reservation in government jobs and educational admissions. It carries the standard <strong>₹10–15</strong> eSathi fee and 7–15 working day processing, but note its validity carefully: an EWS certificate is valid for <strong>one financial year only</strong>. If your admission or recruitment process crosses into a new financial year, you will need a fresh certificate — plan the timing before you apply. Read the full <a href="/en/ews-certificate/">EWS certificate guide</a> for the income and property tests, the family definition and the documents.</p>
   </div>
 
-  <div class="box" id="blog-latest">
-    <h2>Latest from the Blog</h2>
-    <p>The latest news, deadline updates and detailed articles about eDistrict UP and eSathi — newest first.</p>
-    <section class="blog-grid">
-      {blogPostsEn.map(post => (
-        <article class="blog-card">
-          <a href={post.href}><img src={post.img} alt={post.alt} loading="lazy" /></a>
-          <div class="blog-card-body">
-            <p class="blog-tag">{post.tag}</p>
-            <h2><a href={post.href}>{post.title}</a></h2>
-            <p>{post.excerpt}</p>
-            <a class="blog-read" href={post.href}>Read more →</a>
-          </div>
-        </article>
-      ))}
-    </section>
-    <p style="margin-top:1rem"><a class="blog-read" href="/en/blog/">See all blog posts →</a></p>
-  </div>
+
 
   <div class="box" id="fees">
     <h2>Certificate fees — eSathi vs CSC (2026)</h2>
@@ -586,6 +569,25 @@ const faqs = [
     <p>Follow these basics and the process is genuinely straightforward: one registration, one application, a wait of about one to two weeks, and a signed certificate you can download, verify and print for the rest of its validity. Start with the certificate you need from the <a href="#certificates">certificates section</a> above, and use the dedicated guide for that certificate — each one walks through its documents and steps in full detail.</p>
   </div>
 
+
+  <div class="box" id="blog-latest">
+    <h2>Latest from the Blog</h2>
+    <p>The latest news, deadline updates and detailed articles about eDistrict UP and eSathi — newest first.</p>
+    <section class="blog-grid">
+      {blogPostsEn.map(post => (
+        <article class="blog-card">
+          <a href={post.href}><img src={post.img} alt={post.alt} loading="lazy" /></a>
+          <div class="blog-card-body">
+            <p class="blog-tag">{post.tag}</p>
+            <h2><a href={post.href}>{post.title}</a></h2>
+            <p>{post.excerpt}</p>
+            <a class="blog-read" href={post.href}>Read more →</a>
+          </div>
+        </article>
+      ))}
+    </section>
+    <p style="margin-top:1rem"><a class="blog-read" href="/en/blog/">See all blog posts →</a></p>
+  </div>
 </div>
 
 </Base>
