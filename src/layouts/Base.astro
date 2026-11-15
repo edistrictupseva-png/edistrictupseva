@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Sidebar from '../components/Sidebar.astro';
 import AuthorityVisual from '../components/AuthorityVisual.astro';
 
 interface Faq { q: string; a: string; }
@@ -105,6 +106,8 @@ const howtoSchema = howto ? {
   <a class="skip-link" href="#main-content">{lang === 'hi' ? 'मुख्य सामग्री पर जाएं' : 'Skip to main content'}</a>
   <Header lang={lang} altPath={altPath} />
   <main id="main-content">
+    <div class="page-layout">
+    <div class="page-layout-main">
     <slot />
     <AuthorityVisual lang={lang} path={path} />
     <script>
@@ -135,6 +138,9 @@ const howtoSchema = howto ? {
         ? 'Portal की service list, शुल्क, processing time, document format/size और certificate की स्वीकार्य issue date बदल सकती है। आवेदन वाले दिन official portal पर दिखाई गई requirement और जिस संस्था में certificate देना है उसका current notice final मानें।'
         : 'Service availability, charges, processing time, upload format/size and acceptable certificate issue date can change. On the day you apply, treat the official portal and the current notice of the receiving institution as final.'}</p>
     </aside>
+    </div>
+    <Sidebar lang={lang} />
+    </div>
   </main>
   <Footer lang={lang} />
 </body>
