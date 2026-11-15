@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 230" role="img" aria-label="Contact route for a stuck certificate: check status, call the helpdesk, complain on CM Helpline 1076 or IGRS, then appeal under the Janhit Guarantee Act">
+  <rect width="900" height="230" fill="#eff6ff"/>
+  <text x="450" y="26" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#111827">Certificate Stuck — The Contact Route, In Order</text>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <rect x="15" y="70" width="195" height="100" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <text x="112" y="100" font-size="15" font-weight="700" fill="#1d4ed8">1. Check status</text>
+    <text x="112" y="122" font-size="12.5" fill="#374151">Read the remark</text>
+    <text x="112" y="142" font-size="12.5" fill="#374151">with your SRN</text>
+    <path d="M 213 120 h 18" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+    <path d="M 224 112 l 12 8 l -12 8 z" fill="#2563eb"/>
+    <rect x="240" y="70" width="195" height="100" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <text x="337" y="100" font-size="15" font-weight="700" fill="#1d4ed8">2. Helpdesk</text>
+    <text x="337" y="122" font-size="12.5" fill="#374151">0522-2304706</text>
+    <text x="337" y="142" font-size="12.5" fill="#374151">ceghelpdesk@gmail.com</text>
+    <path d="M 438 120 h 18" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+    <path d="M 449 112 l 12 8 l -12 8 z" fill="#2563eb"/>
+    <rect x="465" y="70" width="195" height="100" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <text x="562" y="100" font-size="15" font-weight="700" fill="#1d4ed8">3. Complain</text>
+    <text x="562" y="122" font-size="12.5" fill="#374151">CM Helpline 1076</text>
+    <text x="562" y="142" font-size="12.5" fill="#374151">or IGRS portal</text>
+    <path d="M 663 120 h 18" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+    <path d="M 674 112 l 12 8 l -12 8 z" fill="#2563eb"/>
+    <rect x="690" y="70" width="195" height="100" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <text x="787" y="100" font-size="15" font-weight="700" fill="#1d4ed8">4. Appeal</text>
+    <text x="787" y="122" font-size="12.5" fill="#374151">Janhit Guarantee</text>
+    <text x="787" y="142" font-size="12.5" fill="#374151">Act, 2011</text>
+  </g>
+</svg>
