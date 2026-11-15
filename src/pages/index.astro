@@ -156,7 +156,6 @@ const faqs = [
         <li><a href="#kya-hai">eDistrict UP क्या है</a></li>
         <li><a href="#fark">eDistrict, eSathi और CSC में अंतर</a></li>
         <li><a href="#certificates">उपलब्ध प्रमाण पत्र</a></li>
-        <li><a href="#blog-latest">ताज़ा ब्लॉग लेख</a></li>
         <li><a href="#fees">प्रमाण पत्र शुल्क 2026</a></li>
         <li><a href="#registration">रजिस्ट्रेशन और लॉगिन कैसे करें</a></li>
         <li><a href="#status-check">आवेदन की स्थिति कैसे देखें</a></li>
@@ -166,6 +165,7 @@ const faqs = [
         <li><a href="#problems">आम समस्याएं और उनके हल</a></li>
         <li><a href="#escalation">देरी हो तो क्या करें</a></li>
         <li><a href="#tips">ज़रूरी टिप्स और दस्तावेज़ checklist</a></li>
+        <li><a href="#blog-latest">ताज़ा ब्लॉग लेख</a></li>
       </ol>
     </div>
 
@@ -236,24 +236,7 @@ const faqs = [
       <p>सामान्य वर्ग के आर्थिक रूप से कमज़ोर नागरिकों के लिए EWS प्रमाण पत्र शिक्षा और सरकारी नौकरियों में 10 प्रतिशत आरक्षण का आधार बनता है। यह आय और संपत्ति दोनों के मानदंडों पर बनता है, इसलिए आय प्रमाण से जुड़े दस्तावेज़ों के साथ ज़मीन/मकान संबंधी जानकारी भी देनी होती है। EWS प्रमाण पत्र की सबसे महत्वपूर्ण बात इसकी वैधता है — यह केवल उसी वित्तीय वर्ष के लिए मान्य होता है जिस वर्ष जारी हुआ हो। अर्थात हर नए वित्तीय वर्ष में नया प्रमाण पत्र बनवाना पड़ता है, इसलिए आवेदन की योजना परीक्षा या भर्ती की तिथि देखकर ही बनाएं, ताकि प्रमाण पत्र उपयोग के समय मान्य रहे। पात्रता, आय व संपत्ति की सीमाएँ और आवेदन की पूरी प्रक्रिया <a href="/ews-certificate/">EWS प्रमाण पत्र गाइड</a> में दी गई है।</p>
     </div>
 
-    <div class="box" id="blog-latest">
-      <h2>ताज़ा ब्लॉग लेख</h2>
-      <p>eDistrict UP और eSathi से जुड़ी ताज़ा खबरें, समय-सीमा अपडेट और विस्तृत लेख — सबसे नया पहले।</p>
-      <section class="blog-grid">
-        {blogPostsHi.map(post => (
-          <article class="blog-card">
-            <a href={post.href}><img src={post.img} alt={post.alt} loading="lazy" /></a>
-            <div class="blog-card-body">
-              <p class="blog-tag">{post.tag}</p>
-              <h2><a href={post.href}>{post.title}</a></h2>
-              <p>{post.excerpt}</p>
-              <a class="blog-read" href={post.href}>पूरा पढ़ें →</a>
-            </div>
-          </article>
-        ))}
-      </section>
-      <p style="margin-top:1rem"><a class="blog-read" href="/blog/">सभी ब्लॉग लेख देखें →</a></p>
-    </div>
+
 
     <div class="box" id="fees">
       <h2>प्रमाण पत्र शुल्क — eSathi बनाम CSC (2026)</h2>
@@ -601,6 +584,25 @@ const faqs = [
       <p>हर अपलोड file 100KB से कम रखें। आम दस्तावेज़ JPEG या PDF में चलते हैं, लेकिन घोषणा पत्र केवल JPEG में। Scan 200 DPI पर black &amp; white करना आकार और स्पष्टता दोनों का संतुलन देता है। धुंधली photo वाली file सबसे आम rejection कारणों में है, इसलिए अपलोड से पहले file खोलकर एक बार स्वयं पढ़कर ज़रूर देखें — जो आपको साफ़ नहीं दिख रहा, अधिकारी को भी नहीं दिखेगा।</p>
       <h3>एक आखिरी सलाह</h3>
       <p>यह वेबसाइट एक स्वतंत्र जानकारी गाइड है — हमारा आधिकारिक पोर्टल से कोई संबंध नहीं है, और आवेदन हमेशा आधिकारिक पते edistrict.up.gov.in पर ही करें। हमारी भूमिका सिर्फ प्रक्रिया को आपकी भाषा में, सही क्रम में समझाना है। हमारी पहचान और उद्देश्य के बारे में <a href="/about-us/">हमारे बारे में</a> पेज पर पढ़ें, पूरा <a href="/disclaimer/">अस्वीकरण</a> भी देखें, और किसी भी शुल्क संबंधी उलझन में अंतिम निर्णय पोर्टल पर दिख रही राशि को ही मानें।</p>
+    </div>
+
+    <div class="box" id="blog-latest">
+      <h2>ताज़ा ब्लॉग लेख</h2>
+      <p>eDistrict UP और eSathi से जुड़ी ताज़ा खबरें, समय-सीमा अपडेट और विस्तृत लेख — सबसे नया पहले।</p>
+      <section class="blog-grid">
+        {blogPostsHi.map(post => (
+          <article class="blog-card">
+            <a href={post.href}><img src={post.img} alt={post.alt} loading="lazy" /></a>
+            <div class="blog-card-body">
+              <p class="blog-tag">{post.tag}</p>
+              <h2><a href={post.href}>{post.title}</a></h2>
+              <p>{post.excerpt}</p>
+              <a class="blog-read" href={post.href}>पूरा पढ़ें →</a>
+            </div>
+          </article>
+        ))}
+      </section>
+      <p style="margin-top:1rem"><a class="blog-read" href="/blog/">सभी ब्लॉग लेख देखें →</a></p>
     </div>
   </div>
 
