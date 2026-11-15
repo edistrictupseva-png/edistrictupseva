@@ -186,3 +186,24 @@ figure.shot figcaption{font-size:.85rem;color:var(--gray-500);margin-top:.35rem;
 figure.blog-featured{margin:.9rem 0}
 figure.blog-featured img{width:100%;border:1px solid var(--gray-200)}
 figure.blog-featured figcaption{font-size:.85rem;color:var(--gray-500);margin-top:.35rem;text-align:center}
+
+/* Page layout + sidebar (site-wide, rendered from Base.astro) */
+.page-layout{max-width:78rem;margin:0 auto}
+.page-layout-main{min-width:0}
+.site-sidebar{margin:1.6rem 1rem 0}
+.sidebar-box{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.05rem 1.2rem;margin-bottom:1rem}
+.sidebar-box h2{font-size:1.02rem;margin:.05rem 0 .6rem}
+.sidebar-list{list-style:none;margin:0;padding:0}
+.sidebar-list li{margin:.45rem 0;line-height:1.5}
+.sidebar-list a{font-weight:500}
+.sidebar-date{display:block;font-size:.78rem;color:var(--gray-500)}
+.sidebar-more{font-weight:700;font-size:.92rem}
+.sidebar-helpline{background:var(--blue-50);border-color:var(--blue-200)}
+.sidebar-helpline p{margin:.3rem 0 .55rem;font-size:.93rem}
+@media(min-width:1024px){
+  .page-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:1.75rem;align-items:start;padding:0 1rem}
+  .site-sidebar{margin:1.6rem 0 0;position:sticky;top:6.25rem;max-height:calc(100vh - 7.5rem);overflow-y:auto}
+  /* homepage quick-services grid: 6 columns were designed for the full-width wrap;
+     inside the content column 3 wider columns read better next to the sidebar */
+  .page-layout-main .quick-grid{grid-template-columns:repeat(3,1fr)}
+}
