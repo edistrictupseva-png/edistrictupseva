@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { blogPostsEn } from '../../data/blog-posts';
 
 const faqs = [
   { q: "What is the eDistrict UP citizen login URL?", a: "The citizen login is at esathi.up.gov.in. You can also start from edistrict.up.gov.in and click the Citizen Login (eSathi) option. The old address edistrict.up.nic.in no longer works directly — it redirects to edistrict.up.gov.in." },
@@ -100,6 +101,7 @@ const faqs = [
       <li><a href="#what-is-edistrict">What is eDistrict UP?</a></li>
       <li><a href="#edistrict-vs-esathi-csc">eDistrict vs eSathi vs CSC — the difference</a></li>
       <li><a href="#certificates">Certificates you can get</a></li>
+      <li><a href="#blog-latest">Latest blog posts</a></li>
       <li><a href="#fees">Certificate fees: eSathi vs CSC</a></li>
       <li><a href="#registration-login">Registration and login, step by step</a></li>
       <li><a href="#status-check">How to check application status</a></li>
@@ -182,6 +184,25 @@ const faqs = [
 
     <h3 id="ews-certificate">EWS Certificate (आर्थिक रूप से कमजोर वर्ग प्रमाण पत्र)</h3>
     <p>The EWS certificate is for applicants from the general category whose family income falls within the Economically Weaker Section limit. It is used to claim the EWS reservation in government jobs and educational admissions. It carries the standard <strong>₹10–15</strong> eSathi fee and 7–15 working day processing, but note its validity carefully: an EWS certificate is valid for <strong>one financial year only</strong>. If your admission or recruitment process crosses into a new financial year, you will need a fresh certificate — plan the timing before you apply. Read the full <a href="/en/ews-certificate/">EWS certificate guide</a> for the income and property tests, the family definition and the documents.</p>
+  </div>
+
+  <div class="box" id="blog-latest">
+    <h2>Latest from the Blog</h2>
+    <p>The latest news, deadline updates and detailed articles about eDistrict UP and eSathi — newest first.</p>
+    <section class="blog-grid">
+      {blogPostsEn.map(post => (
+        <article class="blog-card">
+          <a href={post.href}><img src={post.img} alt={post.alt} loading="lazy" /></a>
+          <div class="blog-card-body">
+            <p class="blog-tag">{post.tag}</p>
+            <h2><a href={post.href}>{post.title}</a></h2>
+            <p>{post.excerpt}</p>
+            <a class="blog-read" href={post.href}>Read more →</a>
+          </div>
+        </article>
+      ))}
+    </section>
+    <p style="margin-top:1rem"><a class="blog-read" href="/en/blog/">See all blog posts →</a></p>
   </div>
 
   <div class="box" id="fees">
