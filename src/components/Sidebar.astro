@@ -1,0 +1,76 @@
+---
+import { getBlogPosts } from '../data/blog-posts';
+
+interface Props { lang: 'hi' | 'en'; }
+const { lang } = Astro.props;
+const hi = lang === 'hi';
+
+const guides = hi
+  ? [
+      ['/income-certificate/', 'आय प्रमाण पत्र'],
+      ['/caste-certificate/', 'जाति प्रमाण पत्र'],
+      ['/domicile-certificate/', 'निवास प्रमाण पत्र'],
+      ['/birth-certificate/', 'जन्म प्रमाण पत्र'],
+      ['/death-certificate/', 'मृत्यु प्रमाण पत्र'],
+      ['/ews-certificate/', 'EWS प्रमाण पत्र'],
+    ]
+  : [
+      ['/en/income-certificate/', 'Income Certificate'],
+      ['/en/caste-certificate/', 'Caste Certificate'],
+      ['/en/domicile-certificate/', 'Domicile Certificate'],
+      ['/en/birth-certificate/', 'Birth Certificate'],
+      ['/en/death-certificate/', 'Death Certificate'],
+      ['/en/ews-certificate/', 'EWS Certificate'],
+    ];
+
+const services = hi
+  ? [
+      ['/status-verification/', 'स्टेटस और सत्यापन'],
+      ['/login-registration/', 'लॉगिन और रजिस्ट्रेशन'],
+      ['/blog/certificate-print-download-verification/', 'प्रमाण पत्र प्रिंट और डाउनलोड'],
+      ['/csc-guide/', 'CSC / जन सेवा केंद्र गाइड'],
+    ]
+  : [
+      ['/en/status-verification/', 'Status & Verification'],
+      ['/en/login-registration/', 'Login & Registration'],
+      ['/en/blog/certificate-print-download-verification/', 'Certificate Print & Download'],
+      ['/en/csc-guide/', 'CSC Guide'],
+    ];
+
+const latest = getBlogPosts(lang).slice(0, 5);
+const blogIndex = hi ? '/blog/' : '/en/blog/';
+const helplinePost = hi ? '/blog/edistrict-helpline-contact/' : '/en/blog/edistrict-helpline-contact/';
+---
+<aside class="site-sidebar" aria-label={hi ? 'साइडबार' : 'Sidebar'}>
+  <div class="sidebar-box">
+    <h2>{hi ? 'लोकप्रिय गाइड' : 'Popular Guides'}</h2>
+    <ul class="sidebar-list">
+      {guides.map(([href, label]) => <li><a href={href}>{label}</a></li>)}
+    </ul>
+  </div>
+  <div class="sidebar-box">
+    <h2>{hi ? 'ताज़ा ब्लॉग लेख' : 'Latest Blog Posts'}</h2>
+    <ul class="sidebar-list">
+      {latest.map(post => (
+        <li>
+          <a href={post.href}>{post.title}</a>
+          <span class="sidebar-date">{post.date}</span>
+        </li>
+      ))}
+    </ul>
+    <p style="margin:.6rem 0 0"><a class="sidebar-more" href={blogIndex}>{hi ? 'सभी लेख देखें →' : 'View all posts →'}</a></p>
+  </div>
+  <div class="sidebar-box">
+    <h2>{hi ? 'महत्वपूर्ण सेवाएं' : 'Important Services'}</h2>
+    <ul class="sidebar-list">
+      {services.map(([href, label]) => <li><a href={href}>{label}</a></li>)}
+    </ul>
+  </div>
+  <div class="sidebar-box sidebar-helpline">
+    <h2>{hi ? 'मदद चाहिए?' : 'Need Help?'}</h2>
+    <p>{hi
+      ? 'प्रमाण पत्र अटक गया है या देरी हो रही है? सही संपर्क और शिकायत का सही क्रम इस गाइड में दिया गया है।'
+      : 'Is your certificate stuck or delayed? This guide lists the right contacts and the correct order for complaints.'}</p>
+    <a class="sidebar-more" href={helplinePost}>{hi ? 'eDistrict Helpline गाइड पढ़ें →' : 'Read the eDistrict Helpline guide →'}</a>
+  </div>
+</aside>
