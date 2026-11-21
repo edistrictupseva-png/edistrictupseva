@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" role="img" aria-label="UP Scholarship 2026-27 verification to payment timeline, reported third revised timetable">
+  <rect width="900" height="250" fill="#eff6ff"/>
+  <text x="450" y="28" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#111827">UP Scholarship 2026-27 — Verification to Payment (Reported)</text>
+  <line x1="60" y1="125" x2="840" y2="125" stroke="#93c5fd" stroke-width="3" stroke-linecap="round"/>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <circle cx="90" cy="125" r="9" fill="#2563eb"/>
+    <text x="90" y="100" font-size="14" font-weight="700" fill="#1d4ed8">13 Nov</text>
+    <text x="90" y="82" font-size="12" fill="#374151">Forms closed</text>
+    <text x="90" y="66" font-size="12" fill="#374151">(fresh + renewal)</text>
+    <circle cx="262" cy="125" r="9" fill="#2563eb"/>
+    <text x="262" y="160" font-size="14" font-weight="700" fill="#1d4ed8">18 Nov</text>
+    <text x="262" y="178" font-size="12" fill="#374151">University verification</text>
+    <text x="262" y="194" font-size="12" fill="#374151">(affiliating agency)</text>
+    <circle cx="434" cy="125" r="9" fill="#2563eb"/>
+    <text x="434" y="100" font-size="14" font-weight="700" fill="#1d4ed8">21 Nov</text>
+    <text x="434" y="82" font-size="12" fill="#374151">PFMS Aadhaar authentication</text>
+    <text x="434" y="66" font-size="12" fill="#374151">window ends (6–21 Nov)</text>
+    <circle cx="606" cy="125" r="9" fill="#2563eb"/>
+    <text x="606" y="160" font-size="14" font-weight="700" fill="#1d4ed8">22 Nov – 2 Dec</text>
+    <text x="606" y="178" font-size="12" fill="#374151">District verification</text>
+    <text x="606" y="194" font-size="12" fill="#374151">(suspicious / incorrect data)</text>
+    <circle cx="790" cy="125" r="9" fill="#16a34a"/>
+    <text x="790" y="100" font-size="14" font-weight="700" fill="#15803d">7–11 Dec</text>
+    <text x="790" y="82" font-size="12" fill="#374151">Fund transfer</text>
+    <text x="790" y="66" font-size="12" fill="#374151">(payment by DBT)</text>
+  </g>
+</svg>
