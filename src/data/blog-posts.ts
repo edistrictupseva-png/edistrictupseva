@@ -13,6 +13,15 @@ export interface BlogPost {
 
 export const blogPostsHi: BlogPost[] = [
   {
+    href: '/blog/up-scholarship-verification-payment-date/',
+    img: '/images/blog/up-scholarship-verification-payment-date-featured.webp',
+    alt: 'UP छात्रवृत्ति 2026-27 — सत्यापन जारी और दिसंबर भुगतान तिथियाँ (उदाहरण चित्र)',
+    tag: 'अपडेट · 21 नवंबर 2026',
+    date: '21 नवंबर 2026',
+    title: 'UP छात्रवृत्ति 2026-27: सत्यापन चल रहा है — भुगतान 7–11 दिसंबर को (रिपोर्ट किया गया कार्यक्रम)',
+    excerpt: 'फॉर्म 13 नवंबर को बंद हो गए — अब सत्यापन चल रहा है: PFMS आधार प्रमाणीकरण आज समाप्त, जिला सत्यापन 22 नवंबर से, और भुगतान 7–11 दिसंबर को बताया गया है। छात्रों को अब क्या करना चाहिए।',
+  },
+  {
     href: '/blog/edistrict-forms-download/',
     img: '/images/blog/edistrict-forms-download-featured.webp',
     alt: 'eDistrict UP के सभी फॉर्म और घोषणा पत्र — एक जगह सूची (उदाहरण चित्र)',
@@ -105,6 +114,15 @@ export const blogPostsHi: BlogPost[] = [
 ];
 
 export const blogPostsEn: BlogPost[] = [
+  {
+    href: '/en/blog/up-scholarship-verification-payment-date/',
+    img: '/images/blog/up-scholarship-verification-payment-date-featured.webp',
+    alt: 'UP Scholarship 2026-27 — verification running and December payment dates (example illustration)',
+    tag: 'Update · 21 November 2026',
+    date: '21 November 2026',
+    title: 'UP Scholarship 2026-27: Verification Running Now — Payment Due 7–11 December (Reported Timetable)',
+    excerpt: 'Forms closed on 13 November — verification is now running: PFMS Aadhaar authentication ends today, district verification from 22 November, and payment reported for 7–11 December. What students should do now.',
+  },
   {
     href: '/en/blog/edistrict-forms-download/',
     img: '/images/blog/edistrict-forms-download-featured.webp',
