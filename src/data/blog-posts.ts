@@ -13,6 +13,15 @@ export interface BlogPost {
 
 export const blogPostsHi: BlogPost[] = [
   {
+    href: '/blog/digital-life-certificate-jeevan-pramaan/',
+    img: '/images/blog/digital-life-certificate-jeevan-pramaan-featured.webp',
+    alt: 'डिजिटल जीवन प्रमाण पत्र — घर बैठे मोबाइल से फेस स्कैन करके जमा करना (उदाहरण चित्र)',
+    tag: 'खबर · 22 नवंबर 2026',
+    date: '22 नवंबर 2026',
+    title: 'डिजिटल जीवन प्रमाण पत्र 2026: नवंबर अभियान में घर बैठे फेस स्कैन से जमा करें — कोषागार जाने की ज़रूरत नहीं',
+    excerpt: 'नवंबर 2026 में राष्ट्रीय डिजिटल जीवन प्रमाण पत्र अभियान चल रहा है — पेंशनर और पारिवारिक पेंशनर घर बैठे मोबाइल से फेस स्कैन करके जीवन प्रमाण पत्र जमा कर सकते हैं। पूरा तरीका और Pramaan ID की सलाह।',
+  },
+  {
     href: '/blog/up-scholarship-verification-payment-date/',
     img: '/images/blog/up-scholarship-verification-payment-date-featured.webp',
     alt: 'UP छात्रवृत्ति 2026-27 — सत्यापन जारी और दिसंबर भुगतान तिथियाँ (उदाहरण चित्र)',
@@ -114,6 +123,15 @@ export const blogPostsHi: BlogPost[] = [
 ];
 
 export const blogPostsEn: BlogPost[] = [
+  {
+    href: '/en/blog/digital-life-certificate-jeevan-pramaan/',
+    img: '/images/blog/digital-life-certificate-jeevan-pramaan-featured.webp',
+    alt: 'Digital Life Certificate — submitting from home by face scan on a mobile (example illustration)',
+    tag: 'News · 22 November 2026',
+    date: '22 November 2026',
+    title: 'Digital Life Certificate 2026: Submit from Home by Face Scan in the November Campaign — No Treasury Visit Needed',
+    excerpt: 'The National Digital Life Certificate campaign is running in November 2026 — pensioners and family pensioners can submit the life certificate from home by face scan on a mobile. The full process and the Pramaan ID advice.',
+  },
   {
     href: '/en/blog/up-scholarship-verification-payment-date/',
     img: '/images/blog/up-scholarship-verification-payment-date-featured.webp',
