@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" role="img" aria-label="Digital Life Certificate (Jeevan Pramaan) — submit from home in five steps">
+  <rect width="900" height="250" fill="#eff6ff"/>
+  <text x="450" y="28" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#111827">Digital Life Certificate — Submit from Home in 5 Steps</text>
+  <line x1="60" y1="125" x2="840" y2="125" stroke="#93c5fd" stroke-width="3" stroke-linecap="round"/>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <circle cx="90" cy="125" r="16" fill="#2563eb"/>
+    <text x="90" y="130" font-size="15" font-weight="700" fill="#ffffff">1</text>
+    <text x="90" y="100" font-size="13" font-weight="700" fill="#1d4ed8">Download apps</text>
+    <text x="90" y="82" font-size="12" fill="#374151">Jeevan Pramaan +</text>
+    <text x="90" y="66" font-size="12" fill="#374151">Aadhaar Face RD</text>
+    <circle cx="270" cy="125" r="16" fill="#2563eb"/>
+    <text x="270" y="130" font-size="15" font-weight="700" fill="#ffffff">2</text>
+    <text x="270" y="160" font-size="13" font-weight="700" fill="#1d4ed8">Aadhaar + mobile</text>
+    <text x="270" y="178" font-size="12" fill="#374151">Verify with OTP</text>
+    <circle cx="450" cy="125" r="16" fill="#2563eb"/>
+    <text x="450" y="130" font-size="15" font-weight="700" fill="#ffffff">3</text>
+    <text x="450" y="100" font-size="13" font-weight="700" fill="#1d4ed8">Fill pension details</text>
+    <text x="450" y="82" font-size="12" fill="#374151">Pension type, PPO no.,</text>
+    <text x="450" y="66" font-size="12" fill="#374151">bank account + IFSC</text>
+    <circle cx="630" cy="125" r="16" fill="#2563eb"/>
+    <text x="630" y="130" font-size="15" font-weight="700" fill="#ffffff">4</text>
+    <text x="630" y="160" font-size="13" font-weight="700" fill="#1d4ed8">Face scan</text>
+    <text x="630" y="178" font-size="12" fill="#374151">Look at the camera</text>
+    <circle cx="810" cy="125" r="16" fill="#16a34a"/>
+    <text x="810" y="130" font-size="15" font-weight="700" fill="#ffffff">5</text>
+    <text x="810" y="100" font-size="13" font-weight="700" fill="#15803d">Submitted</text>
+    <text x="810" y="82" font-size="12" fill="#374151">Keep the Pramaan ID</text>
+    <text x="810" y="66" font-size="12" fill="#374151">safe to check status</text>
+  </g>
+</svg>
