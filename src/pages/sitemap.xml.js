@@ -16,6 +16,7 @@ const slugs = [
   'blog/rani-laxmibai-scooty-yojana-verification-november-2026',
   'blog/up-scholarship-deadline-extension-13-november-2026',
   'blog/up-scholarship-verification-payment-date',
+  'blog/digital-life-certificate-jeevan-pramaan',
 ];
 export function GET() {
   // Per-slug lastmod: 2026-10-27 = pages content-edited in this fix round;
@@ -37,7 +38,7 @@ export function GET() {
     'contact-us': '2026-10-22',
     'privacy-policy': '2026-10-22',
     'disclaimer': '2026-10-22',
-    'blog': '2026-11-21',
+    'blog': '2026-11-22',
     'blog/certificate-print-download-verification': '2026-11-11',
     'blog/esathi-login-forgot-password-otp': '2026-11-12',
     'blog/esathi-download': '2026-11-14',
@@ -49,6 +50,7 @@ export function GET() {
     'blog/rani-laxmibai-scooty-yojana-verification-november-2026': '2026-11-08',
     'blog/up-scholarship-deadline-extension-13-november-2026': '2026-11-08',
     'blog/up-scholarship-verification-payment-date': '2026-11-21',
+    'blog/digital-life-certificate-jeevan-pramaan': '2026-11-22',
   };
   const entries = slugs.flatMap((s) => {
     const lastmod = lastmodBySlug[s];
