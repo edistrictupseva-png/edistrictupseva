@@ -1,0 +1,10 @@
+---
+interface Props { lang: 'hi' | 'en'; }
+const { lang } = Astro.props;
+const aboutPath = lang === 'hi' ? '/about-us/' : '/en/about-us/';
+---
+<section class="box author-box" aria-label={lang === 'hi' ? 'लेखक के बारे में' : 'About the author'}>
+  <h2>{lang === 'hi' ? 'लेखक' : 'About the author'}</h2>
+  <p><strong>{lang === 'hi' ? 'अनवर फ़ख़री' : 'Anwar Fakhri'}</strong> — {lang === 'hi' ? 'SEO विशेषज्ञ; इस साइट की UP eDistrict गाइड लिखते हैं।' : 'SEO specialist who writes this site’s UP eDistrict guides.'}</p>
+  <p><a href={aboutPath}>{lang === 'hi' ? 'लेखक के बारे में और पढ़ें →' : 'More about the author →'}</a></p>
+</section>

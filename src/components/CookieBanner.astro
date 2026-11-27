@@ -1,0 +1,65 @@
+---
+interface Props { lang: 'hi' | 'en'; }
+const { lang } = Astro.props;
+const privacyPath = lang === 'hi' ? '/privacy-policy/' : '/en/privacy-policy/';
+---
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label={lang === 'hi' ? 'कुकी सूचना' : 'Cookie notice'} hidden>
+  <p>{lang === 'hi'
+    ? 'यह वेबसाइट विश्लेषण (analytics) के लिए कुकीज़ का उपयोग करती है।'
+    : 'This website uses cookies for analytics.'}
+    <a href={privacyPath}>{lang === 'hi' ? 'गोपनीयता नीति पढ़ें' : 'Read our Privacy Policy'}</a>
+  </p>
+  <div class="cookie-banner-actions">
+    <button type="button" class="btn cookie-accept" id="cookie-accept">{lang === 'hi' ? 'स्वीकार करें' : 'Accept'}</button>
+    <button type="button" class="btn btn-outline cookie-reject" id="cookie-reject">{lang === 'hi' ? 'अस्वीकार करें' : 'Reject'}</button>
+  </div>
+</div>
+<script>
+  (function () {
+    var KEY = 'edistrict-cookie-consent';
+    var GA_ID = 'G-8MYFTEZB3X';
+    function loadGA() {
+      if (window.__edistrictGaLoaded) return;
+      window.__edistrictGaLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', GA_ID);
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(s);
+    }
+    function getChoice() {
+      try { return window.localStorage.getItem(KEY); } catch (e) { return null; }
+    }
+    function setChoice(value) {
+      try { window.localStorage.setItem(KEY, value); } catch (e) {}
+    }
+    var banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    var choice = getChoice();
+    if (choice === 'accepted') {
+      loadGA();
+      return;
+    }
+    if (choice === 'rejected') return;
+    banner.hidden = false;
+    document.body.classList.add('cookie-banner-visible');
+    var acceptBtn = document.getElementById('cookie-accept');
+    var rejectBtn = document.getElementById('cookie-reject');
+    function dismiss() {
+      banner.hidden = true;
+      document.body.classList.remove('cookie-banner-visible');
+    }
+    if (acceptBtn) acceptBtn.addEventListener('click', function () {
+      setChoice('accepted');
+      loadGA();
+      dismiss();
+    });
+    if (rejectBtn) rejectBtn.addEventListener('click', function () {
+      setChoice('rejected');
+      dismiss();
+    });
+  })();
+</script>
