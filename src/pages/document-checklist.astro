@@ -1,0 +1,169 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base lang="hi" title="दस्तावेज़ चेकलिस्ट — eDistrict UP Seva" description="प्रमाण पत्र के लिए ज़रूरी दस्तावेज़ों की सूची — आय, जाति, निवास, जन्म, मृत्यु प्रमाण पत्र और परिवार रजिस्टर नकल। जो तैयार है उस पर टिक लगाएँ और सूची प्रिंट करें।" path="/document-checklist/" altPath="/en/document-checklist/" updated="27 नवंबर 2026" datePublished="2026-11-27" dateModified="2026-11-27">
+  <div class="content-col">
+    <h1 class="page-title">दस्तावेज़ चेकलिस्ट</h1>
+    <p class="note">नोट: यह वेबसाइट एक स्वतंत्र जानकारी गाइड है — इसका आधिकारिक पोर्टल edistrict.up.gov.in से कोई संबंध नहीं है।</p>
+    <p>अपना प्रमाण पत्र चुनें — उसके लिए ज़रूरी दस्तावेज़ों की सूची देखें, जो दस्तावेज़ तैयार है उस पर टिक लगाएँ, और सूची प्रिंट करके साथ ले जाएँ। टिक लगाई हुई जानकारी सिर्फ़ आपके ब्राउज़र में रहती है, कहीं भेजी नहीं जाती।</p>
+
+    <section class="box">
+      <h2>प्रमाण पत्र चुनें</h2>
+      <div class="checklist-picker" role="group" aria-label="प्रमाण पत्र चुनें">
+        <button type="button" class="btn checklist-picker-btn is-active" data-target="income" aria-pressed="true">आय प्रमाण पत्र</button>
+        <button type="button" class="btn btn-outline checklist-picker-btn" data-target="caste" aria-pressed="false">जाति प्रमाण पत्र</button>
+        <button type="button" class="btn btn-outline checklist-picker-btn" data-target="domicile" aria-pressed="false">निवास प्रमाण पत्र</button>
+        <button type="button" class="btn btn-outline checklist-picker-btn" data-target="birth" aria-pressed="false">जन्म प्रमाण पत्र</button>
+        <button type="button" class="btn btn-outline checklist-picker-btn" data-target="death" aria-pressed="false">मृत्यु प्रमाण पत्र</button>
+        <button type="button" class="btn btn-outline checklist-picker-btn" data-target="parivar" aria-pressed="false">परिवार रजिस्टर नकल</button>
+      </div>
+      <p><button type="button" class="btn checklist-print-btn" id="checklist-print">सूची प्रिंट करें</button></p>
+    </section>
+
+    <section class="box checklist-panel" id="checklist-income" data-cert="income">
+      <h2>आय प्रमाण पत्र — ज़रूरी दस्तावेज़</h2>
+      <p>पूरी गाइड: <a href="/income-certificate/">आय प्रमाण पत्र गाइड →</a></p>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="income" data-index="0" /><span>आवेदक का आधार कार्ड</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="1" /><span>पासपोर्ट साइज़ फोटो</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="2" /><span>राशन कार्ड (परिवार के सदस्यों के विवरण के लिए)</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="3" /><span>स्व-प्रमाणित घोषणा पत्र — भरा और हस्ताक्षर किया हुआ, केवल JPEG प्रारूप में</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="4" /><span>वेतनभोगी हैं तो वेतन पर्ची (salary slip) या नियोक्ता द्वारा दिया गया आय प्रमाण</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="5" /><span>व्यापार या स्वरोज़गार है तो बैंक स्टेटमेंट / पासबुक की प्रति</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="6" /><span>किसान परिवार है तो खेती से आय संबंधी प्रमाण — जैसे खतौनी या बैंक खाते का विवरण</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="7" /><span>आधार से लिंक मोबाइल नंबर (OTP के लिए अनिवार्य)</span></label></li>
+      </ul>
+      <div class="note"><strong>फ़ाइल का आकार:</strong> हर फ़ाइल 100KB से कम, JPEG या PDF प्रारूप में रखें। स्व-प्रमाणित घोषणा पत्र केवल JPEG में ही अपलोड करें — PDF डालने पर आवेदन अस्वीकार हो सकता है।</div>
+    </section>
+
+    <section class="box checklist-panel" id="checklist-caste" data-cert="caste" hidden>
+      <h2>जाति प्रमाण पत्र — ज़रूरी दस्तावेज़</h2>
+      <p>पूरी गाइड: <a href="/caste-certificate/">जाति प्रमाण पत्र गाइड →</a></p>
+      <h3>सभी आवेदकों के लिए</h3>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="caste" data-index="0" /><span>आवेदक का आधार कार्ड</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="1" /><span>पासपोर्ट साइज़ फोटो</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="2" /><span>राशन कार्ड (पारिवारिक विवरण के लिए)</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="3" /><span>स्व-प्रमाणित घोषणा पत्र — भरा और हस्ताक्षर किया हुआ, केवल JPEG प्रारूप में</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="4" /><span>निवास से जुड़ा कोई प्रमाण — जैसे परिवार का निवास प्रमाण पत्र या वोटर ID (यदि उपलब्ध हो)</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="5" /><span>आधार से लिंक मोबाइल नंबर (OTP के लिए)</span></label></li>
+      </ul>
+      <h3>SC / ST आवेदकों के लिए जाति का प्रमाण</h3>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="caste" data-index="6" /><span>पिता या परिवार के किसी सदस्य का पहले से बना जाति प्रमाण पत्र (सबसे मज़बूत प्रमाण)</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="7" /><span>परिवार का पुराना रिकॉर्ड या ग्राम प्रधान / स्थानीय निकाय द्वारा जाति संबंधी प्रमाण (पुराना प्रमाण पत्र न होने पर)</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="8" /><span>स्कूल रिकॉर्ड — जैसे स्थानांतरण प्रमाण पत्र (TC) जिसमें जाति दर्ज हो (यदि उपलब्ध हो)</span></label></li>
+      </ul>
+      <h3>OBC आवेदकों के लिए अतिरिक्त दस्तावेज़</h3>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="caste" data-index="9" /><span>पिता का जाति प्रमाण पत्र या जाति का पारिवारिक प्रमाण (ऊपर की तरह)</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="10" /><span>परिवार की आय से जुड़े दस्तावेज़ — नॉन-क्रीमी लेयर स्थिति के आकलन के लिए (आय प्रमाण पत्र या आय का प्रमाण)</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="11" /><span>क्रीमी लेयर से संबंधित स्व-घोषणा — फॉर्म में पूछी गई आर्थिक जानकारी सही भरें</span></label></li>
+      </ul>
+      <div class="note"><strong>फ़ाइल का आकार:</strong> हर फ़ाइल 100KB से कम, JPEG या PDF प्रारूप में रखें। स्व-प्रमाणित घोषणा पत्र केवल JPEG में ही अपलोड करें — PDF डालने पर आवेदन अस्वीकार हो सकता है।</div>
+    </section>
+
+    <section class="box checklist-panel" id="checklist-domicile" data-cert="domicile" hidden>
+      <h2>निवास प्रमाण पत्र — ज़रूरी दस्तावेज़</h2>
+      <p>पूरी गाइड: <a href="/domicile-certificate/">निवास प्रमाण पत्र गाइड →</a></p>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="domicile" data-index="0" /><span>आवेदक का आधार कार्ड</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="1" /><span>पासपोर्ट साइज़ फोटो</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="2" /><span>राशन कार्ड (परिवार के निवास का रिकॉर्ड)</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="3" /><span>स्व-प्रमाणित घोषणा पत्र — भरा और हस्ताक्षर किया हुआ, केवल JPEG प्रारूप में</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="4" /><span>वोटर ID कार्ड (मतदाता सूची में नाम निवास का मज़बूत संकेत होता है)</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="5" /><span>बिजली बिल या अन्य उपयोगिता बिल — वर्तमान पते के प्रमाण के रूप में</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="6" /><span>पुराना निवास प्रमाण — माता-पिता का निवास प्रमाण पत्र, परिवार का कोई पुराना प्रमाण पत्र या पूर्व में जारी कोई सरकारी दस्तावेज़ जिसमें UP का पता दर्ज हो</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="7" /><span>लंबे निवास के अन्य प्रमाण — मकान/भूमि के कागज़ (खतौनी), बच्चों के स्कूल रिकॉर्ड, या पुराने बैंक/सरकारी रिकॉर्ड (जो उपलब्ध हों)</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="8" /><span>आधार से लिंक मोबाइल नंबर (OTP के लिए)</span></label></li>
+      </ul>
+      <div class="note"><strong>फ़ाइल का आकार:</strong> हर फ़ाइल 100KB से कम, JPEG या PDF प्रारूप में रखें। स्व-प्रमाणित घोषणा पत्र केवल JPEG में ही अपलोड करें — PDF डालने पर आवेदन अस्वीकार हो सकता है।</div>
+    </section>
+
+    <section class="box checklist-panel" id="checklist-birth" data-cert="birth" hidden>
+      <h2>जन्म प्रमाण पत्र — ज़रूरी दस्तावेज़</h2>
+      <p>पूरी गाइड: <a href="/birth-certificate/">जन्म प्रमाण पत्र गाइड →</a></p>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="birth" data-index="0" /><span>अस्पताल द्वारा जारी जन्म सूचना (birth report) या डिस्चार्ज सारांश की प्रति</span></label></li>
+        <li><label><input type="checkbox" data-cert="birth" data-index="1" /><span>माता और पिता दोनों के आधार कार्ड</span></label></li>
+        <li><label><input type="checkbox" data-cert="birth" data-index="2" /><span>माता-पिता का पता प्रमाण (आधार कार्ड पर दर्ज पता सामान्यतः पर्याप्त होता है)</span></label></li>
+        <li><label><input type="checkbox" data-cert="birth" data-index="3" /><span>घर पर जन्म की स्थिति में ग्राम प्रधान / पार्षद का प्रमाणन या आशा कार्यकर्ता की रिपोर्ट</span></label></li>
+        <li><label><input type="checkbox" data-cert="birth" data-index="4" /><span>देर से पंजीकरण में देरी का कारण स्पष्ट करने वाला शपथ-पत्र या स्व-प्रमाणित घोषणा पत्र</span></label></li>
+        <li><label><input type="checkbox" data-cert="birth" data-index="5" /><span>आवेदक का सक्रिय मोबाइल नंबर (OTP और स्टेटस सूचना के लिए)</span></label></li>
+      </ul>
+      <div class="note"><strong>फ़ाइल का आकार:</strong> हर फ़ाइल 100KB से कम, JPEG या PDF प्रारूप में रखें। स्व-प्रमाणित घोषणा पत्र केवल JPEG में ही अपलोड करें — PDF डालने पर आवेदन अस्वीकार हो सकता है।</div>
+    </section>
+
+    <section class="box checklist-panel" id="checklist-death" data-cert="death" hidden>
+      <h2>मृत्यु प्रमाण पत्र — ज़रूरी दस्तावेज़</h2>
+      <p>पूरी गाइड: <a href="/death-certificate/">मृत्यु प्रमाण पत्र गाइड →</a></p>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="death" data-index="0" /><span>अस्पताल की मृत्यु रिपोर्ट (death report) — अस्पताल में मृत्यु की स्थिति में</span></label></li>
+        <li><label><input type="checkbox" data-cert="death" data-index="1" /><span>श्मशान घाट / कब्रिस्तान की अंतिम संस्कार रसीद — विशेषकर घर पर मृत्यु में</span></label></li>
+        <li><label><input type="checkbox" data-cert="death" data-index="2" /><span>मृतक का आधार कार्ड (उपलब्ध हो तो)</span></label></li>
+        <li><label><input type="checkbox" data-cert="death" data-index="3" /><span>आवेदक (परिवार के सदस्य) का आधार कार्ड या अन्य पहचान पत्र</span></label></li>
+        <li><label><input type="checkbox" data-cert="death" data-index="4" /><span>मृतक का पता प्रमाण — राशन कार्ड या आधार पर दर्ज पता सामान्यतः चलता है</span></label></li>
+        <li><label><input type="checkbox" data-cert="death" data-index="5" /><span>देर से पंजीकरण की स्थिति में देरी का कारण बताने वाला घोषणा पत्र</span></label></li>
+        <li><label><input type="checkbox" data-cert="death" data-index="6" /><span>सक्रिय मोबाइल नंबर — OTP और आवेदन स्थिति की सूचना के लिए</span></label></li>
+      </ul>
+      <div class="note"><strong>फ़ाइल का आकार:</strong> हर फ़ाइल 100KB से कम, JPEG या PDF प्रारूप में रखें। स्व-प्रमाणित घोषणा पत्र केवल JPEG में ही अपलोड करें — PDF डालने पर आवेदन अस्वीकार हो सकता है।</div>
+    </section>
+
+    <section class="box checklist-panel" id="checklist-parivar" data-cert="parivar" hidden>
+      <h2>परिवार रजिस्टर नकल — ज़रूरी दस्तावेज़</h2>
+      <p>पूरी गाइड: <a href="/parivar-register-nakal/">परिवार रजिस्टर नकल गाइड →</a></p>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="parivar" data-index="0" /><span>आवेदक का आधार कार्ड (परिवार के मुखिया या वयस्क सदस्य का)</span></label></li>
+        <li><label><input type="checkbox" data-cert="parivar" data-index="1" /><span>परिवार के मुखिया का नाम और गांव / ग्राम पंचायत का पूरा विवरण</span></label></li>
+        <li><label><input type="checkbox" data-cert="parivar" data-index="2" /><span>नाम जोड़ने की स्थिति में जन्म प्रमाण पत्र (बच्चे के लिए)</span></label></li>
+        <li><label><input type="checkbox" data-cert="parivar" data-index="3" /><span>नाम हटाने की स्थिति में मृत्यु प्रमाण पत्र (मृत सदस्य के लिए)</span></label></li>
+        <li><label><input type="checkbox" data-cert="parivar" data-index="4" /><span>शादी द्वारा नाम जोड़ने की स्थिति में विवाह प्रमाण पत्र या स्वीकार्य साक्ष्य</span></label></li>
+        <li><label><input type="checkbox" data-cert="parivar" data-index="5" /><span>पुरानी नकल या राशन कार्ड की प्रति (उपलब्ध हो तो — सत्यापन आसान होता है)</span></label></li>
+      </ul>
+      <div class="note"><strong>फ़ाइल का आकार:</strong> हर फ़ाइल 100KB से कम, JPEG या PDF प्रारूप में रखें। स्व-प्रमाणित घोषणा पत्र केवल JPEG में ही अपलोड करें — PDF डालने पर आवेदन अस्वीकार हो सकता है।</div>
+    </section>
+  </div>
+  <script>
+    (function () {
+      var KEY = 'edistrict-checklist';
+      var buttons = Array.prototype.slice.call(document.querySelectorAll('.checklist-picker-btn'));
+      var panels = Array.prototype.slice.call(document.querySelectorAll('.checklist-panel'));
+      function show(id) {
+        buttons.forEach(function (b) {
+          var active = b.getAttribute('data-target') === id;
+          b.classList.toggle('is-active', active);
+          b.classList.toggle('btn-outline', !active);
+          b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        panels.forEach(function (p) { p.hidden = p.getAttribute('data-cert') !== id; });
+        try { history.replaceState(null, '', '#' + id); } catch (e) {}
+      }
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () { show(b.getAttribute('data-target')); });
+      });
+      var saved = {};
+      try { saved = JSON.parse(window.localStorage.getItem(KEY) || '{}'); } catch (e) { saved = {}; }
+      var boxes = Array.prototype.slice.call(document.querySelectorAll('.checklist-tool input[type="checkbox"]'));
+      boxes.forEach(function (box) {
+        var cert = box.getAttribute('data-cert');
+        var idx = box.getAttribute('data-index');
+        if (saved[cert] && saved[cert].indexOf(idx) !== -1) box.checked = true;
+        box.addEventListener('change', function () {
+          var current = {};
+          try { current = JSON.parse(window.localStorage.getItem(KEY) || '{}'); } catch (e) { current = {}; }
+          var list = current[cert] || [];
+          var pos = list.indexOf(idx);
+          if (box.checked && pos === -1) list.push(idx);
+          if (!box.checked && pos !== -1) list.splice(pos, 1);
+          current[cert] = list;
+          try { window.localStorage.setItem(KEY, JSON.stringify(current)); } catch (e) {}
+        });
+      });
+      var printBtn = document.getElementById('checklist-print');
+      if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
+      var hash = (window.location.hash || '').replace('#', '');
+      if (hash && document.getElementById('checklist-' + hash)) show(hash);
+      else show('income');
+    })();
+  </script>
+</Base>
