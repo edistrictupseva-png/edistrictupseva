@@ -16,18 +16,18 @@ const help = lang === 'hi'
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <h4>eDistrict UP Seva</h4>
+        <h2>eDistrict UP Seva</h2>
         <p>{lang === 'hi'
           ? 'उत्तर प्रदेश के नागरिकों के लिए eDistrict / eSathi पोर्टल की आसान भाषा में गाइड — प्रमाण पत्र आवेदन, स्टेटस, डाउनलोड और सत्यापन की पूरी जानकारी।'
           : 'Easy-language guides to the Uttar Pradesh eDistrict / eSathi portal — certificate applications, status, downloads and verification, explained step by step.'}</p>
       </div>
       <div>
-        <h4>{lang === 'hi' ? 'प्रमाण पत्र' : 'Certificates'}</h4>
+        <h2>{lang === 'hi' ? 'प्रमाण पत्र' : 'Certificates'}</h2>
         <ul>{certs.map(([label, slug]) => <li><a href={p(slug)}>{label}</a></li>)}</ul>
       </div>
-      <div><h4>{lang === 'hi' ? 'सहायता केंद्र' : 'Help Centre'}</h4><ul>{help.map(([label, slug]) => <li><a href={p(slug)}>{label}</a></li>)}</ul></div>
+      <div><h2>{lang === 'hi' ? 'सहायता केंद्र' : 'Help Centre'}</h2><ul>{help.map(([label, slug]) => <li><a href={p(slug)}>{label}</a></li>)}</ul></div>
       <div>
-        <h4>{lang === 'hi' ? 'जानकारी' : 'Information'}</h4>
+        <h2>{lang === 'hi' ? 'जानकारी' : 'Information'}</h2>
         <ul>{legal.map(([label, slug]) => <li><a href={p(slug)}>{label}</a></li>)}</ul>
       </div>
     </div>
