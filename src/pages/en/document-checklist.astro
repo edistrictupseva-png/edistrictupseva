@@ -1,0 +1,155 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base lang="en" title="Document Checklist — eDistrict UP Seva" description="Checklist of documents needed for UP certificates — income, caste, domicile, birth, death certificates and Parivar Register Nakal. Tick what is ready and print the list." path="/en/document-checklist/" altPath="/document-checklist/" updated="27 November 2026" datePublished="2026-11-27" dateModified="2026-11-27">
+  <div class="content-col">
+    <h1 class="page-title">Document Checklist</h1>
+    <p class="note">Note: This is an independent information guide — it is not the official portal (edistrict.up.gov.in).</p>
+    <p>Pick your certificate — see the list of documents it needs, tick off the ones you have ready, and print the list to take with you. Your ticks stay in your browser only; nothing is sent anywhere.</p>
+
+    <section class="box">
+      <h2>Choose a certificate</h2>
+      <div class="checklist-picker" role="group" aria-label="Choose a certificate">
+        <button type="button" class="btn checklist-picker-btn is-active" data-target="income" aria-pressed="true">Income Certificate</button>
+        <button type="button" class="btn btn-outline checklist-picker-btn" data-target="caste" aria-pressed="false">Caste Certificate</button>
+        <button type="button" class="btn btn-outline checklist-picker-btn" data-target="domicile" aria-pressed="false">Domicile Certificate</button>
+        <button type="button" class="btn btn-outline checklist-picker-btn" data-target="birth" aria-pressed="false">Birth Certificate</button>
+        <button type="button" class="btn btn-outline checklist-picker-btn" data-target="death" aria-pressed="false">Death Certificate</button>
+        <button type="button" class="btn btn-outline checklist-picker-btn" data-target="parivar" aria-pressed="false">Parivar Register Nakal</button>
+      </div>
+      <p><button type="button" class="btn checklist-print-btn" id="checklist-print">Print the list</button></p>
+    </section>
+
+    <section class="box checklist-panel" id="checklist-income" data-cert="income">
+      <h2>Income Certificate — documents needed</h2>
+      <p>Full guide: <a href="/en/income-certificate/">Income Certificate guide →</a></p>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="income" data-index="0" /><span>Aadhaar card of the applicant</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="1" /><span>Recent passport-size photograph</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="2" /><span>Ration card (family details and income group are cross-checked against it)</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="3" /><span>Self-declaration form (swa-pramanit ghoshna patra), filled and signed — upload as JPEG</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="4" /><span>Income proof matching your occupation: salary slip or employer certificate for salaried applicants</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="5" /><span>Bank statement or passbook pages (useful for pensioners and self-employed applicants)</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="6" /><span>For agricultural income: khatauni or land records showing the holding</span></label></li>
+        <li><label><input type="checkbox" data-cert="income" data-index="7" /><span>For business income: any available proof such as a trade licence or previous ITR, if filed</span></label></li>
+      </ul>
+      <div class="note"><strong>File rules:</strong> uploads must be under 100KB each, in JPEG or PDF; the self-declaration is accepted as a <strong>JPEG image only</strong>.</div>
+    </section>
+
+    <section class="box checklist-panel" id="checklist-caste" data-cert="caste" hidden>
+      <h2>Caste Certificate — documents needed</h2>
+      <p>Full guide: <a href="/en/caste-certificate/">Caste Certificate guide →</a></p>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="caste" data-index="0" /><span>Aadhaar card of the applicant</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="1" /><span>Recent passport-size photograph</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="2" /><span>Ration card</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="3" /><span>Self-declaration form (swa-pramanit ghoshna patra), filled and signed — upload as JPEG</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="4" /><span><strong>Caste proof:</strong> father's or a close paternal relative's existing caste certificate — the strongest and most commonly used proof</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="5" /><span>If no family member has a certificate: certificate from the Gram Pradhan (village) or local councillor confirming your caste</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="6" /><span>Supporting records where available: school leaving certificate or land/revenue records that mention caste</span></label></li>
+        <li><label><input type="checkbox" data-cert="caste" data-index="7" /><span>For OBC NCL applications: income proof of the family (salary slip, income certificate or bank statement)</span></label></li>
+      </ul>
+      <div class="note"><strong>File rules:</strong> uploads must be under 100KB each, in JPEG or PDF; the self-declaration is accepted as a <strong>JPEG image only</strong>.</div>
+    </section>
+
+    <section class="box checklist-panel" id="checklist-domicile" data-cert="domicile" hidden>
+      <h2>Domicile Certificate — documents needed</h2>
+      <p>Full guide: <a href="/en/domicile-certificate/">Domicile Certificate guide →</a></p>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="domicile" data-index="0" /><span>Aadhaar card of the applicant (with UP address, or updated to it)</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="1" /><span>Recent passport-size photograph</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="2" /><span>Ration card showing the family and address</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="3" /><span>Self-declaration form (swa-pramanit ghoshna patra), filled and signed — upload as JPEG</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="4" /><span>Old residence proof: an earlier document showing you lived at this address — old domicile of a parent, school records, or previous certificates</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="5" /><span>Electricity bill in your or a parent's name for the address</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="6" /><span>Voter ID card with the UP address</span></label></li>
+        <li><label><input type="checkbox" data-cert="domicile" data-index="7" /><span>For land-owning families: khatauni or land records; for tenants: rent agreement</span></label></li>
+      </ul>
+      <div class="note"><strong>File rules:</strong> uploads must be under 100KB each, in JPEG or PDF; the self-declaration is accepted as a <strong>JPEG image only</strong>.</div>
+    </section>
+
+    <section class="box checklist-panel" id="checklist-birth" data-cert="birth" hidden>
+      <h2>Birth Certificate — documents needed</h2>
+      <p>Full guide: <a href="/en/birth-certificate/">Birth Certificate guide →</a></p>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="birth" data-index="0" /><span>Birth report or discharge summary from the hospital (for institutional births)</span></label></li>
+        <li><label><input type="checkbox" data-cert="birth" data-index="1" /><span>Aadhaar card of the mother</span></label></li>
+        <li><label><input type="checkbox" data-cert="birth" data-index="2" /><span>Aadhaar card of the father</span></label></li>
+        <li><label><input type="checkbox" data-cert="birth" data-index="3" /><span>Self-declaration form, filled and signed, where asked — upload as JPEG</span></label></li>
+        <li><label><input type="checkbox" data-cert="birth" data-index="4" /><span>Address proof of the parents (ration card or Aadhaar with current address)</span></label></li>
+        <li><label><input type="checkbox" data-cert="birth" data-index="5" /><span>For late registration: affidavit, any proof of the birth (hospital or school records), and the SDM's order where required</span></label></li>
+      </ul>
+      <div class="note"><strong>File rules:</strong> uploads must be under 100KB each, in JPEG or PDF; the self-declaration is accepted as a <strong>JPEG image only</strong>.</div>
+    </section>
+
+    <section class="box checklist-panel" id="checklist-death" data-cert="death" hidden>
+      <h2>Death Certificate — documents needed</h2>
+      <p>Full guide: <a href="/en/death-certificate/">Death Certificate guide →</a></p>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="death" data-index="0" /><span>Hospital death report or medical certificate of cause of death, if the death occurred in a hospital</span></label></li>
+        <li><label><input type="checkbox" data-cert="death" data-index="1" /><span>Cremation ground receipt or burial receipt, especially when the death occurred at home</span></label></li>
+        <li><label><input type="checkbox" data-cert="death" data-index="2" /><span>Aadhaar card of the deceased (if available)</span></label></li>
+        <li><label><input type="checkbox" data-cert="death" data-index="3" /><span>Applicant's own ID — usually Aadhaar card (the applicant is normally a close family member)</span></label></li>
+        <li><label><input type="checkbox" data-cert="death" data-index="4" /><span>Ration card of the family, if the deceased's name has to be removed from it later</span></label></li>
+        <li><label><input type="checkbox" data-cert="death" data-index="5" /><span>An older ID of the deceased such as voter ID or PAN, in case the name needs to be matched across records</span></label></li>
+      </ul>
+      <div class="note"><strong>File rules:</strong> uploads must be under 100KB each, in JPEG or PDF; the self-declaration is accepted as a <strong>JPEG image only</strong>.</div>
+    </section>
+
+    <section class="box checklist-panel" id="checklist-parivar" data-cert="parivar" hidden>
+      <h2>Parivar Register Nakal — documents needed</h2>
+      <p>Full guide: <a href="/en/parivar-register-nakal/">Parivar Register Nakal guide →</a></p>
+      <ul class="checklist-tool">
+        <li><label><input type="checkbox" data-cert="parivar" data-index="0" /><span>Applicant's Aadhaar card or any government photo ID</span></label></li>
+        <li><label><input type="checkbox" data-cert="parivar" data-index="1" /><span>Ration card of the family (helps the Panchayat locate the exact register entry)</span></label></li>
+        <li><label><input type="checkbox" data-cert="parivar" data-index="2" /><span>Any older copy of the Parivar Register Nakal, if you have one — the fastest way to find the entry</span></label></li>
+        <li><label><input type="checkbox" data-cert="parivar" data-index="3" /><span>Details of the head of the family exactly as recorded in the register</span></label></li>
+        <li><label><input type="checkbox" data-cert="parivar" data-index="4" /><span>For updates: birth certificate for adding a child, death certificate for removing a deceased member, marriage record where a spouse is to be added</span></label></li>
+      </ul>
+      <div class="note"><strong>File rules:</strong> uploads must be under 100KB each, in JPEG or PDF; the self-declaration is accepted as a <strong>JPEG image only</strong>.</div>
+    </section>
+  </div>
+  <script>
+    (function () {
+      var KEY = 'edistrict-checklist';
+      var buttons = Array.prototype.slice.call(document.querySelectorAll('.checklist-picker-btn'));
+      var panels = Array.prototype.slice.call(document.querySelectorAll('.checklist-panel'));
+      function show(id) {
+        buttons.forEach(function (b) {
+          var active = b.getAttribute('data-target') === id;
+          b.classList.toggle('is-active', active);
+          b.classList.toggle('btn-outline', !active);
+          b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        panels.forEach(function (p) { p.hidden = p.getAttribute('data-cert') !== id; });
+        try { history.replaceState(null, '', '#' + id); } catch (e) {}
+      }
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () { show(b.getAttribute('data-target')); });
+      });
+      var saved = {};
+      try { saved = JSON.parse(window.localStorage.getItem(KEY) || '{}'); } catch (e) { saved = {}; }
+      var boxes = Array.prototype.slice.call(document.querySelectorAll('.checklist-tool input[type="checkbox"]'));
+      boxes.forEach(function (box) {
+        var cert = box.getAttribute('data-cert');
+        var idx = box.getAttribute('data-index');
+        if (saved[cert] && saved[cert].indexOf(idx) !== -1) box.checked = true;
+        box.addEventListener('change', function () {
+          var current = {};
+          try { current = JSON.parse(window.localStorage.getItem(KEY) || '{}'); } catch (e) { current = {}; }
+          var list = current[cert] || [];
+          var pos = list.indexOf(idx);
+          if (box.checked && pos === -1) list.push(idx);
+          if (!box.checked && pos !== -1) list.splice(pos, 1);
+          current[cert] = list;
+          try { window.localStorage.setItem(KEY, JSON.stringify(current)); } catch (e) {}
+        });
+      });
+      var printBtn = document.getElementById('checklist-print');
+      if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
+      var hash = (window.location.hash || '').replace('#', '');
+      if (hash && document.getElementById('checklist-' + hash)) show(hash);
+      else show('income');
+    })();
+  </script>
+</Base>
