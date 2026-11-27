@@ -200,6 +200,24 @@ figure.blog-featured figcaption{font-size:.85rem;color:var(--gray-500);margin-to
 .sidebar-more{font-weight:700;font-size:.92rem}
 .sidebar-helpline{background:var(--blue-50);border-color:var(--blue-200)}
 .sidebar-helpline p{margin:.3rem 0 .55rem;font-size:.93rem}
+/* author box (Batch 1 — rendered by Base.astro on guides and blog posts) */
+.author-box{border-left:4px solid var(--blue-500)}
+.author-box h2{font-size:1.2rem}
+.author-box p{margin:.4rem 0}
+
+/* cookie consent banner (fixed bottom; shown only until a choice is stored) */
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:100;background:#fff;border-top:1px solid var(--blue-200);box-shadow:0 -8px 24px rgba(15,23,42,.10);padding:1rem 0}
+.cookie-banner[hidden]{display:none}
+.cookie-banner p{max-width:72rem;margin:0 auto .7rem;padding:0 1rem;font-size:.93rem;color:var(--gray-700)}
+.cookie-banner-actions{max-width:72rem;margin:0 auto;padding:0 1rem;display:flex;gap:.6rem;flex-wrap:wrap}
+body.cookie-banner-visible{padding-bottom:10rem}
+@media(min-width:768px){
+  .cookie-banner{display:flex;align-items:center;gap:1rem;justify-content:space-between}
+  .cookie-banner p{margin:0;flex:1}
+  .cookie-banner-actions{margin:0;flex:none}
+  body.cookie-banner-visible{padding-bottom:5.5rem}
+}
+
 @media(min-width:1024px){
   .page-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:1.75rem;align-items:start;padding:0 1rem}
   .site-sidebar{margin:1.6rem 0 0}
