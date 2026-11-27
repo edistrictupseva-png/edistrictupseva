@@ -127,9 +127,8 @@ figure.shot figcaption{font-size:.85rem;color:var(--gray-500);margin-top:.35rem;
 .visual-note{position:relative;z-index:1;display:flex;align-items:center;gap:.55rem;background:color-mix(in srgb,var(--visual-accent) 8%,#fff);border-left:3px solid var(--visual-accent);border-radius:.35rem;padding:.62rem .75rem;color:#3f4b5f;font-size:.85rem;font-weight:600;padding-right:10rem}
 .visual-note>span{color:var(--visual-accent);font-weight:900}
 .visual-watermark{position:absolute;right:1rem;bottom:1.35rem;color:color-mix(in srgb,var(--visual-accent) 58%,#fff);font-size:.68rem;font-weight:800;letter-spacing:.02em;z-index:2}
-.visual-caption{text-align:right;color:#7b8494;font-size:.74rem;margin:.38rem .2rem 0}
 .authority-home{margin-top:2rem;margin-bottom:1.7rem}
-@media(max-width:700px){.authority-visual{padding:1.1rem}.visual-heading{align-items:flex-start}.visual-heading h2{font-size:1.15rem}.visual-flow{grid-template-columns:repeat(2,1fr)}.visual-step{min-height:5rem}.visual-note{padding-right:.75rem;padding-bottom:1.65rem}.visual-watermark{right:1.5rem;bottom:1.28rem}.visual-caption{text-align:left}}
+@media(max-width:700px){.authority-visual{padding:1.1rem}.visual-heading{align-items:flex-start}.visual-heading h2{font-size:1.15rem}.visual-flow{grid-template-columns:repeat(2,1fr)}.visual-step{min-height:5rem}.visual-note{padding-right:.75rem;padding-bottom:1.65rem}.visual-watermark{right:1.5rem;bottom:1.28rem}}
 /* faq */
 .faq-item{border:1px solid var(--gray-200);border-radius:.6rem;margin-bottom:.6rem;background:#fff}
 .faq-item summary{cursor:pointer;font-weight:600;padding:.85rem 1.05rem;list-style:none}
@@ -188,8 +187,6 @@ figure.blog-featured figcaption{font-size:.85rem;color:var(--gray-500);margin-to
 .sidebar-list a{font-weight:500}
 .sidebar-date{display:block;font-size:.78rem;color:var(--gray-500)}
 .sidebar-more{font-weight:700;font-size:.92rem}
-.sidebar-helpline{background:var(--blue-50);border-color:var(--blue-200)}
-.sidebar-helpline p{margin:.3rem 0 .55rem;font-size:.93rem}
 /* author box (Batch 1 — rendered by Base.astro on guides and blog posts) */
 .author-box{border-left:4px solid var(--blue-500)}
 .author-box h2{font-size:1.2rem}
