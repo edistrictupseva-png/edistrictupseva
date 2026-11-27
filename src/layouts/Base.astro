@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Sidebar from '../components/Sidebar.astro';
 import AuthorityVisual from '../components/AuthorityVisual.astro';
+import AuthorBox from '../components/AuthorBox.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 
 interface Faq { q: string; a: string; }
 interface Props {
@@ -37,6 +39,18 @@ const crumbSchema = !isHome ? {
   ],
 } : null;
 const resolvedFaqTitle = faqTitle ?? (lang === 'hi' ? 'अक्सर पूछे जाने वाले प्रश्न' : 'Frequently Asked Questions');
+// Author box: shown on guide pages and blog posts only (not home, blog index, or info pages).
+const GUIDE_SLUGS = new Set(['income-certificate', 'caste-certificate', 'domicile-certificate', 'birth-certificate', 'death-certificate', 'parivar-register-nakal', 'self-declaration-form', 'csc-guide', 'login-registration', 'status-verification', 'ews-certificate']);
+const cleanPath = path.replace(/^\/(en\/)?/, '').replace(/\/$/, '');
+const isBlogPost = cleanPath.startsWith('blog/') && cleanPath !== 'blog';
+const showAuthorBox = isBlogPost || GUIDE_SLUGS.has(cleanPath);
+const isAboutPage = cleanPath === 'about-us';
+const aboutPath = lang === 'hi' ? '/about-us/' : '/en/about-us/';
+const personSchema = {
+  '@context': 'https://schema.org', '@type': 'Person', name: 'Anwar Fakhri',
+  url: site + aboutPath,
+  description: lang === 'hi' ? 'SEO विशेषज्ञ; eDistrict UP Seva की UP eDistrict गाइड लिखते हैं।' : 'SEO specialist who writes the UP eDistrict guides on eDistrict UP Seva.',
+};
 const websiteSchema = {
   '@context': 'https://schema.org', '@type': 'WebSite', name: 'eDistrict UP Seva', url: site,
   inLanguage: ['hi-IN', 'en-IN'],
@@ -46,6 +60,7 @@ const webPageSchema = {
   '@context': 'https://schema.org', '@type': isHome ? 'CollectionPage' : 'WebPage',
   name: title, description, url: canonical, inLanguage: lang === 'hi' ? 'hi-IN' : 'en-IN',
   isPartOf: { '@type': 'WebSite', name: 'eDistrict UP Seva', url: site },
+  ...(showAuthorBox ? { author: { '@type': 'Person', name: 'Anwar Fakhri', url: site + aboutPath } } : {}),
   ...(datePublished ? { datePublished } : {}),
   ...(dateModified ? { dateModified } : {}),
 };
@@ -59,14 +74,7 @@ const howtoSchema = howto ? {
 <!doctype html>
 <html lang={lang === 'hi' ? 'hi-IN' : 'en-IN'}>
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MYFTEZB3X"></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-8MYFTEZB3X');
-  </script>
+  <!-- Analytics (Google tag) loads only after cookie consent — see CookieBanner component -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
@@ -99,6 +107,7 @@ const howtoSchema = howto ? {
   {crumbSchema && <script type="application/ld+json" set:html={JSON.stringify(crumbSchema)} />}
   {isHome && <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />}
   <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+  {(showAuthorBox || isAboutPage) && <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />}
   {howtoSchema && <script type="application/ld+json" set:html={JSON.stringify(howtoSchema)} />}
   {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 </head>
@@ -131,6 +140,7 @@ const howtoSchema = howto ? {
         </div>
       </div>
     )}
+    {showAuthorBox && (<div class="content-col"><AuthorBox lang={lang} /></div>)}
     {updated && <div class="content-col"><p class="updated-line">{lang === 'hi' ? 'अंतिम अपडेट: ' : 'Last updated: '}{updated}</p></div>}
     <aside class="content-col source-policy" aria-label={lang === 'hi' ? 'आधिकारिक जानकारी नोट' : 'Official-information note'}>
       <strong>{lang === 'hi' ? 'आवेदन से पहले official check' : 'Check before applying'}</strong>
@@ -143,5 +153,6 @@ const howtoSchema = howto ? {
     </div>
   </main>
   <Footer lang={lang} />
+  <CookieBanner lang={lang} />
 </body>
 </html>
