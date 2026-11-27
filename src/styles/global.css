@@ -228,7 +228,7 @@ body.cookie-banner-visible{padding-bottom:10rem}
 .checklist-tool input[type="checkbox"]:checked + span{color:var(--gray-500);text-decoration:line-through}
 .checklist-panel[hidden]{display:none}
 @media print{
-  header,footer,.site-sidebar,.cookie-banner,.checklist-picker,.checklist-print-btn,.skip-link,.authority-visual-wrap,.source-policy,.updated-line{display:none !important}
+  header,footer,.site-sidebar,.cookie-banner,.checklist-picker,.checklist-print-btn,.checklist-download-btn,.checklist-tips,.skip-link,.authority-visual-wrap,.source-policy,.updated-line{display:none !important}
   .page-layout{display:block}
   .checklist-panel[hidden]{display:none !important}
   body{background:#fff}
