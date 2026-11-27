@@ -17,7 +17,7 @@ import Base from '../layouts/Base.astro';
         <button type="button" class="btn btn-outline checklist-picker-btn" data-target="death" aria-pressed="false">मृत्यु प्रमाण पत्र</button>
         <button type="button" class="btn btn-outline checklist-picker-btn" data-target="parivar" aria-pressed="false">परिवार रजिस्टर नकल</button>
       </div>
-      <p><button type="button" class="btn checklist-print-btn" id="checklist-print">सूची प्रिंट करें</button></p>
+      <p><button type="button" class="btn checklist-print-btn" id="checklist-print">सूची प्रिंट करें</button> <button type="button" class="btn btn-outline checklist-download-btn" id="checklist-download">डाउनलोड करें</button></p>
     </section>
 
     <section class="box checklist-panel" id="checklist-income" data-cert="income">
@@ -122,6 +122,23 @@ import Base from '../layouts/Base.astro';
       </ul>
       <div class="note"><strong>फ़ाइल का आकार:</strong> हर फ़ाइल 100KB से कम, JPEG या PDF प्रारूप में रखें। स्व-प्रमाणित घोषणा पत्र केवल JPEG में ही अपलोड करें — PDF डालने पर आवेदन अस्वीकार हो सकता है।</div>
     </section>
+
+    <section class="box checklist-tips">
+      <h2>दस्तावेज़ तैयार करते समय ध्यान रखें</h2>
+      <p>सूची पूरी करना पहला कदम है, दस्तावेज़ सही तैयार करना दूसरा। इस साइट की गाइडों के अनुसार आवेदन सबसे ज़्यादा इन्हीं बातों पर रुकते हैं।</p>
+      <h3>1. नाम और पता हर दस्तावेज़ में एक जैसा</h3>
+      <p>फॉर्म में नाम ठीक वही लिखें जो आधार कार्ड पर है — एक अक्षर का अंतर भी सत्यापन धीमा कर देता है। सभी दस्तावेज़ों में पता एक जैसा रखें, वरना देरी या अस्वीकृति हो सकती है। जाति का नाम पिता के प्रमाण पत्र या पारिवारिक रिकॉर्ड के अनुसार लिखें, और पोर्टल की सूची से ही चुनें — खुद टाइप की हुई अलग स्पेलिंग से आवेदन अस्वीकार हो सकता है।</p>
+      <h3>2. मोबाइल नंबर और OTP तैयार रखें</h3>
+      <p>आधार से लिंक मोबाइल पर OTP आता है — वही नंबर सक्रिय रखें। OTP, पासवर्ड या आधार नंबर किसी के साथ साझा न करें; CSC से आवेदन करवाएँ तो भी OTP और SRN अपने ही नंबर पर लें।</p>
+      <h3>3. फ़ाइलें साफ़ और सही प्रारूप में</h3>
+      <p>हर फ़ाइल 100KB से कम, JPEG या PDF में रखें, और स्कैन साफ़ और पढ़ने लायक हो — धुंधली फ़ाइल अस्वीकृति की आम वजह है। स्व-घोषणा पत्र केवल JPEG में अपलोड करें — PDF डालने पर आवेदन अस्वीकार हो जाता है। जानकारी <a href="/self-declaration-form/">स्व-घोषणा पत्र गाइड</a> में देखें।</p>
+      <h3>4. आय वही लिखें जो कागज़ों से साबित हो</h3>
+      <p>आय वही लिखें जो कागज़ों से साबित हो सके — लेखपाल आय की जांच करता है, और बड़ा अंतर होने पर आवेदन अस्वीकार हो सकता है।</p>
+      <h3>5. कोई दस्तावेज़ न हो तो क्या करें</h3>
+      <p>जाति का प्रमाण न हो तो पिता का जाति प्रमाण पत्र, या ग्राम प्रधान का प्रमाण काम आता है — <a href="/caste-certificate/">जाति प्रमाण पत्र गाइड</a>। जन्म प्रमाण पत्र के लिए अस्पताल की जन्म सूचना सबसे मज़बूत प्रमाण है; देर से पंजीकरण में शपथ-पत्र लगता है — <a href="/birth-certificate/">जन्म प्रमाण पत्र गाइड</a>। निवास के पुराने प्रमाण के लिए माता-पिता का पुराना निवास प्रमाण पत्र या स्कूल रिकॉर्ड चलता है — <a href="/domicile-certificate/">निवास प्रमाण पत्र गाइड</a>।</p>
+      <h3>6. आवेदन अस्वीकार हो जाए तो घबराएँ नहीं</h3>
+      <p>eSathi में लॉगिन करके अस्वीकृति का कारण पढ़ें, वही गलती सुधारें और दोबारा आवेदन करें — दोबारा आवेदन पर कोई जुर्माना नहीं लगता।</p>
+    </section>
   </div>
   <script>
     (function () {
@@ -161,6 +178,34 @@ import Base from '../layouts/Base.astro';
       });
       var printBtn = document.getElementById('checklist-print');
       if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
+      var downloadBtn = document.getElementById('checklist-download');
+      if (downloadBtn) downloadBtn.addEventListener('click', function () {
+        var panel = null;
+        panels.forEach(function (p) { if (!p.hidden) panel = p; });
+        if (!panel) return;
+        var titleEl = panel.querySelector('h2');
+        var title = titleEl ? titleEl.textContent.trim() : '';
+        var guideLink = panel.querySelector('a');
+        var guidePath = guideLink ? guideLink.getAttribute('href') : '';
+        var slug = guidePath.replace(/\//g, '') || panel.getAttribute('data-cert');
+        var lines = [title, 'edistrictupseva.com', ''];
+        var items = panel.querySelectorAll('.checklist-tool input[type="checkbox"]');
+        items.forEach(function (box) {
+          var label = box.parentNode.querySelector('span');
+          lines.push((box.checked ? '[x] ' : '[ ] ') + (label ? label.textContent.trim() : ''));
+        });
+        lines.push('');
+        lines.push('पूरी गाइड: https://edistrictupseva.com' + guidePath);
+        var blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = slug + '-checklist.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      });
       var hash = (window.location.hash || '').replace('#', '');
       if (hash && document.getElementById('checklist-' + hash)) show(hash);
       else show('income');
