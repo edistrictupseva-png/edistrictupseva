@@ -41,7 +41,6 @@ const services = hi
 
 const latest = getBlogPosts(lang).slice(0, 5);
 const blogIndex = hi ? '/blog/' : '/en/blog/';
-const helplinePost = hi ? '/blog/edistrict-helpline-contact/' : '/en/blog/edistrict-helpline-contact/';
 ---
 <aside class="site-sidebar" aria-label={hi ? 'साइडबार' : 'Sidebar'}>
   <div class="sidebar-box">
@@ -67,12 +66,5 @@ const helplinePost = hi ? '/blog/edistrict-helpline-contact/' : '/en/blog/edistr
     <ul class="sidebar-list">
       {services.map(([href, label]) => <li><a href={href}>{label}</a></li>)}
     </ul>
-  </div>
-  <div class="sidebar-box sidebar-helpline">
-    <h2>{hi ? 'मदद चाहिए?' : 'Need Help?'}</h2>
-    <p>{hi
-      ? 'प्रमाण पत्र अटक गया है या देरी हो रही है? सही संपर्क और शिकायत का सही क्रम इस गाइड में दिया गया है।'
-      : 'Is your certificate stuck or delayed? This guide lists the right contacts and the correct order for complaints.'}</p>
-    <a class="sidebar-more" href={helplinePost}>{hi ? 'eDistrict Helpline गाइड पढ़ें →' : 'Read the eDistrict Helpline guide →'}</a>
   </div>
 </aside>
