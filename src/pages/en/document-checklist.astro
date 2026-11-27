@@ -17,7 +17,7 @@ import Base from '../../layouts/Base.astro';
         <button type="button" class="btn btn-outline checklist-picker-btn" data-target="death" aria-pressed="false">Death Certificate</button>
         <button type="button" class="btn btn-outline checklist-picker-btn" data-target="parivar" aria-pressed="false">Parivar Register Nakal</button>
       </div>
-      <p><button type="button" class="btn checklist-print-btn" id="checklist-print">Print the list</button></p>
+      <p><button type="button" class="btn checklist-print-btn" id="checklist-print">Print the list</button> <button type="button" class="btn btn-outline checklist-download-btn" id="checklist-download">Download</button></p>
     </section>
 
     <section class="box checklist-panel" id="checklist-income" data-cert="income">
@@ -108,6 +108,23 @@ import Base from '../../layouts/Base.astro';
       </ul>
       <div class="note"><strong>File rules:</strong> uploads must be under 100KB each, in JPEG or PDF; the self-declaration is accepted as a <strong>JPEG image only</strong>.</div>
     </section>
+
+    <section class="box checklist-tips">
+      <h2>Getting your documents ready</h2>
+      <p>Ticking the list is the first step — preparing the documents properly is the second. These are the points our guides say cause the most applications to stall.</p>
+      <h3>1. Keep names and details identical everywhere</h3>
+      <p>Write your name exactly as it appears on Aadhaar — even a spelling difference slows verification. Keep the address the same across your documents; different addresses can delay or reject a domicile application. Write the caste name exactly as in your father's certificate or family record, and pick it from the portal's list — typing a different spelling can get the application rejected.</p>
+      <h3>2. Keep your mobile number ready for OTP</h3>
+      <p>Registration and login use an OTP sent to the mobile number linked to Aadhaar, so keep that number active. Never share an OTP, password or Aadhaar number — even through a CSC, take the OTP and SRN on your own mobile number.</p>
+      <h3>3. Upload clean files in the right format</h3>
+      <p>Keep every file under 100KB, in JPEG or PDF, and make sure scans and photos are clear and readable — a blurry scan is a common reason for rejection. Upload the self-declaration as a JPEG image only; a PDF upload gets the application rejected. See the <a href="/en/self-declaration-form/">self-declaration guide</a>.</p>
+      <h3>4. Declare only the income your papers can prove</h3>
+      <p>On an income certificate, write only the income you can prove with documents — the Lekhpal verifies the figures, and a mismatch is a common reason for rejection.</p>
+      <h3>5. If a document is missing</h3>
+      <p>If you have no caste proof, your father's caste certificate works, or a certificate from the Gram Pradhan — <a href="/en/caste-certificate/">caste certificate guide</a>. For a birth certificate, the hospital's birth report is the strongest proof; late registration needs an affidavit, and beyond a year the SDM's order — <a href="/en/birth-certificate/">birth certificate guide</a>. For domicile, an old residence proof such as a parent's old domicile certificate or school records works — <a href="/en/domicile-certificate/">domicile certificate guide</a>.</p>
+      <h3>6. If your application is rejected, don't panic</h3>
+      <p>Log in to eSathi, read the rejection remark, fix that specific problem and apply again — there is no penalty for reapplying.</p>
+    </section>
   </div>
   <script>
     (function () {
@@ -147,6 +164,34 @@ import Base from '../../layouts/Base.astro';
       });
       var printBtn = document.getElementById('checklist-print');
       if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
+      var downloadBtn = document.getElementById('checklist-download');
+      if (downloadBtn) downloadBtn.addEventListener('click', function () {
+        var panel = null;
+        panels.forEach(function (p) { if (!p.hidden) panel = p; });
+        if (!panel) return;
+        var titleEl = panel.querySelector('h2');
+        var title = titleEl ? titleEl.textContent.trim() : '';
+        var guideLink = panel.querySelector('a');
+        var guidePath = guideLink ? guideLink.getAttribute('href') : '';
+        var slug = guidePath.replace(/\//g, '') || panel.getAttribute('data-cert');
+        var lines = [title, 'edistrictupseva.com', ''];
+        var items = panel.querySelectorAll('.checklist-tool input[type="checkbox"]');
+        items.forEach(function (box) {
+          var label = box.parentNode.querySelector('span');
+          lines.push((box.checked ? '[x] ' : '[ ] ') + (label ? label.textContent.trim() : ''));
+        });
+        lines.push('');
+        lines.push('Full guide: https://edistrictupseva.com' + guidePath);
+        var blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = slug + '-checklist.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      });
       var hash = (window.location.hash || '').replace('#', '');
       if (hash && document.getElementById('checklist-' + hash)) show(hash);
       else show('income');
