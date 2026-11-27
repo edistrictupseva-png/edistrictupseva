@@ -6,13 +6,21 @@ import Footer from '../components/Footer.astro';
 <!doctype html>
 <html lang="hi-IN">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MYFTEZB3X"></script>
+  <!-- Analytics (Google tag) loads only when cookie consent was accepted — no banner on this page -->
   <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-8MYFTEZB3X');
+    (function () {
+      var choice = null;
+      try { choice = window.localStorage.getItem('edistrict-cookie-consent'); } catch (e) {}
+      if (choice !== 'accepted') return;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-8MYFTEZB3X');
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8MYFTEZB3X';
+      document.head.appendChild(s);
+    })();
   </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
