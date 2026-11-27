@@ -47,11 +47,11 @@ export function GET() {
     'blog/edistrict-forms-download': '2026-11-15',
     'blog/edistrict-helpline-contact': '2026-11-15',
     'blog/kasganj-certificate-clearance-october-2026': '2026-11-06',
-    'blog/up-scholarship-verification-november-2026': '2026-11-06',
+    'blog/up-scholarship-verification-november-2026': '2026-11-28',
     'blog/janhit-guarantee-appeal-delayed-certificate': '2026-11-06',
     'blog/rani-laxmibai-scooty-yojana-verification-november-2026': '2026-11-08',
-    'blog/up-scholarship-deadline-extension-13-november-2026': '2026-11-08',
-    'blog/up-scholarship-verification-payment-date': '2026-11-27',
+    'blog/up-scholarship-deadline-extension-13-november-2026': '2026-11-28',
+    'blog/up-scholarship-verification-payment-date': '2026-11-28',
     'blog/digital-life-certificate-jeevan-pramaan': '2026-11-22',
   };
   const entries = slugs.flatMap((s) => {
