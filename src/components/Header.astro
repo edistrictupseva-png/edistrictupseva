@@ -14,15 +14,16 @@ const labels = isHindi ? {
   contact: 'Contact', legal: 'Legal', brandGuide: 'Guide 2026', menu: 'Open menu', blog: 'Blog',
 };
 const services = [
-  [isHindi ? 'आय प्रमाण पत्र' : 'Income Certificate', p('income-certificate'), 'income'],
-  [isHindi ? 'जाति प्रमाण पत्र' : 'Caste Certificate', p('caste-certificate'), 'caste'],
-  [isHindi ? 'निवास प्रमाण पत्र' : 'Domicile Certificate', p('domicile-certificate'), 'home'],
-  [isHindi ? 'जन्म प्रमाण पत्र' : 'Birth Certificate', p('birth-certificate'), 'heart'],
-  [isHindi ? 'मृत्यु प्रमाण पत्र' : 'Death Certificate', p('death-certificate'), 'file'],
-  [isHindi ? 'परिवार रजिस्टर नकल' : 'Parivar Register Nakal', p('parivar-register-nakal'), 'archive'],
-  [isHindi ? 'EWS प्रमाण पत्र' : 'EWS Certificate', p('ews-certificate'), 'file'],
-  [isHindi ? 'स्व-घोषणा पत्र' : 'Self Declaration Form', p('self-declaration-form'), 'edit'],
-  [isHindi ? 'CSC गाइड' : 'CSC Guide', p('csc-guide'), 'target'],
+  [isHindi ? 'आय प्रमाण पत्र' : 'Income Certificate', p('income-certificate')],
+  [isHindi ? 'जाति प्रमाण पत्र' : 'Caste Certificate', p('caste-certificate')],
+  [isHindi ? 'निवास प्रमाण पत्र' : 'Domicile Certificate', p('domicile-certificate')],
+  [isHindi ? 'जन्म प्रमाण पत्र' : 'Birth Certificate', p('birth-certificate')],
+  [isHindi ? 'मृत्यु प्रमाण पत्र' : 'Death Certificate', p('death-certificate')],
+  [isHindi ? 'परिवार रजिस्टर नकल' : 'Parivar Register Nakal', p('parivar-register-nakal')],
+  [isHindi ? 'EWS प्रमाण पत्र' : 'EWS Certificate', p('ews-certificate')],
+  [isHindi ? 'स्व-घोषणा पत्र' : 'Self Declaration Form', p('self-declaration-form')],
+  [isHindi ? 'CSC गाइड' : 'CSC Guide', p('csc-guide')],
+  [isHindi ? 'दस्तावेज़ चेकलिस्ट' : 'Document Checklist', p('document-checklist')],
 ];
 const legal = [
   [isHindi ? 'गोपनीयता नीति' : 'Privacy Policy', p('privacy-policy')],
@@ -48,10 +49,8 @@ const legal = [
         <details class="nav-dropdown">
           <summary class="nav-link">{labels.services}<span class="chevron" aria-hidden="true"></span></summary>
           <div class="dropdown-panel services-menu">
-            {services.map(([label, href, icon]) => (
-              <a href={href} class:list={{ active: isCurrent(href) }}>
-                <span class={`service-icon icon-${icon}`} aria-hidden="true"></span><span>{label}</span>
-              </a>
+            {services.map(([label, href]) => (
+              <a href={href} class:list={{ active: isCurrent(href) }}>{label}</a>
             ))}
           </div>
         </details>
